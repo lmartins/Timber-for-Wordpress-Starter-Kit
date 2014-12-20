@@ -1,14 +1,21 @@
 {% block html_head_container %}
-{% include 'html-header.twig' %}
 
-{% block head %}
+    {% include 'html-header.twig' %}
+
+    {% block head %}
     {% endblock %}
     </head>
+
 {% endblock %}
 
     <body class="{{body_class}}" data-template="base.twig">
+
+        {% do action('tha_body_top') %}
+        {% do action('tha_header_before') %}
+
         <header class="header" >
             {% block header %}
+            {% do action('tha_header_top') %}
             <div class="wrapper">
 
                 <h1 class="hdr-logo" role="banner">
@@ -25,29 +32,43 @@
                 </nav><!-- #access -->
 
             </div>
+            {% do action('tha_header_bottom') %}
             {% endblock %}
         </header>
-
+        {% do action('tha_header_after') %}
 
         <section id="content" role="main" class="content-wrapper">
+            {% do action('tha_content_before') %}
             {% if title %}<h1>{{title}}</h1>{% endif %}
             <div class="wrapper {{sidebar_class}}">
+                {% do action('tha_content_top') %}
                 {% block content %}
                     Sorry, no content
                 {% endblock %}
+                {% do action('tha_content_bottom') %}
             </div>
+            {% do action('tha_content_after') %}
             {% if sidebar %}
+                {% do action('tha_sidebars_before') %}
                 <aside class="layout-sidebar">
+                    {% do action('tha_sidebars_top') %}
                     {{sidebar}}
+                    {% do action('tha_sidebars_bottom') %}
                 </aside>
+                {% do action('tha_sidebars_after') %}
             {% endif %}
         </section>
 
+        {% do action('tha_footer_before') %}
         {% block footer %}
             <footer id="footer">
+                {% do action('tha_footer_top') %}
                 {% include 'footer.twig' %}
+                {% do action('tha_footer_bottom') %}
             </footer>
             {{ function('wp_footer') }}
         {% endblock %}
+        {% do action('tha_footer_after') %}
+        {% do action('tha_body_bottom') %}
     </body>
 </html>

@@ -6,7 +6,9 @@
 	<p>{{qux}}</p>
 
     {% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+        {% do action('tha_entry_before') %}
+        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+        {% do action('tha_entry_after') %}
 	{% endfor %}
 
 {% endblock %}
