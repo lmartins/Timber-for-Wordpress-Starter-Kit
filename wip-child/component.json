@@ -1,0 +1,11 @@
+{
+  "name": "Webipack",
+  "paths": [],
+  "local": [],
+  "dependencies": {
+    "component/query": "*",
+    "component/emitter": "*",
+    "anthonyshort/static-router": "*",
+    "segmentio/raf-scroll": "*"
+  }
+}

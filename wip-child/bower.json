@@ -1,0 +1,12 @@
+{
+  "author": "Webipack",
+  "name": "Foster",
+  "version": "0.1.0",
+  "dependencies": {
+    "intentionjs": "~0.9.9",
+    "slick.js": "~1.3.11",
+    "modular-scale": "~2.0.5",
+    "Shifter": "~3.1.2",
+    "masonry": "~3.2.1"
+  }
+}

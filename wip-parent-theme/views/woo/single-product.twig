@@ -1,0 +1,65 @@
+{% extends "base.twig" %}
+{% block sectionheader %}
+    <div class="gray">
+        <div class="row">
+            <div class="columns medium-2"><h2>Store</h2></div>
+            <div class="columns medium-10">
+                <div class="product-cats">
+                {% for cat in cats %}
+                    <a href="{{cat.link}}">{{cat.name}}</a>
+                      {% if not loop.last %} // {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+    <br>
+    <article class='post product-detail woocommerce'>
+        <div class="columns medium-6">
+            <img class="productimage" src="{{post.get_thumbnail.get_src|resize(400, 400)}}" />
+            {{function('woocommerce_show_product_thumbnails')}}
+            {#
+            {% filter shortcodes %}
+                [product-gallery] - no worky
+            {% endfilter %}
+            #}
+        </div>
+        <div class="columns medium-6">
+            <h1>{{post.get_title}}</h1>
+
+            {#
+            {{function('woocommerce_template_single_rating')}}
+            {{function('woocommerce_template_single_meta')}}
+            #}
+
+
+            <p class="price">
+                {{ product.get_price_html }}
+                {% if product.is_on_sale %}SALE!{% endif %}
+            </p>
+            <p> {{post.post_excerpt}}</p>
+
+            {{post.content}}
+            <div class='order'>
+                {% do action('woocommerce_' ~ product.product_type ~ '_add_to_cart') %}
+            </div>
+            <hr>
+
+            {% do action('mc_attributes', product) %}
+            {#
+            {% do action('mc_reviews', product) %}
+            <div class="responses">
+                {% for cmt in post.get_comments() %}
+                    {% include "partials/comment.twig" with {comment:cmt} %}
+                {% endfor %}
+            </div>
+            #}
+
+            {% do action('woocommerce_share') %}
+            {{function('woocommerce_upsell_display')}}
+            {{function('woocommerce_output_related_products')}}
+        </div>
+    </article>
+{% endblock  %}
