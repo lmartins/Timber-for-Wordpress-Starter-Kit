@@ -39,13 +39,11 @@
 
         <section id="content" role="main" class="content-wrapper">
             {% do action('tha_content_before') %}
-            {% if title %}<h1>{{title}}</h1>{% endif %}
             <div class="wrapper {{sidebar_class}}">
-                {% do action('tha_content_top') %}
+                {% if title %}<h1>{{title}}</h1>{% endif %}
                 {% block content %}
                     Sorry, no content
                 {% endblock %}
-                {% do action('tha_content_bottom') %}
             </div>
             {% do action('tha_content_after') %}
             {% if sidebar %}
