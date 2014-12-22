@@ -4,8 +4,8 @@ require_once( get_template_directory() . '/mdf/init.php' );
 
 require_once( CHILD_DIR . '/inc/media.php' );
 require_once( CHILD_DIR . '/inc/menus.php' );
+require_once( CHILD_DIR . '/inc/post-types.php' );
 require_once( CHILD_DIR . '/inc/sidebars.php' );
-require_once( CHILD_DIR . '/sample-config.php' );
 
 
 // add_action('tha_footer_bottom','teste');
@@ -41,6 +41,8 @@ class StarterSite extends TimberSite {
         // $context['foo'] = 'bar';
         // $context['stuff'] = 'I am a value set in your functions.php file';
         // $context['notes'] = 'These values are available everytime you call Timber::get_context();';
+        $context['layout'] = 'content-sidebar';
+        $context['sidebar'] = Timber::get_widgets('sidebar-1');
         $context['menu'] = new TimberMenu('0');
         $content['footerNav'] = new TimberMenu('0');
         $context['site'] = $this;

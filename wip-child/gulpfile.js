@@ -46,7 +46,7 @@ var config = {
   },
 
   SASS: {
-    src: "src/sass/**/*.scss",
+    src: ["src/sass/**/*.scss", "../wip-parent-theme/src/sass/**/*.scss"],
     build: "build/css/"
   }
 

@@ -1,5 +1,6 @@
 <?php
 
+if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 
 if (!class_exists('Timber')){
@@ -19,4 +20,8 @@ require_once( PARENT_DIR . '/mdf/security.php' );
 
 require_once( PARENT_DIR . '/mdf/admin/editor.php' );
 require_once( PARENT_DIR . '/mdf/admin/lists.php' );
+require_once( PARENT_DIR . '/mdf/admin/metaboxes.php' );
+require_once( PARENT_DIR . '/mdf/admin/taxonomies.php' );
+require_once( PARENT_DIR . '/mdf/admin/users.php' );
+require_once( PARENT_DIR . '/mdf/admin/widgets.php' );
 

@@ -7,5 +7,7 @@
  * @subpackage  Timber
  */
 
-$data['sidebar'] = Timber::get_widgets('sidebar-1');
-Timber::render(array('sidebar.twig'), $data);
+$context = array();
+$context['sidebar'] = Timber::get_widgets('sidebar-1');
+var_dump($context);
+Timber::render(array('sidebar.twig'), $context);

@@ -4,7 +4,7 @@
     {% endblock %}
     </head>
 {% endblock %}
-    <body class="{{body_class}}" data-template="base.twig" data-view="{{site_view}}">
+    <body class="{{body_class}} {{layout}}" data-template="base.twig" data-view="{{site_view}}">
 
         <header class="header" data-role="header" >
             {% block header %}
@@ -27,21 +27,20 @@
             {% endblock %}
         </header>
 
+        <section role="main" class="main-wrapper">
 
-        <section id="content" role="main" class="content-wrapper">
             {% if title %}<h1>{{title}}</h1>{% endif %}
 
-            <div class="wrapper {{sidebar_class}}">
-                {% block content %}
-                    Sorry, no content
-                {% endblock %}
-            </div>
+            {% block content %}
+                Sorry, no content
+            {% endblock %}
 
             {% if sidebar %}
                 <aside class="layout-sidebar">
                     {{sidebar}}
                 </aside>
             {% endif %}
+
         </section>
 
         {% block footer %}

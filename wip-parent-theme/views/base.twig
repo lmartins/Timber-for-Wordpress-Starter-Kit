@@ -38,23 +38,32 @@
         {% do action('tha_header_after') %}
 
         <section id="content" role="main" class="content-wrapper">
+
             {% do action('tha_content_before') %}
+
             <div class="wrapper {{sidebar_class}}">
                 {% if title %}<h1>{{title}}</h1>{% endif %}
                 {% block content %}
                     Sorry, no content
                 {% endblock %}
             </div>
+
             {% do action('tha_content_after') %}
+
             {% if sidebar %}
+
                 {% do action('tha_sidebars_before') %}
+
                 <aside class="layout-sidebar">
                     {% do action('tha_sidebars_top') %}
                     {{sidebar}}
                     {% do action('tha_sidebars_bottom') %}
                 </aside>
+
                 {% do action('tha_sidebars_after') %}
+
             {% endif %}
+
         </section>
 
         {% do action('tha_footer_before') %}
