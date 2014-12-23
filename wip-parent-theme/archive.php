@@ -35,6 +35,8 @@
 			array_unshift($templates, 'archive-'.get_post_type().'.twig');
 		}
 
+        $data['categories'] = 'teste';
+
         $data['site_view'] = 'archives';
 		$data['posts'] = Timber::get_posts();
 

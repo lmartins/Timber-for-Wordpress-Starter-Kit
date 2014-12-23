@@ -6,16 +6,18 @@
 {% endblock %}
     <body class="{{body_class}} {{layout}}" data-template="base.twig" data-view="{{site_view}}">
 
-        <header class="header" data-role="header" >
+        {% do action('tha_header_before') %}
+        <header class="header" >
             {% block header %}
+            {% do action('tha_header_top') %}
             <div class="wrapper">
 
                 <h1 class="hdr-logo" role="banner">
                     <a class="hdr-logo-link" href="/" title="Timber" rel="home">{{site.name}}</a>
                 </h1>
-                <nav id="access" class="main-navigation" role="navigation">
+                <nav class="main-navigation" role="navigation">
                     <ul>
-                    {% for item in menu.items %}
+                    {% for item in mainMenu.items %}
                         <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
                             <a href="{{item.link}}">{{item.title}}</a>
                         </li>
@@ -24,6 +26,7 @@
                 </nav><!-- #access -->
 
             </div>
+            {% do action('tha_header_bottom') %}
             {% endblock %}
         </header>
 

@@ -17,7 +17,9 @@ require_once( PARENT_DIR . '/mdf/archives.php' );
 require_once( PARENT_DIR . '/mdf/pages.php' );
 require_once( PARENT_DIR . '/mdf/single.php' );
 require_once( PARENT_DIR . '/mdf/security.php' );
+require_once( PARENT_DIR . '/mdf/woocommerce.php' );
 
+require_once( PARENT_DIR . '/mdf/admin/branding.php' );
 require_once( PARENT_DIR . '/mdf/admin/editor.php' );
 require_once( PARENT_DIR . '/mdf/admin/lists.php' );
 require_once( PARENT_DIR . '/mdf/admin/metaboxes.php' );

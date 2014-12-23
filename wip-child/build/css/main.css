@@ -46,5 +46,9 @@ header, .content-wrapper {
 .main-navigation li {
   display: inline-block; }
 
+/* line 38, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/main.scss */
+img {
+  max-width: 100%; }
+
 
 /*# sourceMappingURL=main.css.map */

@@ -2,17 +2,28 @@
 
 require_once( get_template_directory() . '/mdf/init.php' );
 
+require_once( CHILD_DIR . '/inc/header.php' );
 require_once( CHILD_DIR . '/inc/media.php' );
 require_once( CHILD_DIR . '/inc/menus.php' );
 require_once( CHILD_DIR . '/inc/post-types.php' );
 require_once( CHILD_DIR . '/inc/sidebars.php' );
 
 
-// add_action('tha_footer_bottom','teste');
-// function teste()
-// {
-//     echo 'teste';
-// }
+// add_action('tha_header_bottom','teste');
+function teste()
+{
+    echo 'teste';
+}
+
+
+add_action('tha_header_bottom', 'my_function');
+
+function my_function($context){
+
+    $image = get_header_image();
+    if ($image)
+        echo "<img src=" . get_header_image() . " >";
+}
 
 
 
@@ -43,8 +54,9 @@ class StarterSite extends TimberSite {
         // $context['notes'] = 'These values are available everytime you call Timber::get_context();';
         $context['layout'] = 'content-sidebar';
         $context['sidebar'] = Timber::get_widgets('sidebar-1');
-        $context['menu'] = new TimberMenu('0');
-        $content['footerNav'] = new TimberMenu('0');
+        $context['mainMenu'] = new TimberMenu('main_menu');
+        // $context['menu'] = new TimberMenu('main-menu');
+        $content['footerNav'] = new TimberMenu('main_menu');
         $context['site'] = $this;
 
         return $context;
