@@ -55,8 +55,7 @@ class StarterSite extends TimberSite {
         $context['layout'] = 'content-sidebar';
         $context['sidebar'] = Timber::get_widgets('sidebar-1');
         $context['mainMenu'] = new TimberMenu('main_menu');
-        // $context['menu'] = new TimberMenu('main-menu');
-        $content['footerNav'] = new TimberMenu('main_menu');
+        $content['footerNav'] = new TimberMenu('footer_menu');
         $context['site'] = $this;
 
         return $context;

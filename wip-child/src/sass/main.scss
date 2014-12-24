@@ -5,12 +5,12 @@ body{
     padding: 0;
     font-family: Helvetica Neue;
     font-size: 1em;
-    color: #b9b1b1;
+    color: hsla(0, 0%, 20%, 1);
 }
 
 a{
     text-decoration: none;
-    color: grey;
+    color: hsla(195, 53%, 56%, 1);
     &:hover{
         color: black;
     }

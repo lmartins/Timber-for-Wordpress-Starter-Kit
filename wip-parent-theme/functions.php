@@ -11,6 +11,14 @@ if (!class_exists('Timber')){
 }
 
 
+/**
+ * @param string $function_name
+ * @param array (optional) $defaults
+ * @param bool (optional) $return_output_buffer Return function output instead of return value (default: false)
+ * @return \TimberFunctionWrapper
+ */
+TimberHelper::function_wrapper( $function_name = 'default', $defaults = array(), $return_output_buffer = false );
+
 require_once( PARENT_DIR . '/lib/tha-theme-hooks.php' );
 
 require_once( PARENT_DIR . '/mdf/archives.php' );

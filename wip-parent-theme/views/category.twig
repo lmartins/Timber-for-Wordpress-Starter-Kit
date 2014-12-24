@@ -1,0 +1,24 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{% if children %}
+    <div class="loop loop--categories">
+    {% for category in children %}
+        <div class="item">
+            <!-- {{dump(category)}} -->
+                <!-- <img src="{{TimberImage( category.image )}}" /> -->
+            <img src="{{TimberImage( fn('get_field', 'category_image', 'category_' ~ category.term_id ) )}}" />
+            <a href="" class="item-title">{{ category.name }} - {{category.term_id}}</a>
+            {{ category.description }}
+
+        </div>
+    {% endfor %}
+    </div>
+{% endif %}
+
+{% for post in posts %}
+	{% include ["tease-"~post.post_type~".twig", "tease.twig"] %}
+{% endfor %}
+
+{% endblock %}

@@ -58,7 +58,7 @@ gulp.task('browser-sync', function() {
     // server: {
     //   baseDir: "./app/"
     // },
-    proxy: "http://wp-beta.dev/",
+    proxy: "http://wptimber.dev/",
     // port: 80,
     browser: "",
     online: true,

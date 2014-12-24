@@ -4,6 +4,16 @@ if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 
 
+/**
+ * Update default image sizes
+ */
+update_option( 'thumbnail_size_w', 260 );
+update_option( 'thumbnail_size_h', 195 );
+update_option( 'medium_size_w', 420 );
+update_option( 'medium_size_h', 315 );
+update_option( 'large_size_w', 800 );
+update_option( 'large_size_h', 600 );
+
 
 
 /**

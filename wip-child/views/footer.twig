@@ -1,7 +1,5 @@
 {% do action('tha_footer_top') %}
 
-Copyright {{"now"|date('Y')}}
-
 <nav id="access" class="main-navigation" role="navigation">
     <ul>
     {% for item in footerNav.items %}
@@ -11,5 +9,7 @@ Copyright {{"now"|date('Y')}}
     {% endfor %}
     </ul>
 </nav>
+
+Copyright {{"now"|date('Y')}}
 
 {% do action('tha_footer_bottom') %}
