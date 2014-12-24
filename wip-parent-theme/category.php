@@ -26,7 +26,7 @@ if (isset($wp_query->query_vars['cat'])){
             'title_li'  => __('Categories','wip'),
             'echo' => 0
             );
-        $children = get_categories( $args );
+        // $children = get_categories( $args );
         // change depth to 1 if only the top level sub categories should be shown i.e., with children NOT expanded
 
     } else {
@@ -41,17 +41,18 @@ if (isset($wp_query->query_vars['cat'])){
             'title_li'  => __('Categories','wip'),
             'echo' => 0
             );
-        $children = get_categories( $args );
+        // $children = get_categories( $args );
         // change depth to 1 if only the top level sub categories should be shown i.e., with children NOT expanded
     }
 
+    $data['categories'] = Timber::get_terms('category', $args );
 
-    $data['children'] = $children;
+    // $data['children'] = $children;
     // $data['edit_post_link'] = TimberHelper::function_wrapper( 'edit_post_link', array( __( 'Edit' ), '<span class="edit-link">', '</span>' ) );
 
-    // $data['get_image'] = TimberHelper::function_wrapper( 'get_field', array( 'category_image', 'category_8' ) );
-    $data['image_id'] = get_field( 'category_image', 'category_54' );
-    $data['category_link'] = get_category_link( 'term_id' );
+    $data['get_image'] = TimberHelper::function_wrapper( 'get_field', array( 'category_image', 'category_id' ) );
+    // $data['image_id'] = get_field( 'category_image', 'category_54' );
+    // $data['category_link'] = get_category_link( 'term_id' );
     // $data['image'] = new TimberImage( 'image_id' );
 
 

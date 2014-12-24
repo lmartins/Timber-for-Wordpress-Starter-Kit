@@ -2,13 +2,34 @@
 
 {% block content %}
 
+{% if categories %}
+    <div class="loop loop--categories">
+    {% for cat in categories %}
+        <!-- {{dump(cat)}} -->
+        <div class="item">
+
+            imagem: {{ fn('get_field', 'category_image', 'category_' ~ cat.term_id ) }}
+            <a href="{{cat.link}}" class="item-title">{{cat.name}} - {{ cat.term_id }}</a>
+            <p>{{cat.description}}</p>
+        </div>
+        {% if cat.children %}
+        <ul class="cat-list-children">
+            {% for child in cat.children %}
+                <li><a href="{{child.link}}">{{child.name}}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endif %}
+
 {% if children %}
     <div class="loop loop--categories">
     {% for category in children %}
         <div class="item">
             <!-- {{dump(category)}} -->
             <!-- {{ category_link }} -->
-                <!-- <img src="{{TimberImage( category.image )}}" /> -->
+            <!-- <img src="{{TimberImage( category.image )}}" /> -->
             <!-- <img src="{{TimberImage( fn('get_field', 'category_image', 'category_' ~ category.term_id ) )}}" /> -->
             <!-- <img src="{{TimberImage( image_id )}}" /> -->
             <!-- imagem: {{ image }} | -->

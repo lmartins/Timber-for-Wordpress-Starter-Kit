@@ -24,6 +24,7 @@ require_once( PARENT_DIR . '/lib/tha-theme-hooks.php' );
 require_once( PARENT_DIR . '/mdf/archives.php' );
 require_once( PARENT_DIR . '/mdf/pages.php' );
 require_once( PARENT_DIR . '/mdf/single.php' );
+require_once( PARENT_DIR . '/mdf/navigation.php' );
 require_once( PARENT_DIR . '/mdf/security.php' );
 require_once( PARENT_DIR . '/mdf/woocommerce.php' );
 

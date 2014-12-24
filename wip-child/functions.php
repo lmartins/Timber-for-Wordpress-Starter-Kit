@@ -1,4 +1,5 @@
 <?php
+if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 require_once( get_template_directory() . '/mdf/init.php' );
 
@@ -16,6 +17,15 @@ function teste()
 }
 
 
+/**
+ * Adiciona os breadcrumbs YOAST
+ */
+add_action('tha_header_bottom','mw_add_breadcrumbs');
+
+
+/**
+ * Adiciona a imagem de header
+ */
 add_action('tha_header_bottom', 'my_function');
 
 function my_function($context){
