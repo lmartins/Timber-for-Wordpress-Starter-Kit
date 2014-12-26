@@ -6,9 +6,8 @@
     <div class="loop loop--categories">
     {% for category in children %}
         <div class="item">
-            <!-- {{dump(category)}} -->
-                <!-- <img src="{{TimberImage( category.image )}}" /> -->
-            <img src="{{TimberImage( fn('get_field', 'category_image', 'category_' ~ category.term_id ) )}}" />
+        {{category|print_r}}
+            <img src="{{TimberImage( fn('get_field', 'category_image', 'category_' ~ category.term_id ) ).src | resize(200) }}" />
             <a href="" class="item-title">{{ category.name }} - {{category.term_id}}</a>
             {{ category.description }}
 
