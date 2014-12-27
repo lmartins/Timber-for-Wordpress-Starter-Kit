@@ -13,9 +13,11 @@ global $wp_query;
 $data = Timber::get_context();
 $data['posts'] = Timber::get_posts();
 if (isset($wp_query->query_vars['cat'])){
+
     $category = get_category ($cat);
 
     if(!$category->category_parent) {
+
         // if category has NO parent
         $args = array(
             'child_of' => $category->cat_ID,
@@ -30,6 +32,7 @@ if (isset($wp_query->query_vars['cat'])){
         // change depth to 1 if only the top level sub categories should be shown i.e., with children NOT expanded
 
     } else {
+
         // if category has parent, show children of current category's parent
         $args = array(
             'parent' => $category->cat_ID,
