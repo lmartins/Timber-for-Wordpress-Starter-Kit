@@ -2,29 +2,38 @@
 
 require_once( get_template_directory() . '/mdf/init.php' );
 
-require_once( CHILD_DIR . '/inc/header.php' );
-require_once( CHILD_DIR . '/inc/media.php' );
-require_once( CHILD_DIR . '/inc/menus.php' );
-require_once( CHILD_DIR . '/inc/post-types.php' );
-require_once( CHILD_DIR . '/inc/sidebars.php' );
+// TODO: Ver se isto é necessário
+// require_once( CHILD_DIR . '/lib/underscores/inc/customizer.php' );
+
+require_once( CHILD_DIR . '/fw/head.php' );
+require_once( CHILD_DIR . '/fw/header.php' );
+require_once( CHILD_DIR . '/fw/media.php' );
+require_once( CHILD_DIR . '/fw/menus.php' );
+require_once( CHILD_DIR . '/fw/post-types.php' );
+require_once( CHILD_DIR . '/fw/sidebars.php' );
 
 
-// add_action('tha_header_bottom','teste');
+// add_action('mwh_banner','teste');
 function teste()
 {
     echo 'teste';
 }
 
 
-add_action('tha_header_bottom', 'my_function');
-
+/**
+ * Adds the header image to a hook position
+ */
 function my_function($context){
-
     $image = get_header_image();
-    if ($image)
+    if ($image && ! is_front_page() )
         echo "<img src=" . get_header_image() . " >";
 }
+// add_action('mwh_banner', 'my_function');
 
+
+
+if ( ! isset( $content_width ) )
+    $content_width = 960;
 
 
 class StarterSite extends TimberSite {
@@ -33,10 +42,13 @@ class StarterSite extends TimberSite {
         add_theme_support('post-formats');
         add_theme_support('post-thumbnails');
         add_theme_support('menus');
+
         add_filter('timber_context', array($this, 'add_to_context'));
         add_filter('get_twig', array($this, 'add_to_twig'));
+
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
+
         parent::__construct();
     }
 
@@ -49,13 +61,11 @@ class StarterSite extends TimberSite {
     }
 
     function add_to_context($context){
-        // $context['foo'] = 'bar';
-        // $context['stuff'] = 'I am a value set in your functions.php file';
-        // $context['notes'] = 'These values are available everytime you call Timber::get_context();';
         $context['layout'] = 'content-sidebar';
         $context['sidebar'] = Timber::get_widgets('sidebar-1');
         $context['mainMenu'] = new TimberMenu('main_menu');
         $content['footerNav'] = new TimberMenu('footer_menu');
+        $context["commentReplyArgs"] = array('reply_text' => "Reply", 'depth' => 1, 'max_depth' => 5);
         $context['site'] = $this;
 
         return $context;
@@ -72,7 +82,3 @@ class StarterSite extends TimberSite {
 
 new StarterSite();
 
-// function myfoo($text){
-//     $text .= ' bar!';
-//     return $text;
-// }

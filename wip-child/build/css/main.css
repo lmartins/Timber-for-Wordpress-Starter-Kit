@@ -1,54 +1,576 @@
-/* line 4, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-parent-theme/src/sass/_layout.scss */
-.content-sidebar .main-wrapper {
-  display: table;
-  width: 95%;
-  margin: 0 auto; }
-/* line 10, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-parent-theme/src/sass/_layout.scss */
-.content-sidebar .content-wrapper, .content-sidebar .layout-sidebar {
-  display: table-cell;
-  padding: 1.5em; }
-/* line 15, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-parent-theme/src/sass/_layout.scss */
-.content-sidebar .content-wrapper {
-  width: 70%; }
-/* line 19, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-parent-theme/src/sass/_layout.scss */
-.content-sidebar .layout-sidebar {
-  width: 30%;
-  background: #eee; }
+/**
+ * ----------------------------------------------------------------------------
+ * SETUP
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * ----------------------------------------------------------------------------
+ * COLORS
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * ----------------------------------------------------------------------------
+ * WEBFONTS
+ * O carregamento das webfonts é feito por enqueue do Wordpress
+ * /fw/front/components/head.php
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * ----------------------------------------------------------------------------
+ * RITMO
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * ----------------------------------------------------------------------------
+ * SUSY SETTINGS
+ * http://susydocs.oddbird.net/en/latest/settings/
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * ----------------------------------------------------------------------------
+ * VENDORS
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * ----------------------------------------------------------------------------
+ * HELPERS
+ * The helpers/ folder (sometimes called utils/) gathers all Sass tools and helpers
+ * we’ll use across the project. Got a function? A mixin? Put it in there. This folder
+ * also contains a _variables.scss file (sometimes _config.scss) which holds all
+ * global variables for the project (for typography, color schemes, and so on).
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * ----------------------------------------------------------------------------
+ * BASE
+ * The base/ folder holds what we might call the boilerplate stuff for your project.
+ * In there, you might find the reset (or Normalize.css, or whatever), probably some
+ * stuff dealing with typography, and, depending on the project, maybe some other
+ * files.
+ * This comes after VENDORS and HELPERS so it can use those resources' code.
+ * ----------------------------------------------------------------------------
+ */
+*, *:before, *:after {
+  box-sizing: border-box; }
 
-/* line 3, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/main.scss */
-body {
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, legend, table, th, td, caption, hr {
   margin: 0;
-  padding: 0;
-  font-family: Helvetica Neue;
-  font-size: 1em;
-  color: #333333; }
+  padding: 0; }
 
-/* line 11, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/main.scss */
+button, select, option {
+  cursor: pointer; }
+
+fieldset {
+  border: none; }
+
+ol, ul {
+  list-style: none; }
+
+fieldset, article, aside, footer, main, summary {
+  margin-bottom: 2em; }
+
+img {
+  max-width: 100%;
+  display: block; }
+
+body {
+  font-family: Fira Sans, 'Helvetica Neue', Verdana, Arial, sans-serif;
+  color: #555a62;
+  font-size: 0.9em;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; }
+
+.sidebar {
+  font-family: Fira Sans, 'Helvetica Neue', Verdana, Arial, sans-serif; }
+
+h1 {
+  font-size: 3.6989em; }
+
+h2 {
+  font-size: 1.44163em; }
+
+h3 {
+  font-size: 1.28145em; }
+
+h4 {
+  font-size: 1.13906em; }
+
+h5 {
+  font-size: 1.0125em; }
+
+h6 {
+  font-size: 1.0125em; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333333;
+  font-family: Montserrat, 'Helvetica Neue', Verdana, Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.1;
+  text-transform: uppercase; }
+
+p {
+  margin-bottom: 2em; }
+  p.lead {
+    font-size: 1.28145em; }
+  p.note {
+    font-size: 0.71111em;
+    color: #6e7a87; }
+
+blockquote {
+  font-style: italic;
+  padding-left: 2em;
+  margin: 1.5em 0;
+  font-weight: 200;
+  font-size: 1.28145em;
+  line-height: 1.4;
+  color: #6e7a87; }
+
+strong {
+  color: #333333;
+  font-weight: bold; }
+
 a {
   text-decoration: none;
-  color: #53adca; }
-  /* line 14, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/main.scss */
-  a:hover {
-    color: black; }
+  outline: none; }
 
-/* line 21, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/main.scss */
-header, .content-wrapper {
-  width: 95%;
-  margin: 0 auto;
-  max-width: 1600px; }
+hr {
+  border: none;
+  border-top: 1px solid #f2f2f2;
+  margin: 4em 0; }
 
-/* line 28, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/main.scss */
+ul p, dl p {
+  margin: 0; }
+
+.tab-pane ul {
+  list-style: disc;
+  margin: 0 0 2em 2em; }
+
+dl dt {
+  color: #333333; }
+dl dd {
+  margin-bottom: 2em; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * ALIGNMENT
+ * ----------------------------------------------------------------------------
+ */
+.alignnone, .alignleft, .alignright, .aligncenter {
+  height: auto;
+  margin-top: 0.675em; }
+
+.alignright {
+  float: right;
+  margin-bottom: 0.675em;
+  margin-left: 2em; }
+
+.alignleft {
+  float: left;
+  margin-bottom: 0.675em;
+  margin-right: 2em; }
+
+.aligncenter {
+  margin-bottom: 0.675em; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * POST/PAGE EMBED FIGURE
+ * ----------------------------------------------------------------------------
+ */
+figure {
+  max-width: 100%; }
+  figure.wp-caption {
+    background: #f2f2f2; }
+  figure figcaption {
+    padding: 1.35em;
+    font-size: 0.71111em;
+    font-style: italic; }
+
+#wpadminbar {
+  background: #343741; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * LAYOUT
+ * Let the fun begin
+ * Here we start adding structure to our project layout
+ * It closely follows Wordpress layout conventions, separating the code between
+ * using Wordpress' classes separation
+ * ----------------------------------------------------------------------------
+ */
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0; }
+
+.container {
+  max-width: 64em;
+  margin-left: auto;
+  margin-right: auto; }
+  .container:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+.main-wrapper {
+  background: white;
+  position: relative;
+  z-index: 2; }
+
+.content-wrapper {
+  max-width: 64em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 4em; }
+  .content-wrapper:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+.site-header {
+  text-align: center;
+  position: relative;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 10;
+  padding-top: 2em;
+  padding-bottom: 2em; }
+  body:not(.home) .site-header .wrapper {
+    max-width: 64em;
+    margin-left: auto;
+    margin-right: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    body:not(.home) .site-header .wrapper:after {
+      content: " ";
+      display: block;
+      clear: both; }
+    body:not(.home) .site-header .wrapper nav {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      text-align: right; }
+  body:not(.home) .site-header .hdr-logo > * {
+    display: inline-block; }
+
+.site-logo {
+  font-size: 3.6989em;
+  font-family: Montserrat, 'Helvetica Neue', Verdana, Arial, sans-serif;
+  color: #333333;
+  margin: 0;
+  line-height: 1;
+  font-weight: 600; }
+
+.tagline {
+  font-style: italic;
+  font-size: 1.28145em;
+  color: #949ea8; }
+
+.main-navigation {
+  font-size: 1.28145em;
+  font-family: Montserrat, 'Helvetica Neue', Verdana, Arial, sans-serif;
+  margin-top: 0.675em;
+  padding-top: 0.675em;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative; }
+  .main-navigation a {
+    padding: 0 1.5em;
+    font-weight: bold;
+    color: #333333; }
+  .main-navigation li:not(:last-child):after {
+    display: inline-block;
+    content: "/"; }
+
+.site-footer {
+  clear: both;
+  background: #42494c;
+  padding: 4em 0; }
+
+.layout-sidebar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: white; }
+  .layout-sidebar .widget {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 33%;
+        -ms-flex: 1 1 33%;
+            flex: 1 1 33%; }
+  .layout-sidebar h1 {
+    color: white;
+    font-size: 1.28145em; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * COMPONENTS
+ * ----------------------------------------------------------------------------
+ */
+.comment-form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap; }
+  .comment-form label {
+    display: block; }
+  .comment-form input, .comment-form textarea {
+    width: 100%; }
+
+.comment-notes, .comment-form-comment {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 100%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%; }
+
+.comment-form-author, .comment-form-email, .comment-form-url {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 33.333%;
+      -ms-flex: 1 0 33.333%;
+          flex: 1 0 33.333%; }
+
+.comment-form-author, .comment-form-email {
+  padding-right: 3%; }
+
+/**
+ * COMMENTS LIST
+ */
+.blog-comment {
+  margin-bottom: 2em; }
+
+.comment-content p {
+  margin: 0; }
+
+.comment-avatar {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 70px;
+      -ms-flex: 0 0 70px;
+          flex: 0 0 70px;
+  padding-right: 1em; }
+  .comment-avatar img {
+    border-radius: 100%; }
+
+.Media {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.Media-figure img {
+  width: 100%;
+  height: auto !important; }
+
+.Media--vertical {
+  display: block; }
+  .Media--vertical > [class*="Media"]:first-child {
+    display: block; }
+  .Media--vertical .Media-content, .Media--vertical .Media-image {
+    display: block; }
+
+input {
+  line-height: 2.5em;
+  min-height: 2.5em; }
+
+input, textarea {
+  border: 2px solid #f2f2f2;
+  border-radius: 0em;
+  background: #f2f2f2;
+  padding: 0 0.8em;
+  -webkit-transition: all 0.15s ease-in 0;
+          transition: all 0.15s ease-in 0;
+  outline: none;
+  font-weight: 400;
+  font-family: Fira Sans, 'Helvetica Neue', Verdana, Arial, sans-serif;
+  color: #6e7a87;
+  font-size: 1.28145em; }
+  input:focus, textarea:focus {
+    color: #333333; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * VIEWS
+ * ----------------------------------------------------------------------------
+ */
+.article-info {
+  display: table;
+  width: 100%;
+  border-top: 2px solid #42494c;
+  padding: 2em 0 0 0;
+  margin-bottom: 2em;
+  font-size: 0.8em;
+  text-transform: uppercase; }
+
+.article-author, .article-meta {
+  display: table-cell;
+  width: 50%;
+  border-bottom: 2px solid #42494c;
+  padding: 0 0 2em 0; }
+
+.article-author {
+  margin-right: 0.675em; }
+
+.article-meta {
+  margin-left: 0.675em; }
+
+.cover {
+  width: 100%;
+  color: white;
+  -webkit-transition: all 0.2s;
+          transition: all 0.2s;
+  background: #f2f2f2;
+  position: relative; }
+  .cover .cover-image {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1; }
+    .cover .cover-image:after {
+      content: "";
+      display: block;
+      background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+  .cover .cover-frame {
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .cover .container {
+    padding-bottom: 4em; }
+  .cover h1 {
+    margin: 0;
+    color: white; }
+
 .main-navigation ul {
   list-style: none;
   margin: 0;
   padding: 0; }
-/* line 33, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/main.scss */
 .main-navigation li {
   display: inline-block; }
 
-/* line 38, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/main.scss */
 img {
   max-width: 100%; }
 
+.inline-list li {
+  display: inline-block; }
 
-/*# sourceMappingURL=main.css.map */
+.nav-seemore {
+  border-top: 2px solid #c0c5c8;
+  border-bottom: 2px solid #c0c5c8;
+  padding: 2em 0;
+  margin-bottom: 2em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap; }
+  .nav-seemore > div {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 50%;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%; }
+    .nav-seemore > div:last-child {
+      text-align: right; }
+  .nav-seemore h3, .nav-seemore h4 {
+    margin: 0; }
+  .nav-seemore .entry-title {
+    font-size: 1.82456em; }
+
+.loop .entry-title {
+  font-size: 2.59786em; }
+
+.loop--posts {
+  color: white; }
+  .loop--posts .entry {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #f2f2f2;
+    
+    
+    
+    width: 48.33333%;
+    float: left;
+    margin-left: 0.83333%;
+    margin-right: 0.83333%;
+    
+    
+    width: 50%;
+    margin: 0;
+    position: relative; }
+    .loop--posts .entry .Media {
+      padding-top: 40%;
+      -webkit-transition: all 0.3s;
+              transition: all 0.3s; }
+    .loop--posts .entry:nth-child(3n+1) {
+      width: 100%; }
+      .loop--posts .entry:nth-child(3n+1) .Media {
+        padding-top: 20%; }
+    .loop--posts .entry:hover .Media {
+      box-shadow: inset 0 0 0 1em rgba(255, 255, 255, 0.5); }
+  .loop--posts .Media {
+    padding-top: 25%;
+    position: relative;
+    z-index: 2; }
+  .loop--posts .Media-content {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    text-align: center; }
+  .loop--posts .meta {
+    font-family: Montserrat, 'Helvetica Neue', Verdana, Arial, sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block; }
+    .loop--posts .meta:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -0.5em;
+      right: 0;
+      bottom: 0;
+      left: 50%;
+      width: 30%;
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%);
+      border-top: 2px solid white; }
+  .loop--posts a {
+    color: white; }

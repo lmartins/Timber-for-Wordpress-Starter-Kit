@@ -1,0 +1,21 @@
+
+
+.site-footer{
+    clear: both;
+    background: $bc-dark;
+    padding: $box-spacing-large 0;
+}
+
+.layout-sidebar{
+
+    display: flex;
+    color: white;
+
+    .widget{
+        flex: 1 1 33%;
+    }
+    h1{
+        color: white;
+        font-size: $f-size-l;
+    }
+}

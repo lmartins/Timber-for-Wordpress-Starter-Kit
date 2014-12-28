@@ -30,10 +30,16 @@
         'order'       => 'ASC',
         'orderby'     => 'menu_order'
     );
-    $context['banners_top'] = Timber::get_posts( $args );
+
+    if ( is_front_page() ) {
+        $context['banners_top'] = Timber::get_posts( $args );
+        // $context["link"] = get_field( 'banner_link' );
+        $context["link"] = get_field( 'link' ) ? get_permalink(get_field( 'link' )[0]) : false;
+    }
 
     $context['posts'] = Timber::get_posts();
     $context['site_view'] = 'home';
+    $context['layout'] = 'content-full-width';
 
     $templates = array('index.twig');
 

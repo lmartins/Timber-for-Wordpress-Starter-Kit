@@ -1,0 +1,11 @@
+{
+  "name": "raf-scroll",
+  "scripts": [
+    "index.js"
+  ],
+  "dependencies": {
+    "component/emitter": "*",
+    "anthonyshort/raf-queue": "*"
+  },
+  "repo": "https://raw.githubusercontent.com/segmentio/raf-scroll"
+}

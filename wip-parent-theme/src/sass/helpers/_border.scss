@@ -1,0 +1,23 @@
+
+// $BORDER --------------------------------------------------------------------
+//
+
+@mixin border-top($color, $size: 1px, $style: solid){
+  border-top: $size $style $color;
+}
+
+@mixin border-right($color, $size: 1px, $style: solid){
+  border-right: $size $style $color;
+}
+
+@mixin border-bottom($color, $size: 1px, $style: solid){
+  border-bottom: $size $style $color;
+}
+
+@mixin border-left($color, $size: 1px, $style: solid){
+  border-left: $size $style $color;
+}
+
+@mixin border($color, $size: 1px, $style: solid){
+  border: $size $style $color;
+}

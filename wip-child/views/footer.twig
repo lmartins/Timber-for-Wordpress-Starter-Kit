@@ -1,15 +1,13 @@
+<div class="container">
 {% do action('tha_footer_top') %}
 
-<nav id="access" class="main-navigation" role="navigation">
-    <ul>
-    {% for item in footerNav.items %}
-        <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
-            <a href="{{item.link}}">{{item.title}}</a>
-        </li>
-    {% endfor %}
-    </ul>
-</nav>
+{% if sidebar %}
+    <aside class="layout-sidebar">
+        {{sidebar}}
+    </aside>
+{% endif %}
 
 Copyright {{"now"|date('Y')}}
 
 {% do action('tha_footer_bottom') %}
+</div>

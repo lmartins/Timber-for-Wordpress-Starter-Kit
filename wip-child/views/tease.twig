@@ -1,0 +1,17 @@
+<article class="entry entry-{{post.post_type}}" id="entry-{{post.ID}}" style="background-image: url( {{ post.thumbnail.src('medium') }} )">
+    <div class="Media">
+        {% do action('tha_entry_top') %}
+        {% block content %}
+
+            <div class="Media-content">
+                <h2 class="entry-title"><a href="{{post.link}}">{{post.title}}</a></h2>
+                <div class="meta">{{post.date|date("F jS\\, Y")}} in {{ post.terms('categories')|first }}</div>
+            </div>
+
+        {% endblock %}
+        {% do action('tha_entry_bottom') %}
+    </div>
+    <span class="cover"></span>
+
+</article>
+

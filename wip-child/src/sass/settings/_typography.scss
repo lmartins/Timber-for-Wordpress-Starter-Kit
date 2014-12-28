@@ -1,0 +1,54 @@
+
+/**
+ * ----------------------------------------------------------------------------
+ * WEBFONTS
+ * O carregamento das webfonts é feito por enqueue do Wordpress
+ * /fw/front/components/head.php
+ * ----------------------------------------------------------------------------
+ */
+
+$f-sans    : Fira Sans, 'Helvetica Neue', Verdana, Arial, sans-serif;
+$f-sans2   : Montserrat, 'Helvetica Neue', Verdana, Arial, sans-serif;
+$f-serif   : Merriweather, Times, 'Times New Roman', serif;
+$f-stack-default : $f-sans;
+
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * RITMO
+ * ----------------------------------------------------------------------------
+ */
+
+$base-font-size: 0.90em !default;
+
+// MODULAR SCALE VARS
+$ms-base: $base-font-size;
+// $ms-base: 14px;
+// $ms-ratio: $golden;
+$ms-ratio: $major-second;
+// $ms-ratio: 1.15;
+
+
+$f-size-h1  : ms(12);
+$f-size-h2  : ms(4);
+$f-size-h3  : ms(3);
+$f-size-h4  : ms(2);
+$f-size-h5  : ms(1);
+$f-size-h5  : ms(1);
+$f-size-h6  : ms(1);
+
+$f-size-xxs : ms(-3);
+$f-size-xs  : ms(-2);
+$f-size-s   : ms(-1);
+$f-size     : $base-font-size;
+$f-size-l   : ms(3);
+$f-size-xl  : ms(6);
+$f-size-xxl : ms(9);
+
+$f-line-height-ratio : 1.5;
+$f-line-height       : $f-size * $f-line-height-ratio !default;
+
+
+

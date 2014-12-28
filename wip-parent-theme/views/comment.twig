@@ -1,6 +1,11 @@
-{% do action('tha_comments_before') %}
-<div class="blog-comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
-    <h5 class="comment-author">{{comment.author.name}} says</h5>
-    <div class="comment-content">{{comment.comment_content|wpautop}}</div>
+
+<div class="blog-comment {{comment.comment_type}} Media" id="blog-comment-{{comment.ID}}">
+    <div class="Media-figure comment-avatar">
+        <img src="{{ comment.avatar }}" />
+    </div>
+    <div class="Media-content">
+        <h5 class="comment-author">{{comment.author.name}} says</h5>
+        <div class="comment-content">{{comment.comment_content|wpautop}}</div>
+        {{ function('comment_reply_link', commentReplyArgs, comment.ID, post.ID) }}
+    </div>
 </div>
-{% do action('tha_comments_after') %}

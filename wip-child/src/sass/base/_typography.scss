@@ -1,0 +1,101 @@
+
+
+
+body{
+    font-family: $f-sans;
+    color: $f-text;
+    font-size: $f-size;
+    line-height: $f-line-height-ratio;
+    -webkit-font-smoothing: antialiased;
+}
+
+.sidebar{
+    font-family: $f-sans;
+}
+
+h1{ font-size: $f-size-h1; }
+h2{ font-size: $f-size-h2; }
+h3{ font-size: $f-size-h3; }
+h4{ font-size: $f-size-h4; }
+h5{ font-size: $f-size-h5; }
+h6{ font-size: $f-size-h6; }
+
+
+
+h1, h2, h3, h4, h5, h6{
+  color: $f-text-accent;
+  font-family: $f-sans2;
+  font-weight: 600;
+  // transition: all 0.25s ease-in;
+  // margin-bottom: $box-spacing-small;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+p{
+  margin-bottom: $box-spacing;
+
+  &.lead{
+    font-size: $f-size-l;
+    // font-weight: 300;
+  }
+
+  &.note{
+    font-size: $f-size-xs;
+    color: $f-text-neutral;
+  }
+}
+
+blockquote{
+    font-style: italic;
+    padding-left: 2em;
+    margin: 1.5em 0;
+    font-weight: 200;
+    // font-size: 1.3em;
+    font-size: $f-size-l;
+    line-height: 1.4;
+    color: $f-text-neutral;
+}
+
+
+
+strong{
+  color: $f-text-accent;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+hr{
+  border: none;
+  border-top: 1px solid $bc-muted;
+  margin: $box-spacing * 2 0;
+}
+
+// LISTS ----------------------------------------------------------------------
+
+ul, dl{
+  p{
+    margin: 0;
+  }
+}
+
+
+.tab-pane{
+  ul{
+    list-style: disc;
+    margin: 0 0 $box-spacing $box-spacing;
+  }
+}
+
+dl{
+  dt{
+    color: $f-text-accent;
+  }
+  dd{
+    margin-bottom: $box-spacing;
+  }
+}

@@ -1,0 +1,49 @@
+
+.comment-form{
+    display: flex;
+    flex-flow: row wrap;
+    label{
+        display: block;
+    }
+    input, textarea{
+        width: 100%;
+    }
+}
+
+.comment-notes,
+.comment-form-comment{
+    flex: 1 0 100%;
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url{
+    flex: 1 0 33.333%;
+}
+
+.comment-form-author,
+.comment-form-email{
+    padding-right: 3%;
+}
+
+
+/**
+ * COMMENTS LIST
+ */
+.blog-comment{
+    margin-bottom: $box-spacing;
+}
+.comment-content{
+    p{
+        margin: 0;
+    }
+}
+
+.comment-avatar{
+    flex: 0 0 70px;
+    padding-right: 1em;
+    // border-radius: 100%;
+    img{
+        border-radius: 100%;
+    }
+}

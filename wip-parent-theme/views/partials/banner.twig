@@ -1,4 +1,13 @@
-banner
 
-{{ dump(banner.get_field('link')) }}
-<h2 class="h2"><a href="">{{banner.title}}</a></h2>
+<img src="{{ TimberImage( banner.meta('banner_top_image') ).src }}" />
+{% for link in banner.get_field('banner_link') %}
+    <h2>
+        <a href="{{link.permalink}}">{{banner.title}}</a>
+    </h2>
+{% endfor %}
+<p>{{ banner.description }}</p>
+<p>{{ banner.button_text }}</p>
+
+<!-- {{ banner.meta('banner_link') }} -->
+<!-- {{ dump(banner) }} -->
+<!-- {{ dump(banner.meta('banner_link')|first ) }} -->

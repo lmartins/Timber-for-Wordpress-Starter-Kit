@@ -88,12 +88,12 @@ var webpackConfig = {
   devtool: 'source-map',
   entry: {
     app: './src/js/app.js',
-    maps: './src/js/maps.js',
+    // maps: './src/js/maps.js',
     vendor: [
       // 'salvattore',
       // 'masonry',
-      'slick.js',
-      'shifter'
+      // 'slick.js',
+      // 'Stickyfill'
     ]
   },
   output: {
@@ -113,6 +113,7 @@ var webpackConfig = {
     alias: {
       'underscore'  : 'lodash',
       'shifter'     : 'Shifter/jquery.fs.shifter.js',
+      // 'Stickyfill'  : 'Stickyfill/dist/stickyfill.js',
       // 'owl'         : 'owl-carousel2/dist/owl.carousel.js',
       // 'pikabu'      : 'pikabu/build/pikabu.min.js',
       // 'intentionjs' : 'intentionjs/code/intention.min.js'
@@ -175,8 +176,8 @@ gulp.task('set-env-prod', function() {
 
 gulp.task('sass', function () {
   gulp.src( config.SASS.src )
-    .pipe( plugins.sourcemaps.init() )
     .pipe( plugins.plumber() )
+    // .pipe( plugins.sourcemaps.init() )
     .pipe( plugins.sass({
           outputStyle: 'normal',
           debugInfo: false
@@ -185,7 +186,11 @@ gulp.task('sass', function () {
         browserSync.notify(err.message, 35000);
         this.emit('end');
     })
-    .pipe( plugins.sourcemaps.write('./', {includeContent: false, sourceRoot: '../../src/sass/'}) )
+    // .pipe( plugins.sourcemaps.write('./', {includeContent: false, sourceRoot: '../../src/sass/'}) )
+    // .pipe( plugins.sourcemaps.write('./') )
+    .pipe( plugins.autoprefixer (
+      "last 1 versions", "> 10%", "ie 9"
+      ))
     .pipe( gulp.dest( config.SASS.build ) )
     .pipe( plugins.filter( '**/*.css') ) // Filtering stream to only css files
     .pipe( browserSync.reload({ stream: true }) );

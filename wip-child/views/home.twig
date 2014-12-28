@@ -1,18 +1,24 @@
 {% extends "base.twig" %}
 
 {% block banner %}
-    {% for banner in banners_top %}
-        {% include ['partials/banner-'~post.post_type~'.twig', 'partials/banner.twig'] %}
-    {% endfor %}
+    {% if banners_top %}
+        {% for banner in banners_top %}
+            {% include ['partials/banner-'~post.post_type~'.twig', 'partials/banner.twig'] %}
+        {% endfor %}
+    {% else %}
+        {% do action('mwh_banner') %}
+    {% endif %}
 {% endblock %}
 
 
 {% block content %}
 
-    {% for post in posts %}
-        {% do action('tha_entry_before') %}
-        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-        {% do action('tha_entry_after') %}
-    {% endfor %}
+    <div class="loop loop--posts">
+        {% for post in posts %}
+            {% do action('tha_entry_before') %}
+            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+            {% do action('tha_entry_after') %}
+        {% endfor %}
+    </div>
 
 {% endblock %}

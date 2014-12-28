@@ -1,0 +1,32 @@
+// ----------------------------------------------------------------------------
+// MEDIA
+// Componente usado para mostrar imagem mais conteúdo
+// ----------------------------------------------------------------------------
+
+.Media{
+    display: flex;
+}
+
+.Media-content{}
+
+.Media-figure{
+    img{
+        width: 100%;
+        height: auto !important;
+    }
+}
+
+.Media--vertical{
+
+  display: block;
+
+  > [class*="Media"]:first-child{
+    display: block;
+  }
+
+  .Media-content,
+  .Media-image{
+    display: block;
+  }
+
+}

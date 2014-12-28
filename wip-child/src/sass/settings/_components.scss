@@ -1,0 +1,64 @@
+
+// $BOURBON SETTINGS ----------------------------------------------------------
+$prefix-for-webkit:    false;
+$prefix-for-mozilla:   false;
+$prefix-for-microsoft: false;
+$prefix-for-opera:     false;
+$prefix-for-spec:      false; // required for keyframe mixin
+
+
+
+
+
+// ============================================================================
+// Components Settings (Prefixo c- )
+// ============================================================================
+
+// $c-module-background       : #F4F4F4;
+// $c-module-border           : $bc-neutral; // This should be applied whenever the border is surrounding a white element and/or is directly showing on white.
+// $c-module-border-light     : $bc-muted; // This should be applied whenever the border is wrapping an element with $c-module-background
+// $c-module-border-highlight : $bc-accent;
+
+
+
+// MODULES --------------------------------------------------------------------
+//$box-spacing: $box-spacing;
+
+// $c-module-border: $bc-neutral;
+// $c-module-divider: $bc-muted;
+
+
+// FORMS ----------------------------------------------------------------------
+$c-input-height          : 2.5em;
+$c-input-radius          : 0em;
+$c-input-padding         : 0.8em;
+
+$c-input-border          : $bc-muted;
+$c-input-bg              : $bc-muted;
+$c-input-border-focus    : $bc-accent;
+$c-input-placeholder     : $f-text-neutral;
+//$c-input-text          : $f-text;
+
+$c-fieldset-border       : $bc-neutral;
+$c-fieldset-border-light : $bc-muted;
+
+
+// BUTTONS --------------------------------------------------------------------
+// Button Styles
+$c-button: $bc-accent;
+$c-button-secondary: $bc-neutral;
+$c-button-subtle: #ECECEC;
+
+// Button Sizes
+$btn-large-grow-factor: 1.4;
+$btn-big-grow-factor:   1.2;
+$btn-small-grow-factor: 0.8;
+
+
+
+// TABLES ---------------------------------------------------------------------
+// $c-table-background: #F4F4F4;
+// $c-table-border: darken($bc-muted, 2%);
+
+// $c-table-zebra-odd: #F8F7F5;
+// $c-table-zebra-even: #EEEDED;

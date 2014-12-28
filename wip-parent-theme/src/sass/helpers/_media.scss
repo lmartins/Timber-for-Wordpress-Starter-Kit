@@ -1,0 +1,111 @@
+// ==========================================================================
+// Spacing-specific utilities
+// ==========================================================================
+
+// ==================================================
+// $Variables
+// ==================================================
+// Supports
+// @media min-width
+// @media max-width
+// @media min-width and max-width
+
+$viewport-increment: 0.1px; // customize to suite
+
+// Desktop
+$desktop: 1024px; // customize to suite
+$pre-desktop: $desktop - $viewport-increment;
+
+// Tablet
+$tablet: 768px; // customize to suite
+$pre-tablet: $tablet - $viewport-increment;
+
+// Palm
+$palm: 640px; // customize to suite
+$post-palm: $palm + $viewport-increment;
+
+// Constraints
+$min: min-width;
+$max: max-width;
+
+
+// ==================================================
+// $Media Query @Mixin
+// ==================================================
+
+@mixin mediaQuery($constraint, $viewport1, $viewport2: null) {
+
+  @if $constraint == $min {
+
+    @media screen and ($min: $viewport1) {
+      @content;
+    }
+
+  } @else if $constraint == $max {
+
+    @media screen and ($max: $viewport1) {
+      @content;
+    }
+
+  } @else {
+
+    @media screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
+
+  }
+
+}
+
+
+// ==================================================
+// The Implementation!
+// ==================================================
+
+// p {
+//   @include mediaQuery($max, $palm) {
+//     font-size: 75%;
+//   }
+
+//   @include mediaQuery(null, $post-palm, $pre-tablet) {
+//     font-size: 87.5%;
+//   }
+
+//   @include mediaQuery($min, $tablet) {
+//     font-size: 100%;
+//   }
+
+//   @include mediaQuery($min, $desktop) {
+//     font-size: 108.75%;
+//   }
+// }
+
+
+
+@mixin thumb-fallback($ratio: 70%, $show-icon: true, $bc-color: $bc-muted) {
+    .thumb-placeholder{
+        display: block;
+        background: $bc-color;
+        position: relative;
+        &:before{
+            content: "";
+            display: block;
+            padding-top: $ratio;  // ajustar para proporções do destaque
+        }
+        @if $show-icon{
+            i{
+                font-size: $f-size-xxl;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                color: darken($bc-color, 30%);
+            }
+        } @else {
+            i{
+                display: none;
+            }
+        }
+
+    }
+}

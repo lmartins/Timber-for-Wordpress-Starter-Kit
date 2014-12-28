@@ -5,56 +5,53 @@
     </head>
 {% endblock %}
     <body class="{{body_class}} {{layout}}" data-template="base.twig" data-view="{{site_view}}">
+        <div class="site-container">
+            {% do action('tha_header_before') %}
+            <header class="site-header" >
+                {% block header %}
+                {% do action('tha_header_top') %}
+                <div class="wrapper">
 
-        {% do action('tha_header_before') %}
-        <header class="header" >
-            {% block header %}
-            {% do action('tha_header_top') %}
-            <div class="wrapper">
+                    <div class="hdr-logo" role="banner">
+                        <a class="hdr-logo-link site-logo" href="/" rel="home">{{site.name}}</a>
+                        <div class="tagline">{{ site.description }}</div>
+                    </div>
+                    <nav class="main-navigation" role="navigation">
+                        <ul>
+                        {% for item in mainMenu.items %}
+                            <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
+                                <a href="{{item.link}}">{{item.title}}</a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </nav><!-- #access -->
 
-                <h1 class="hdr-logo" role="banner">
-                    <a class="hdr-logo-link" href="/" title="Timber" rel="home">{{site.name}}</a>
-                </h1>
-                <nav class="main-navigation" role="navigation">
-                    <ul>
-                    {% for item in mainMenu.items %}
-                        <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
-                            <a href="{{item.link}}">{{item.title}}</a>
-                        </li>
-                    {% endfor %}
-                    </ul>
-                </nav><!-- #access -->
+                </div>
+                {% do action('tha_header_bottom') %}
+                {% endblock %}
+            </header>
 
-            </div>
-            {% do action('tha_header_bottom') %}
-            {% endblock %}
-        </header>
-
-        {% block banner %}
-        {% endblock %}
-
-        <section role="main" class="main-wrapper">
-
-            {% if title %}<h1>{{title}}</h1>{% endif %}
-
-            {% block content %}
-                Sorry, no content
+            {% block banner %}
+                {% do action('mwh_banner') %}
             {% endblock %}
 
-            {% if sidebar %}
-                <aside class="layout-sidebar">
-                    {{sidebar}}
-                </aside>
-            {% endif %}
+            <section role="main" class="main-wrapper">
 
-        </section>
+                {% if title %}<h1>{{title}}</h1>{% endif %}
 
-        {% block footer %}
-            <footer id="footer">
-                {% include 'footer.twig' %}
-            </footer>
-            {{ function('wp_footer') }}
-        {% endblock %}
+                {% block content %}
+                    Sorry, no content
+                {% endblock %}
+
+            </section>
+
+            {% block footer %}
+                <footer class="site-footer" >
+                    {% include 'footer.twig' %}
+                </footer>
+                {{ function('wp_footer') }}
+            {% endblock %}
+        </div>
 
     </body>
 </html>

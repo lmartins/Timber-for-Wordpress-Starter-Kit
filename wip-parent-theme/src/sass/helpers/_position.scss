@@ -1,0 +1,68 @@
+
+// --------------------------------------------------------------------
+// $POSITION
+// ^position
+// --------------------------------------------------------------------
+
+@mixin absolute($top: false, $right: false, $bottom: false, $left: false) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin relative($top: false, $right: false, $bottom: false, $left: false) {
+  position: relative;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute-top-left($top: 0, $left: 0) {
+  // @include absolute($top, false, false, $left);
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+@mixin absolute-top($top: 0) {
+  // @include absolute($top, false, false, false);
+  position: absolute;
+  top: $top;
+}
+
+@mixin absolute-top-right($top: 0, $right: 0) {
+  // @include absolute($top, $right, false, false);
+  position: absolute;
+  top: $top;
+  right: $right;
+}
+
+@mixin absolute-right($right: 0) {
+  // @include absolute(false, $right, false, false);
+  position: absolute;
+  right: $right;
+}
+
+@mixin absolute-bottom-right($bottom: 0, $right: 0) {
+  // @include absolute(false, $right, $bottom, false);
+  position: absolute;
+  bottom: $bottom;
+  right: $right;
+}
+
+@mixin absolute-bottom($bottom: 0) {
+  // @include absolute(false, false, $bottom, false);
+  position: absolute;
+  bottom: $bottom;
+}
+
+@mixin absolute-bottom-left($bottom: 0, $left: 0) {
+  // @include absolute(false, false, $bottom, $left);
+  position: absolute;
+  bottom: $bottom;
+  left: $left;
+}
+
