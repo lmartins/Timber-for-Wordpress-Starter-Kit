@@ -7,14 +7,23 @@
     display: flex;
 }
 
-.Media-content{}
-
 .Media-figure{
+    // flex: 1 1 20%;
+    // padding-right: 2%;
     img{
         width: 100%;
         height: auto !important;
     }
 }
+
+.Media-figure,
+.Media-content{
+    flex: 1 1;
+}
+
+// .Media-content{
+//     flex: 1 1 80%;
+// }
 
 .Media--vertical{
 
@@ -25,7 +34,7 @@
   }
 
   .Media-content,
-  .Media-image{
+  .Media-figure{
     display: block;
   }
 

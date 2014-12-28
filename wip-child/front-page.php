@@ -33,7 +33,6 @@
 
     if ( is_front_page() ) {
         $context['banners_top'] = Timber::get_posts( $args );
-        // $context["link"] = get_field( 'banner_link' );
         $context["link"] = get_field( 'link' ) ? get_permalink(get_field( 'link' )[0]) : false;
     }
 

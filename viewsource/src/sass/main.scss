@@ -1,0 +1,132 @@
+
+
+
+// @import "../../../wip-parent-theme/src/sass/_layout.scss";
+
+@import "../../bower_components/modular-scale/stylesheets/_modular-scale.scss";
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * SETUP
+ * ----------------------------------------------------------------------------
+ */
+
+@import "settings/_colors.scss";
+@import "settings/_typography.scss";
+@import "settings/_grid.scss";
+@import "settings/_components.scss";
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * VENDORS
+ * ----------------------------------------------------------------------------
+ */
+
+@import "../../bower_components/susy/sass/_susy.scss";
+// @import "../../bower_components/normalize.scss/_normalize.scss";
+@import "../../bower_components/sass-mq/_mq.scss";
+// @import "vendors/libs/bourbon/_bourbon.scss";
+
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * HELPERS
+ * The helpers/ folder (sometimes called utils/) gathers all Sass tools and helpers
+ * we’ll use across the project. Got a function? A mixin? Put it in there. This folder
+ * also contains a _variables.scss file (sometimes _config.scss) which holds all
+ * global variables for the project (for typography, color schemes, and so on).
+ * ----------------------------------------------------------------------------
+ */
+
+@import "../../../wip-parent-theme/src/sass/helpers/_border.scss";
+@import "../../../wip-parent-theme/src/sass/helpers/_links.scss";
+@import "../../../wip-parent-theme/src/sass/helpers/_media.scss";
+@import "../../../wip-parent-theme/src/sass/helpers/_position.scss";
+@import "../../../wip-parent-theme/src/sass/helpers/_specificity.scss";
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * BASE
+ * The base/ folder holds what we might call the boilerplate stuff for your project.
+ * In there, you might find the reset (or Normalize.css, or whatever), probably some
+ * stuff dealing with typography, and, depending on the project, maybe some other
+ * files.
+ * This comes after VENDORS and HELPERS so it can use those resources' code.
+ * ----------------------------------------------------------------------------
+ */
+
+@import "base/_reset.scss";
+// @import "base/_animations.scss";
+// @import "base/_tables.scss";
+@import "base/_typography.scss";
+@import "base/_wp-core.scss";
+
+// @import "components/icons/_icons.scss"; // posicionado aqui para permitir utilização pelos elementos abaixo
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * LAYOUT
+ * Let the fun begin
+ * Here we start adding structure to our project layout
+ * It closely follows Wordpress layout conventions, separating the code between
+ * using Wordpress' classes separation
+ * ----------------------------------------------------------------------------
+ */
+
+@import "layout/_common.scss";
+@import "layout/_header.scss";
+@import "layout/_footer.scss";
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * COMPONENTS
+ * ----------------------------------------------------------------------------
+ */
+
+@import "../../../wip-parent-theme/src/sass/components/_comments.scss";
+@import "../../../wip-parent-theme/src/sass/components/_media.scss";
+@import "components/_forms.scss";
+
+/**
+ * ----------------------------------------------------------------------------
+ * VIEWS
+ * ----------------------------------------------------------------------------
+ */
+
+// @import "views/_home.scss";
+// @import "views/_archive.scss";
+@import "views/_single.scss";
+
+
+
+// -----------------------------------------------------------------------------------
+
+
+.main-navigation{
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        display: inline-block;
+    }
+}
+
+img{
+    max-width: 100%;
+}
+
+
+
+@import "_shame.scss";

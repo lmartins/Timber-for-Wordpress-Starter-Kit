@@ -5,35 +5,25 @@
     position: relative;
     top: 0;
     width: 100%;
-    background: white;
-    z-index: 10;
-    padding-top: $box-spacing;
-    padding-bottom: $box-spacing;
 
-    body:not(.home) &{
+    @include tablet{
         .wrapper{
-            @include container;
             display: flex;
-            justify-content: space-between;
-            nav{
-                flex: 1;
-                text-align: right;
-            }
-        }
-        .hdr-logo > *{
-            display: inline-block;
+            align-items: center;
+            padding: gutter();
         }
     }
-
 }
 
 .site-logo{
-    font-size: ms(12);
-    font-family: $f-sans2;
-    color: $f-text-accent;
-    margin: 0;
-    line-height: 1;
-    font-weight: 600;
+    a{
+        font-size: $f-size-xxl;
+        font-family: $f-sans2;
+        color: $f-text-accent;
+        margin: 0;
+        line-height: 1;
+        font-weight: 600;
+    }
 }
 
 .tagline{
@@ -44,25 +34,17 @@
 
 
 .main-navigation{
-    font-size: $f-size-l;
     font-family: $f-sans2;
-    margin-top: $element-spacing;
-    padding-top: $element-spacing;
     text-transform: uppercase;
     display: inline-block;
     position: relative;
-    // &:before{
-    //     content: "";
-    //     width: 6em;
-    //     display: block;
-    //     border-top: 2px solid $bc-dark;
-    //     position: absolute;
-    //     top: 0;
-    //     left: 50%;
-    //     transform: translateX(-50%);
-    // }
+    flex: 1;
+    text-align: right;
+    li{
+        display: inline-block;
+    }
     a{
-        padding: 0 1.5em;
+        padding: 0 0.5em;
         font-weight: bold;
         color: $f-text-accent;
     }
@@ -72,4 +54,43 @@
             content: "/";
         }
     }
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * SITE-BANNER
+ * ----------------------------------------------------------------------------
+ */
+.site-banner{
+
+    margin-bottom: $box-spacing;
+
+    .inner{
+        max-width: 1680px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        &:before{
+            content: "";
+            @include absolute(0, 0, 0, 0);
+            background: hsla(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+    }
+
+    .container{
+        position: relative;
+        z-index: 2;
+    }
+
+    &.-inner{
+        .inner{
+            padding-top: 20%;
+            max-height: 100px;
+            overflow: hidden;
+        }
+    }
+
 }

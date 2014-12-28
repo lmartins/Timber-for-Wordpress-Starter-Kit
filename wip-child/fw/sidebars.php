@@ -15,8 +15,8 @@ function mw_register_sidebars() {
         'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'mw-theme' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
-        'before_title' => '<h1>',
-        'after_title' => '</h1>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
     ) );
 }
 add_action( 'widgets_init', 'mw_register_sidebars' );

@@ -2,22 +2,18 @@
 
 {% block content %}
 
-{% if children %}
-    <div class="loop loop--categories">
-    {% for category in children %}
-        <div class="item">
-        {{category|print_r}}
-            <img src="{{TimberImage( fn('get_field', 'category_image', 'category_' ~ category.term_id ) ).src | resize(200) }}" />
-            <a href="" class="item-title">{{ category.name }} - {{category.term_id}}</a>
-            {{ category.description }}
-
-        </div>
+{% if subcategories %}
+    <div class="loop loop--minibanners loop--categories">
+    {% for cat in subcategories %}
+        {% include 'partials/entry-category.twig' %}
     {% endfor %}
     </div>
 {% endif %}
 
-{% for post in posts %}
-	{% include ["tease-"~post.post_type~".twig", "tease.twig"] %}
-{% endfor %}
+<div class="loop loop--list loop--posts">
+    {% for post in posts %}
+    	{% include ["partials/entry-"~post.post_type~".twig", "partials/entry-post.twig"] %}
+    {% endfor %}
+</div>
 
 {% endblock %}

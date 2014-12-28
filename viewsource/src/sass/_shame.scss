@@ -1,0 +1,125 @@
+
+
+// TODO:
+.inline-list{
+    li{
+        display: inline-block;
+    }
+}
+
+
+
+.nav-seemore{
+
+    border-top: 2px solid $bc-neutral;
+    border-bottom: 2px solid $bc-neutral;
+    padding: $box-spacing 0;
+    margin-bottom: $box-spacing;
+    display: flex;
+    flex-flow: row nowrap;
+
+    > div {
+        flex: 1 1 50%;
+
+        &:last-child{
+            text-align: right;
+        }
+    }
+
+    h3, h4{
+        margin: 0;
+    }
+
+    .entry-title{
+        font-size: $f-size-xl;
+    }
+}
+
+
+// .cover{
+//     @include absolute(0, 0, 0, 0);
+//     z-index: 1;
+//     background: linear-gradient(hsla(0, 0, 0, 0.65), hsla(0, 0, 0, 0.2));
+// }
+
+.loop{
+    .entry-title{
+        font-size: $f-size-xxl;
+    }
+}
+
+.loop--posts{
+
+    color: white;
+
+    .entry{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        // flex: 1 1 50%;
+        background-color: $bc-muted;
+        // padding-top: 25%;;
+        @include span(6);
+        width: 50%;
+        margin: 0;
+
+
+        position: relative;
+
+        .Media{
+            padding-top: 40%;
+            transition: all 0.3s;
+        }
+
+        &:nth-child(3n+1){
+            // flex-basis: 100%;
+            width: 100%;
+            .Media{
+                padding-top: 20%;
+            }
+        }
+
+        &:hover{
+            .Media{
+                box-shadow: inset 0 0 0 1em hsla(0, 0, 100%, 0.5);
+            }
+        }
+
+    }
+
+    .Media{
+        padding-top: 25%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .Media-content{
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+    }
+
+    .meta{
+        font-family: $f-sans2;
+        text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+        &:before{
+            content: "";
+            display: block;
+            @include absolute(-0.5em, 0, 0, 50%);
+            width: 30%;
+            transform: translateX(-50%);
+            @include border-top(white, 2px);
+        }
+    }
+
+    a{
+        @include link-colors(white);
+    }
+
+}
+

@@ -1,19 +1,5 @@
 {% extends "base.twig" %}
 
-{% block banner %}
-<div class="cover">
-    <div class="cover-frame">
-        <div class="container">
-            <h1>{{post.title}}</h1>
-            <div class="meta">
-                {{post.date|date("F jS\\, Y")}} in {{ post.terms('categories')|first }}
-            </div>
-        </div>
-    </div>
-    <div class="cover-image" style="background-image: url({{ post.thumbnail.src('original') }})"></div>
-</div>
-{% endblock %}
-
 {% block content %}
 
     <div class="content-wrapper">
@@ -23,6 +9,10 @@
         <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
             <section class="article-content">
                 <div class="article-body">
+                    <h1>{{post.title}}</h1>
+                    <div class="meta">
+                        {{post.date|date("F jS\\, Y")}} in {{ post.terms('categories')|first }}
+                    </div>
                     {{post.content}}
                 </div>
             </section>

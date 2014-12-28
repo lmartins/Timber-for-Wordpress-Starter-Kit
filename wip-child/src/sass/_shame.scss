@@ -1,125 +1,284 @@
 
 
-// TODO:
-.inline-list{
-    li{
-        display: inline-block;
-    }
-}
 
+// TODO: Arrumar loops dentro do MDF e theme
 
-
-.nav-seemore{
-
-    border-top: 2px solid $bc-neutral;
-    border-bottom: 2px solid $bc-neutral;
-    padding: $box-spacing 0;
-    margin-bottom: $box-spacing;
-    display: flex;
-    flex-flow: row nowrap;
-
-    > div {
-        flex: 1 1 50%;
-
-        &:last-child{
-            text-align: right;
-        }
-    }
-
-    h3, h4{
-        margin: 0;
-    }
-
-    .entry-title{
-        font-size: $f-size-xl;
-    }
-}
-
-
-// .cover{
-//     @include absolute(0, 0, 0, 0);
-//     z-index: 1;
-//     background: linear-gradient(hsla(0, 0, 0, 0.65), hsla(0, 0, 0, 0.2));
-// }
+/*
+ * ----------------------------------------------------------------------------
+ * LOOP DEFAULTS
+ * ----------------------------------------------------------------------------
+ */
 
 .loop{
+
+    @include clearfix;
+    @include thumb-placeholder(75%);
+
+    clear: both;
+    margin-bottom: $box-spacing;
+
     .entry-title{
-        font-size: $f-size-xxl;
+        font-family: $f-sans;
+        font-size: $f-size-l;
     }
-}
-
-.loop--posts{
-
-    color: white;
 
     .entry{
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        // flex: 1 1 50%;
-        background-color: $bc-muted;
-        // padding-top: 25%;;
-        @include span(6);
-        width: 50%;
+        margin-bottom: $element-spacing;
+    }
+
+    p{
         margin: 0;
+    }
+
+}
 
 
-        position: relative;
 
-        .Media{
-            padding-top: 40%;
-            transition: all 0.3s;
-        }
+/*
+ * ----------------------------------------------------------------------------
+ * LOOPLIST
+ * Artigos em modo listagem, com ou sem colunas
+ * ----------------------------------------------------------------------------
+ */
 
-        &:nth-child(3n+1){
-            // flex-basis: 100%;
-            width: 100%;
-            .Media{
-                padding-top: 20%;
-            }
-        }
+.loop--list{
 
-        &:hover{
-            .Media{
-                box-shadow: inset 0 0 0 1em hsla(0, 0, 100%, 0.5);
-            }
-        }
+    margin-bottom: $box-spacing;
 
+    .entry{
+        @include span(full);
     }
 
     .Media{
-        padding-top: 25%;
+        align-items: center;
+    }
+    .Media-figure{
+        flex-basis: span(4);
+        margin-right: gutter();
+    }
+    .Media-content{
+        flex-basis: span(8);
+        margin-left: gutter();
+    }
+
+    // SEM SLIDER
+    // &:not([data-slider]){}
+
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * CARDS
+ * ----------------------------------------------------------------------------
+ */
+
+.loop--cards{
+
+    .item{
         position: relative;
-        z-index: 2;
+        margin-bottom: $box-spacing;
+    }
+
+    img{
+        height:auto;
+        display:block;
+        margin: 0 0 1em;
+    }
+
+    .thumb-placeholder{
+        margin: 0 0 1em;
+    }
+
+    .Media,
+    .Media-figure,
+    .Media-details{
+        display: block;
+    }
+
+    .Media-content{
+        padding: 0 gutter();
+    }
+
+
+    // ------------------------------------------------------------------------
+    // MODO GRELHA - Sem slider, layout é controlado por CSS
+    @include phone-large{
+        .entry{
+            @include gallery(6);
+        }
+    }
+    @include tablet{
+        .entry{
+            @include gallery(4);
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    // MODO SLIDER
+
+
+    // ------------------------------------------------------------------------
+    // APLICADO À SIDEBAR
+    .sidebar &{
+        .entry{
+            float: none;
+            width: 100%;
+        }
+    }
+
+}
+
+
+
+
+/*
+ * ----------------------------------------------------------------------------
+ * MINIBANNERS
+ * Lista de artigos apenas com imagem e título por cima da image
+ * ----------------------------------------------------------------------------
+ */
+
+.loop--minibanners{
+
+    @include thumb_fallback(75%);
+    margin-bottom: $box-spacing;
+
+    .entry{
+
+        position: relative;
+        overflow: hidden;
+        transition: all 0.25s;
+
+        &:hover{
+            .Media-figure{
+                opacity: 0.3;
+            }
+            .entry-title{
+                opacity: 0;
+                transform: translateY(100%);
+                transition-delay: 0s;
+            }
+            .entry-details{
+                opacity: 1;
+                transform: translateY(0%);
+                transition-delay: 0.3s;
+            }
+        }
+    }
+
+    .Media,
+    .Media-figure,
+    .Media-content{
+        display: block;
+    }
+
+    .Media-figure,
+    .entry-title{
+        transition: 0.3s all 0.25s ease;
+    }
+    .excerpt{
+        transition: all 0.35s ease ;
+        font-size: $f-size-s;
+        p{
+            margin: 0;
+        }
     }
 
     .Media-content{
         position: absolute;
-        z-index: 3;
+        bottom: 0;
+        right: 0;
+        left: 0;
         width: 100%;
-        top: 50%;
-        transform: translateY(-50%);
-        text-align: center;
     }
 
-    .meta{
-        font-family: $f-sans2;
-        text-transform: uppercase;
-        position: relative;
-        display: inline-block;
-        &:before{
-            content: "";
-            display: block;
-            @include absolute(-0.5em, 0, 0, 50%);
-            width: 30%;
-            transform: translateX(-50%);
-            @include border-top(white, 2px);
-        }
+    .entry-title{
+        margin: 0;
+        font-size: $f-size-l;
+        background: hsla(0, 0%, 16%, 0.55);
+        padding: 0.75em;
+    }
+
+    .entry-details{
+        opacity: 0;
+        transform: translateY(100%);
+        position: absolute;
+        bottom: 0em;
+        left: 0;
+        padding: $box-spacing;
+    }
+
+    .thumb-placeholder{
+        padding: 0;
     }
 
     a{
-        @include link-colors(white);
+        h4{
+            color: white;
+        }
     }
+
+
+    /**
+     * Quando sem slider activo
+     */
+
+    &:not(.owl-carousel){
+
+        @include tablet{
+            .entry{
+                @include gallery(6);
+            }
+        }
+
+        @include desktop{
+            .entry{
+                @include gallery(4);
+            }
+        }
+
+    }
+
+    // &.loop--categories{
+    //     justify-content: flex-start;
+    //     .item{
+    //         flex: 1 0 100%;
+    //         flex-flow: row wrap;
+    //     }
+    //     @include phone-large{
+    //         .item{
+    //             flex-basis: 50%;
+    //             max-width: 50%;
+    //         }
+    //     }
+    //     @include tablet{
+    //         .item{
+    //             flex-basis: 33.333%;
+    //             max-width: 33%;
+    //         }
+    //     }
+    // }
 
 }
 
+
+
+
+
+/*
+ * ----------------------------------------------------------------------------
+ * LOOP--POSTS
+ * ----------------------------------------------------------------------------
+ */
+
+.loop--posts{
+    // @include border(red);
+    // .Media-figure{
+    //     @include span(4);
+    // }
+    // .Media-details{
+    //     @include span(8);
+    // }
+}

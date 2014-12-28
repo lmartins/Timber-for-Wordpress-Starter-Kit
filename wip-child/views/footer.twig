@@ -1,13 +1,12 @@
+
 <div class="container">
-{% do action('tha_footer_top') %}
 
-{% if sidebar %}
-    <aside class="layout-sidebar">
-        {{sidebar}}
-    </aside>
-{% endif %}
+    <div class="sidebar">
+        {% if sidebar %}
+            {{sidebar}}
+        {% endif %}
+    </div>
 
-Copyright {{"now"|date('Y')}}
+    Copyright {{"now"|date('Y')}}
 
-{% do action('tha_footer_bottom') %}
 </div>

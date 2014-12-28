@@ -46,7 +46,7 @@ var config = {
   },
 
   SASS: {
-    src: ["src/sass/**/*.scss", "../wip-parent-theme/src/sass/**/*.scss"],
+    src: ["src/sass/**/*.scss", "../wip-parent-theme/sass/**/*.scss"],
     build: "build/css/"
   }
 
@@ -179,8 +179,12 @@ gulp.task('sass', function () {
     .pipe( plugins.plumber() )
     // .pipe( plugins.sourcemaps.init() )
     .pipe( plugins.sass({
-          outputStyle: 'normal',
-          debugInfo: false
+        includePaths: [
+            '../wip-parent-theme/sass/',
+            './src/sass/'
+            ],
+        outputStyle: 'normal',
+        debugInfo: false
         }) )
     .on('error', function(err){
         browserSync.notify(err.message, 35000);

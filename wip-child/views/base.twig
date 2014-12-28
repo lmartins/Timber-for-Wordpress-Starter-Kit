@@ -1,5 +1,5 @@
 {% block html_head_container %}
-{% include 'html-header.twig' %}
+    {% include 'html-header.twig' %}
     {% block head %}
     {% endblock %}
     </head>
@@ -10,16 +10,15 @@
             <header class="site-header" >
                 {% block header %}
                 {% do action('tha_header_top') %}
-                <div class="wrapper">
-
-                    <div class="hdr-logo" role="banner">
-                        <a class="hdr-logo-link site-logo" href="/" rel="home">{{site.name}}</a>
+                <div class="wrapper container">
+                    <div class="site-logo" role="banner">
+                        <a class="hdr-logo-link" href="/" rel="home">{{site.name}}</a>
                         <div class="tagline">{{ site.description }}</div>
                     </div>
                     <nav class="main-navigation" role="navigation">
-                        <ul>
+                        <ul class="nav">
                         {% for item in mainMenu.items %}
-                            <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
+                            <li class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
                                 <a href="{{item.link}}">{{item.title}}</a>
                             </li>
                         {% endfor %}
@@ -33,9 +32,12 @@
 
             {% block banner %}
                 {% do action('mwh_banner') %}
+                {% include "partials/header-image.twig" %}
             {% endblock %}
 
-            <section role="main" class="main-wrapper">
+            {% do action('tha_content_before') %}
+
+            <section role="main" class="site-content">
 
                 {% if title %}<h1>{{title}}</h1>{% endif %}
 
@@ -45,13 +47,23 @@
 
             </section>
 
-            {% block footer %}
-                <footer class="site-footer" >
+            {% do action('tha_content_after') %}
+
+            {% do action('tha_footer_before') %}
+            <footer class="site-footer" >
+                {% do action('tha_footer_top') %}
+
+                {% block footer %}
                     {% include 'footer.twig' %}
-                </footer>
-                {{ function('wp_footer') }}
-            {% endblock %}
+                {% endblock %}
+
+                {% do action('tha_footer_bottom') %}
+            </footer>
+            {% do action('tha_footer_after') %}
+
         </div>
+
+        {{ function('wp_footer') }}
 
     </body>
 </html>

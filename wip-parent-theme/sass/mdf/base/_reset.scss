@@ -1,0 +1,72 @@
+
+// --------------------------------------------------------------------
+// $RESET
+// --------------------------------------------------------------------
+//  A more considered reset; more of a restart...
+//  As per: csswizardry.com/2011/10/reset-restarted
+
+
+// Global Border Box
+*{
+  &,
+  &:before,
+  &:after{
+    box-sizing: border-box;
+  }
+}
+
+
+// The usual...
+h1,h2,h3,h4,h5,h6,
+p,blockquote,pre,
+dl,dd,ol,ul,
+form,fieldset,legend,
+table,th,td,caption,
+hr{
+  margin:0;
+  padding:0;
+}
+
+
+// Give form elements some cursor interactions...
+// label,
+// input,
+// textarea,
+button,
+select,
+option{
+  cursor:pointer;
+}
+
+fieldset{
+  border: none;
+}
+
+
+ol, ul{
+  list-style: none;
+}
+
+
+
+// Atribui margem inferior aos elementos Block
+// alguns elementos foram removidos até ser revisti as suas
+// implicações na aplicação
+// section,
+fieldset,
+article,
+aside,
+// header,
+footer,
+main,
+summary {
+  margin-bottom: $box-spacing;
+}
+
+
+// [1] Previne que as imagens cresçam para além do espaço disponível
+// [2] elimina espaçamento após as imagens
+img{
+  max-width: 100%; //[1]
+  display: block;
+}

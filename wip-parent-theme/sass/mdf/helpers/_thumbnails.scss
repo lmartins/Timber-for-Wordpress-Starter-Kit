@@ -1,0 +1,24 @@
+
+@mixin thumb-placeholder($ratio: 70%, $show-icon: true, $bc-color: $bc-muted) {
+    .thumb-placeholder{
+        display: block;
+        padding-top: $ratio;  // ajustar para proporções do destaque
+        background: $bc-color;
+        position: relative;
+        @if $show-icon{
+            i{
+                font-size: $f-size-xxl;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                color: darken($bc-color, 30%);
+            }
+        } @else {
+            i{
+                display: none;
+            }
+        }
+
+    }
+}

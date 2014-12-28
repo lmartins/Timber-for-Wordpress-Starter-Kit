@@ -1,34 +1,5 @@
 
 
-/**
- * ----------------------------------------------------------------------------
- * ALIGNMENT
- * ----------------------------------------------------------------------------
- */
-
-.alignnone,
-.alignleft,
-.alignright,
-.aligncenter{
-    height: auto;
-    margin-top: $element-spacing;
-}
-
-.alignright{
-    float: right;
-    margin-bottom: $element-spacing;
-    margin-left: $box-spacing;
-}
-.alignleft{
-    float: left;
-    margin-bottom: $element-spacing;
-    margin-right: $box-spacing;
-}
-.aligncenter{
-    margin-bottom: $element-spacing;
-}
-
-
 
 /**
  * ----------------------------------------------------------------------------
@@ -38,16 +9,8 @@
 
 figure{
 
-    max-width: 100%;
-
     &.wp-caption{
         background: $bc-muted;
-    }
-
-    figcaption{
-        padding: $element-spacing-large;
-        font-size: $f-size-xs;
-        font-style: italic;
     }
 
 }

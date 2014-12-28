@@ -1,34 +1,38 @@
 <?php
 
+if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 require_once( get_template_directory() . '/mdf/init.php' );
 
 // TODO: Ver se isto é necessário
 // require_once( CHILD_DIR . '/lib/underscores/inc/customizer.php' );
 
+require_once( CHILD_DIR . '/fw/customizer.php' );
 require_once( CHILD_DIR . '/fw/head.php' );
 require_once( CHILD_DIR . '/fw/header.php' );
 require_once( CHILD_DIR . '/fw/media.php' );
 require_once( CHILD_DIR . '/fw/menus.php' );
 require_once( CHILD_DIR . '/fw/post-types.php' );
 require_once( CHILD_DIR . '/fw/sidebars.php' );
+require_once( CHILD_DIR . '/fw/theme.php' );
 
-
-// add_action('mwh_banner','teste');
+// add_action('tha_footer_after','teste');
 function teste()
 {
     echo 'teste';
 }
 
 
+
 /**
  * Adds the header image to a hook position
  */
-function my_function($context){
+function mw_add_header_banner($context){
     $image = get_header_image();
     if ($image && ! is_front_page() )
         echo "<img src=" . get_header_image() . " >";
 }
-// add_action('mwh_banner', 'my_function');
+// add_action('mwh_banner', 'mw_add_header_banner');
 
 
 
@@ -61,10 +65,15 @@ class StarterSite extends TimberSite {
     }
 
     function add_to_context($context){
+
         $context['layout'] = 'content-sidebar';
         $context['sidebar'] = Timber::get_widgets('sidebar-1');
         $context['mainMenu'] = new TimberMenu('main_menu');
-        $content['footerNav'] = new TimberMenu('footer_menu');
+        $context['footerNav'] = new TimberMenu('footer_menu');
+        $context['headerImage'] = new TimberImage( get_header_image() );
+
+        $context['theme_options'] = thsp_cbp_get_options_values();
+
         $context["commentReplyArgs"] = array('reply_text' => "Reply", 'depth' => 1, 'max_depth' => 5);
         $context['site'] = $this;
 

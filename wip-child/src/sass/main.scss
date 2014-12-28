@@ -1,8 +1,6 @@
 
 
 
-// @import "../../../wip-parent-theme/src/sass/_layout.scss";
-
 @import "../../bower_components/modular-scale/stylesheets/_modular-scale.scss";
 
 
@@ -43,11 +41,13 @@
  * ----------------------------------------------------------------------------
  */
 
-@import "../../../wip-parent-theme/src/sass/helpers/_border.scss";
-@import "../../../wip-parent-theme/src/sass/helpers/_links.scss";
-@import "../../../wip-parent-theme/src/sass/helpers/_media.scss";
-@import "../../../wip-parent-theme/src/sass/helpers/_position.scss";
-@import "../../../wip-parent-theme/src/sass/helpers/_specificity.scss";
+@import "mdf/helpers/_border.scss";
+@import "mdf/helpers/_layout.scss";
+@import "mdf/helpers/_links.scss";
+@import "mdf/helpers/_media.scss";
+@import "mdf/helpers/_position.scss";
+@import "mdf/helpers/_specificity.scss";
+@import "mdf/helpers/_thumbnails.scss";
 
 
 
@@ -62,9 +62,13 @@
  * ----------------------------------------------------------------------------
  */
 
-@import "base/_reset.scss";
+
+@import "mdf/base/_reset.scss";
+@import "mdf/base/_layout.scss";
+@import "mdf/base/_tables.scss";
+@import "mdf/base/_wp-core.scss";
+
 // @import "base/_animations.scss";
-// @import "base/_tables.scss";
 @import "base/_typography.scss";
 @import "base/_wp-core.scss";
 
@@ -84,6 +88,7 @@
 
 @import "layout/_common.scss";
 @import "layout/_header.scss";
+@import "layout/_main.scss";
 @import "layout/_footer.scss";
 
 
@@ -93,9 +98,11 @@
  * ----------------------------------------------------------------------------
  */
 
-@import "../../../wip-parent-theme/src/sass/components/_comments.scss";
-@import "../../../wip-parent-theme/src/sass/components/_media.scss";
-@import "components/_forms.scss";
+// @import "../../../wip-parent-theme/src/sass/components/_comments.scss";
+// @import "../../../wip-parent-theme/src/sass/components/_media.scss";
+
+@import "mdf/components/_media.scss";
+// @import "components/_forms.scss";
 
 /**
  * ----------------------------------------------------------------------------
@@ -105,28 +112,11 @@
 
 // @import "views/_home.scss";
 // @import "views/_archive.scss";
-@import "views/_single.scss";
+// @import "views/_single.scss";
 
 
 
 // -----------------------------------------------------------------------------------
-
-
-.main-navigation{
-    ul{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    li{
-        display: inline-block;
-    }
-}
-
-img{
-    max-width: 100%;
-}
-
 
 
 @import "_shame.scss";

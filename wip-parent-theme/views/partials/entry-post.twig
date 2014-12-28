@@ -1,0 +1,23 @@
+<article class="entry entry-{{post.post_type}}" id="entry-{{post.ID}}">
+
+    <div class="Media">
+        {% do action('tha_entry_top') %}
+
+        <div class="Media-figure">
+            {% if post.thumbnail %}
+                <img src="{{ post.thumbnail.src('thumbnail') }}" />
+            {% else %}
+                <span class="thumb-placeholder"><i class="icon-camera"></i></span>
+            {% endif %}
+        </div>
+        <div class="Media-content">
+            <h2 class="entry-title"><a href="{{post.link}}">{{post.title}}</a></h2>
+            <div class="entry-meta">{{post.date|date("F jS\\, Y")}} in {{ post.terms('categories')|first }}</div>
+            <p>{{post.get_preview(35)}}</p>
+        </div>
+
+        {% do action('tha_entry_bottom') %}
+    </div>
+
+</article>
+

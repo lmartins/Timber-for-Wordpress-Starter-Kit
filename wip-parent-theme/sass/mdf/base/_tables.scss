@@ -1,0 +1,52 @@
+
+// --------------------------------------------------------------------
+// {{TABLES}}
+// --------------------------------------------------------------------
+// Baseado no INUIT.CSS
+
+table{
+  width: 100%;
+  margin-bottom: $box-spacing;
+}
+
+th,
+td{
+  padding: $box-spacing / 4;
+  @include tablet{
+    padding: $box-spacing-small;
+  }
+  text-align:left;
+}
+
+caption{
+  font-style: italic;
+  color: $f-text-neutral;
+  padding: 0.5em 0.8em;
+}
+
+
+// Cell alignments ----------------------------------------------------
+
+[colspan]{
+  text-align: center;
+
+  // neste caso assume-se como legenda da valores totais de uma listagem
+  &[scope=row]{
+    text-align: right;
+  }
+}
+
+[colspan="1"]{
+  text-align: left;
+}
+[rowspan]{
+  vertical-align: middle;
+}
+
+
+[rowspan="1"]{
+  vertical-align: top;
+}
+.u-data-numerical{
+  text-align: right;
+}
