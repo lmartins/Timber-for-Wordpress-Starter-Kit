@@ -74,6 +74,14 @@
 
 // @import "components/icons/_icons.scss"; // posicionado aqui para permitir utilização pelos elementos abaixo
 
+/**
+ * ----------------------------------------------------------------------------
+ * VENDOR
+ * ----------------------------------------------------------------------------
+ */
+
+@import "mdf/vendor/_woocommerce.scss";
+
 
 
 /**
@@ -98,7 +106,7 @@
  * ----------------------------------------------------------------------------
  */
 
-// @import "../../../wip-parent-theme/src/sass/components/_comments.scss";
+@import "mdf/components/_comments.scss";
 // @import "../../../wip-parent-theme/src/sass/components/_media.scss";
 
 @import "mdf/components/_media.scss";

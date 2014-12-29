@@ -1,5 +1,9 @@
 
-
+.read-more{
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: $f-size-s;
+}
 
 // TODO: Arrumar loops dentro do MDF e theme
 
@@ -24,6 +28,11 @@
 
     .entry{
         margin-bottom: $element-spacing;
+    }
+
+    .entry-meta{
+        font-size: $f-size-s;
+        color: $f-text-muted;
     }
 
     p{
@@ -112,6 +121,12 @@
     @include tablet{
         .entry{
             @include gallery(4);
+        }
+    }
+
+    @include desktop{
+        .entry{
+            @include gallery(3);
         }
     }
 

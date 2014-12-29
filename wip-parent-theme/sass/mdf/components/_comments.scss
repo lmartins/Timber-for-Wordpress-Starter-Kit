@@ -40,8 +40,10 @@
 }
 
 .comment-avatar{
-    flex: 0 0 70px;
-    padding-right: 1em;
+    @include increase-specificity{
+        flex: 0 0 70px;
+        padding-right: 1em;
+    }
     // border-radius: 100%;
     img{
         border-radius: 100%;

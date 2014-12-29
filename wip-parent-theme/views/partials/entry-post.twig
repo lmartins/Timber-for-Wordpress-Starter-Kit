@@ -1,4 +1,4 @@
-<article class="entry entry-{{post.post_type}}" id="entry-{{post.ID}}">
+<article {{ fn('post_class', ['$classes', 'entry'] ) }}>
 
     <div class="Media">
         {% do action('tha_entry_top') %}
@@ -10,6 +10,7 @@
                 <span class="thumb-placeholder"><i class="icon-camera"></i></span>
             {% endif %}
         </div>
+
         <div class="Media-content">
             <h2 class="entry-title"><a href="{{post.link}}">{{post.title}}</a></h2>
             <div class="entry-meta">{{post.date|date("F jS\\, Y")}} in {{ post.terms('categories')|first }}</div>

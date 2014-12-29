@@ -243,6 +243,11 @@ figure.wp-caption {
 
 /**
  * ----------------------------------------------------------------------------
+ * VENDOR
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * ----------------------------------------------------------------------------
  * LAYOUT
  * Let the fun begin
  * Here we start adding structure to our project layout
@@ -395,6 +400,52 @@ html, body {
  * COMPONENTS
  * ----------------------------------------------------------------------------
  */
+.comment-form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap; }
+  .comment-form label {
+    display: block; }
+  .comment-form input, .comment-form textarea {
+    width: 100%; }
+
+.comment-notes, .comment-form-comment {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 100%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%; }
+
+.comment-form-author, .comment-form-email, .comment-form-url {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 33.333%;
+      -ms-flex: 1 0 33.333%;
+          flex: 1 0 33.333%; }
+
+.comment-form-author, .comment-form-email {
+  padding-right: 3%; }
+
+/**
+ * COMMENTS LIST
+ */
+.blog-comment {
+  margin-bottom: 2em; }
+
+.comment-content p {
+  margin: 0; }
+
+.comment-avatar:nth-child(n) {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 70px;
+      -ms-flex: 0 0 70px;
+          flex: 0 0 70px;
+  padding-right: 1em; }
+.comment-avatar img {
+  border-radius: 100%; }
+
 .Media {
   display: -webkit-box;
   display: -webkit-flex;
@@ -423,6 +474,11 @@ html, body {
  * VIEWS
  * ----------------------------------------------------------------------------
  */
+.read-more {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8em; }
+
 /*
  * ----------------------------------------------------------------------------
  * LOOP DEFAULTS
@@ -456,6 +512,9 @@ html, body {
     font-size: 1.28145em; }
   .loop .entry {
     margin-bottom: 0.675em; }
+  .loop .entry-meta {
+    font-size: 0.8em;
+    color: #949ea8; }
   .loop p {
     margin: 0; }
 
@@ -564,6 +623,47 @@ html, body {
       
       
       margin-left: 67.5%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+ }
+@media (min-width: 980px) {
+  .loop--cards .entry {
+    width: 23.33333%;
+    float: left;
+    
+    
+    
+     }
+    .loop--cards .entry:nth-child(4n+1) {
+      
+      
+      margin-left: 0.83333%;
+      margin-right: -100%;
+      
+      
+      clear: both; }
+    .loop--cards .entry:nth-child(4n+2) {
+      
+      
+      margin-left: 25.83333%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+    .loop--cards .entry:nth-child(4n+3) {
+      
+      
+      margin-left: 50.83333%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+    .loop--cards .entry:nth-child(4n+4) {
+      
+      
+      margin-left: 75.83333%;
       margin-right: -100%;
       
       

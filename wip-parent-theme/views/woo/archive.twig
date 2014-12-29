@@ -1,45 +1,26 @@
 {% extends "base.twig" %}
 
-{% block sectionheader %}
-    <div class="gray">
-        <div class="row">
-            <div class="columns medium-2"><h2>Store</h2></div>
-            <div class="columns medium-10">
-                <div class="product-cats">
-                {% for cat in cats %}
-                    <a href="{{cat.link}}">{{cat.name}}</a>
-                      {% if not loop.last %} // {% endif %}
-                {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-{% endblock %}
-
-
 {% block content %}
 
-<br>
-    <ul class="small-block-grid-3">
-        {% for item in products %}
-            <li>
-                <div class="product">
-                <a href="{{item.post.permalink}}">
-                                <img class="productimage" src="{{item.post.get_thumbnail.get_src|resize(300, 300)}}" />
-                            </a>
-                <a href="{{item.post.permalink}}">
-                     {{ item.post.title }}
-                </a>
-                <p class="price">{{item.product.get_price_html}}</p>
-                <a href="{{item.product.add_to_cart_url}}" class="button">
-                    Add to Cart
-                </a>
-                </div>
-            </li>
+    {% do action('woocommerce_before_main_content') %}
+
+    <h1>{{ fn('__','Store','woocommerce')}}</h1>
+    <div class="product-cats">
+    {% for cat in cats %}
+        <a href="{{cat.link}}">{{cat.name}}</a>
+          {% if not loop.last %} // {% endif %}
+    {% endfor %}
+    </div>
+
+    {% do action( 'woocommerce_before_shop_loop') %}
+    <div class="loop loop--cards">
+        {% for entry in products %}
+
+            {% include ["partials/entry-"~post.post_type~".twig", "partials/entry-product.twig"] %}
 
         {% endfor %}
-    </ul>
-
-
+    </div>
+    {% do action('woocommerce_after_shop_loop') %}
+    {% do action('woocommerce_after_main_content') %}
 
 {% endblock  %}

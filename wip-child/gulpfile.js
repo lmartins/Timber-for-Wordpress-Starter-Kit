@@ -33,7 +33,7 @@ var config = {
     src: [
         '**/*.php',
         '**/views/*.twig',
-        '../wip-parent-theme/views/*.twig',
+        '../wip-parent-theme/views/**/*.twig',
         ]
     // build: "./app/"
   },

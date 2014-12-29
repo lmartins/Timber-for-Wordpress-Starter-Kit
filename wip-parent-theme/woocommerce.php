@@ -16,11 +16,11 @@ if (is_singular('product')) {
 
     Timber::render('views/woo/single-product.twig', $context);
 
-}else{
+} else {
 
     $posts = Timber::get_posts();
     $products = [];
-    foreach ($posts  as $post) {
+    foreach ($posts as $post) {
         $p= [];
         $p['post'] = $post;
         $p['product'] = get_product( $post->ID );

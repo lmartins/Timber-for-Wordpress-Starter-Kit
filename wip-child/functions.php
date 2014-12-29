@@ -91,3 +91,8 @@ class StarterSite extends TimberSite {
 
 new StarterSite();
 
+
+
+
+// TODO: Arrumar
+remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail');
