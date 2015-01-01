@@ -4,8 +4,10 @@
     {% endblock %}
     </head>
 {% endblock %}
+
     <body class="{{body_class}} {{layout}}" data-template="base.twig" data-view="{{site_view}}">
         <div class="site-container">
+
             {% do action('tha_header_before') %}
             <header class="site-header" >
                 {% block header %}
@@ -29,6 +31,7 @@
                 {% do action('tha_header_bottom') %}
                 {% endblock %}
             </header>
+            {% do action('tha_header_after') %}
 
             {% block banner %}
                 {% do action('mwh_banner') %}

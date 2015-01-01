@@ -21,7 +21,9 @@
     $context = Timber::get_context();
 
 
-    // Banners Top
+    /**
+     * BANNER TOP QUERY
+     */
     $args = array(
         'numberposts' => 5,
         'post_type'   => 'banners',
@@ -33,7 +35,7 @@
 
     if ( is_front_page() ) {
         $context['banners_top'] = Timber::get_posts( $args );
-        $context["link"] = get_field( 'link' ) ? get_permalink(get_field( 'link' )[0]) : false;
+        // $context["link"] = get_field( 'link' ) ? get_permalink(get_field( 'link' )[0]) : false;
     }
 
     $context['posts'] = Timber::get_posts();

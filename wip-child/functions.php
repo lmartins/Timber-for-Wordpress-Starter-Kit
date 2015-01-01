@@ -15,25 +15,7 @@ require_once( CHILD_DIR . '/fw/menus.php' );
 require_once( CHILD_DIR . '/fw/post-types.php' );
 require_once( CHILD_DIR . '/fw/sidebars.php' );
 require_once( CHILD_DIR . '/fw/theme.php' );
-
-// add_action('tha_footer_after','teste');
-function teste()
-{
-    echo 'teste';
-}
-
-
-
-/**
- * Adds the header image to a hook position
- */
-function mw_add_header_banner($context){
-    $image = get_header_image();
-    if ($image && ! is_front_page() )
-        echo "<img src=" . get_header_image() . " >";
-}
-// add_action('mwh_banner', 'mw_add_header_banner');
-
+require_once( CHILD_DIR . '/fw/shame.php' );
 
 
 if ( ! isset( $content_width ) )
@@ -43,6 +25,7 @@ if ( ! isset( $content_width ) )
 class StarterSite extends TimberSite {
 
     function __construct(){
+
         add_theme_support('post-formats');
         add_theme_support('post-thumbnails');
         add_theme_support('menus');
@@ -74,6 +57,7 @@ class StarterSite extends TimberSite {
 
         $context['theme_options'] = thsp_cbp_get_options_values();
 
+        // TODO: ver o que é isto
         $context["commentReplyArgs"] = array('reply_text' => "Reply", 'depth' => 1, 'max_depth' => 5);
         $context['site'] = $this;
 
@@ -91,8 +75,3 @@ class StarterSite extends TimberSite {
 
 new StarterSite();
 
-
-
-
-// TODO: Arrumar
-remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail');
