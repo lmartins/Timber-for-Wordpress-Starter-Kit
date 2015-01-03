@@ -1,0 +1,23 @@
+
+[am-banner]{
+    margin-bottom: $box-spacing;
+    color: white;
+    a{
+        color: white;
+    }
+    p{
+        margin: 0;
+    }
+}
+
+[am-banner-inner]{
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    article{
+        @include span(6);
+        padding-top: 2em;
+        padding-bottom: 2em;
+        margin: 0;
+    }
+}

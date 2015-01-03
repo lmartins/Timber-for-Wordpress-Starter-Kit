@@ -1,27 +1,26 @@
-<div class="site-banner">
-    <div class="inner" style="background-image: url({{ TimberImage( banner.meta('banner_top_image') ).src }});">
-        <div class="container">
 
-            <article>
+<div am-banner-inner style="background-image: url({{ TimberImage( banner.meta('banner_top_image') ).src }});">
+    <div class="container">
 
-                {% set link = fn('get_permalink', banner.get_field('link')[0].id ) %}
+        <article>
 
-                <h2>
-                    {% if link %}
-                        <a href="{{ link }}">{{banner.title}}</a>
-                    {% else %}
-                        {{banner.title}}
-                    {% endif %}
-                </h2>
+            {% set link = fn('get_permalink', banner.get_field('link')[0].id ) %}
 
-                <p>{{ banner.description }}</p>
-
-                {% if banner.button_text and link %}
-                    <a href="{{ link }}" am-button>{{ banner.button_text }}</a>
+            <h2>
+                {% if link %}
+                    <a href="{{ link }}">{{banner.title}}</a>
+                {% else %}
+                    {{banner.title}}
                 {% endif %}
+            </h2>
 
-            </article>
+            <p>{{ banner.description }}</p>
 
-        </div>
+            {% if banner.button_text and link %}
+                <a href="{{ link }}" am-button>{{ banner.button_text }}</a>
+            {% endif %}
+
+        </article>
+
     </div>
 </div>

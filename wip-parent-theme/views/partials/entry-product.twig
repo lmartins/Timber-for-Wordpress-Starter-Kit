@@ -15,11 +15,12 @@
         </div>
 
         <div class="Media-content">
-            <!-- {% do action('woocommerce_before_shop_loop_item_title') %} -->
-            {% if entry.product.is_on_sale %}SALE!{% endif %}
+            {% do action('woocommerce_before_shop_loop_item_title') %}
+            <!-- {% if entry.product.is_on_sale %}SALE!{% endif %} -->
             <h2 class="entry-title"><a href="{{entry.post.link}}">{{entry.post.title}}</a></h2>
-            <p class="price">{{entry.product.get_price_html}}</p>
-            <!-- {% do action( 'woocommerce_after_shop_loop_item_title' ) %} -->
+            <!-- <p class="price">{{entry.product.get_price_html}}</p> -->
+            {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
+
             <a href="{{item.product.add_to_cart_url}}" class="button">
                 Add to Cart
             </a>

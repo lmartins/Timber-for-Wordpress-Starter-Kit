@@ -2,18 +2,18 @@
 
 
 {% block banner %}
-<div class="cover">
-    <div class="cover-frame">
-        <div class="container">
-            <h1>{{post.title}}</h1>
-            <div class="meta">
-                {{post.date|date("F jS\\, Y")}} in {{ post.terms('categories')|first }}
-                | Comments: {{ post.comments|length }}
+    <div class="cover">
+        <div class="cover-frame">
+            <div class="container">
+                <h1>{{post.title}}</h1>
+                <div class="meta">
+                    {{post.date|date("F jS\\, Y")}} in {{ post.terms('categories')|first }}
+                    | Comments: {{ post.comments|length }}
+                </div>
             </div>
         </div>
+        <div class="cover-image" style="background-image: url({{ post.thumbnail.src('original') }})"></div>
     </div>
-    <div class="cover-image" style="background-image: url({{ post.thumbnail.src('original') }})"></div>
-</div>
 {% endblock %}
 
 {% block content %}

@@ -1,6 +1,6 @@
 {% extends "base.twig" %}
 
-{% block banner %}
+{% block bannerinner %}
     {% if banners_top %}
         {% for banner in banners_top %}
             {% include ['partials/banner-'~post.post_type~'.twig', 'partials/banner.twig'] %}

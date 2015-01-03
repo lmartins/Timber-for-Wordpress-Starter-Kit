@@ -34,19 +34,25 @@
             {% do action('tha_header_after') %}
 
             {% block banner %}
-                {% do action('mwh_banner') %}
-                {% include "partials/header-image.twig" %}
+                <div am-banner>
+                    {% block bannerinner %}
+                        {% do action('mwh_banner') %}
+                        {% include "partials/header-image.twig" %}
+                    {% endblock %}
+                </div>
             {% endblock %}
 
             {% do action('tha_content_before') %}
 
             <section role="main" class="site-content">
 
-                {% if title %}<h1>{{title}}</h1>{% endif %}
+                <div class="inner">
+                    {% if title %}<h1>{{title}}</h1>{% endif %}
 
-                {% block content %}
-                    Sorry, no content
-                {% endblock %}
+                    {% block content %}
+                        Sorry, no content
+                    {% endblock %}
+                </div>
 
             </section>
 

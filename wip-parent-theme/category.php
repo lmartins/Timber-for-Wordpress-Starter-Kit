@@ -63,4 +63,4 @@ if (isset($wp_query->query_vars['cat'])){
     // $data['author'] = $author;
     // $data['title'] = 'Author Archives: ' . $author->name();
 }
-Timber::render(array('category.twig', 'archive.twig'), $data, 600);
+Timber::render(array('category.twig', 'archive.twig'), $data);

@@ -1,4 +1,7 @@
 
 .site-content{
-    @include container;
+    background: white;
+    .inner{
+        @include container;
+    }
 }

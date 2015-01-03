@@ -2,18 +2,25 @@
 
 .site-footer{
     clear: both;
-    padding: $box-spacing-large 0;
+    padding: $box-spacing 0;
+
+    .sidebar{
+
+        display: flex;
+
+        .widget{
+            // flex: 1 1;
+            padding-right: 5%;
+        }
+        h1{
+            color: white;
+            font-size: $f-size-l;
+        }
+    }
+
+    .legal-info{
+        font-size: $f-size-xs;
+    }
+
 }
 
-.layout-sidebar{
-
-    display: flex;
-
-    .widget{
-        flex: 1 1 33%;
-    }
-    h1{
-        color: white;
-        font-size: $f-size-l;
-    }
-}

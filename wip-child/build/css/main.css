@@ -262,7 +262,8 @@ html, body {
   height: 100%;
   min-height: 100%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  background: #eaeaec; }
 
 .container {
   max-width: 64em;
@@ -292,7 +293,8 @@ html, body {
   text-align: center;
   position: relative;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  background: white; }
   @media (min-width: 740px) {
     .site-header .wrapper {
       display: -webkit-box;
@@ -369,31 +371,31 @@ html, body {
     overflow: hidden; }
 
 .site-content {
-  max-width: 64em;
-  margin-left: auto;
-  margin-right: auto; }
-  .site-content:after {
-    content: " ";
-    display: block;
-    clear: both; }
+  background: white; }
+  .site-content .inner {
+    max-width: 64em;
+    margin-left: auto;
+    margin-right: auto; }
+    .site-content .inner:after {
+      content: " ";
+      display: block;
+      clear: both; }
 
 .site-footer {
   clear: both;
-  padding: 4em 0; }
-
-.layout-sidebar {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
-  .layout-sidebar .widget {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 33%;
-        -ms-flex: 1 1 33%;
-            flex: 1 1 33%; }
-  .layout-sidebar h1 {
-    color: white;
-    font-size: 1.28145em; }
+  padding: 2em 0; }
+  .site-footer .sidebar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .site-footer .sidebar .widget {
+      padding-right: 5%; }
+    .site-footer .sidebar h1 {
+      color: white;
+      font-size: 1.28145em; }
+  .site-footer .legal-info {
+    font-size: 0.71111em; }
 
 /**
  * ----------------------------------------------------------------------------
@@ -468,6 +470,31 @@ html, body {
     display: block; }
   .Media--vertical .Media-content, .Media--vertical .Media-figure {
     display: block; }
+
+[am-banner] {
+  margin-bottom: 2em;
+  color: white; }
+  [am-banner] a {
+    color: white; }
+  [am-banner] p {
+    margin: 0; }
+
+[am-banner-inner] {
+  background-repeat: no-repeat;
+  background-size: cover; }
+  [am-banner-inner] article {
+    
+    
+    
+    width: 48.33333%;
+    float: left;
+    margin-left: 0.83333%;
+    margin-right: 0.83333%;
+    
+    
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin: 0; }
 
 /**
  * ----------------------------------------------------------------------------

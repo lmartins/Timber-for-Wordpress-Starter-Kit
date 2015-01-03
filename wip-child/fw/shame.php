@@ -10,6 +10,13 @@ function teste()
 }
 
 
+// add_action('tha_entry_top', 'my_function_with_args', 10, 3);
+
+function my_function_with_args($context){
+    echo 'For the post with title '.$context['post']->post_title;
+}
+
+
 /**
  * Adds the header image to a hook position
  */
