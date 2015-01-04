@@ -3,7 +3,7 @@
 {% block bannerinner %}
     {% if banners_top %}
         {% for banner in banners_top %}
-            {% include ['partials/banner-'~post.post_type~'.twig', 'partials/banner.twig'] %}
+            {% include ['partials/banner.twig'] %}
         {% endfor %}
     {% else %}
         {% do action('mwh_banner') %}
@@ -13,10 +13,12 @@
 
 {% block content %}
 
+    {{ home_widgets }}
+
     <div class="loop loop--cards loop--posts">
         {% for post in posts %}
             {% do action('tha_entry_before') %}
-            {% include ['partials/entry-'~post.post_type~'.twig', 'entry-post.twig'] %}
+            {% include ['partials/tease-'~post.post_type~'.twig', 'tease-post.twig'] %}
             {% do action('tha_entry_after') %}
         {% endfor %}
     </div>

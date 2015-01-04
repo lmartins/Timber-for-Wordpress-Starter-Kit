@@ -19,14 +19,17 @@ if (is_singular('product')) {
 } else {
 
     $posts = Timber::get_posts();
-    $products = [];
-    foreach ($posts as $post) {
-        $p= [];
-        $p['post'] = $post;
-        $p['product'] = get_product( $post->ID );
-        $products[] = $p;
+
+    /**
+     * Hack para estabelecer contexto correcto dentro do loop de produtos.
+     * Resolve problem em que hooks corriam todos com o mesmo contexto.
+     */
+    function timber_set_product($post) {
+        global $product;
+        $product = get_product($post->ID);
     }
-    $context['products'] = $products;
+
+    $context['products'] = $posts;
     Timber::render('views/woo/archive.twig', $context);
 
 }

@@ -3,7 +3,6 @@
 if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 
-
 /**
  * ----------------------------------------------------------------------------
  * ADDS BREADCRUMBS NAVIGATION
@@ -11,7 +10,6 @@ if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * ----------------------------------------------------------------------------
  */
 
-add_action('tha_content_top','mw_add_breadcrumbs');
 function mw_add_breadcrumbs(){
     if ( function_exists('yoast_breadcrumb') ) {
         yoast_breadcrumb('<p class="nav nav--breadcrumbs" id="breadcrumbs">','</p>');

@@ -5,14 +5,14 @@
 {% if subcategories %}
     <div class="loop loop--minibanners loop--categories">
     {% for cat in subcategories %}
-        {% include 'partials/entry-category.twig' %}
+        {% include 'partials/tease-category.twig' %}
     {% endfor %}
     </div>
 {% endif %}
 
 <div class="loop loop--list loop--posts">
     {% for post in posts %}
-    	{% include ["partials/entry-"~post.post_type~".twig", "partials/entry-post.twig"] %}
+    	{% include ["partials/tease-"~post.post_type~".twig", "partials/tease-post.twig"] %}
     {% endfor %}
 </div>
 

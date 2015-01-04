@@ -33,14 +33,14 @@ $c-input-height          : 2.5em;
 $c-input-radius          : 0em;
 $c-input-padding         : 0.8em;
 
-$c-input-border          : $bc-muted;
-$c-input-bg              : $bc-muted;
-$c-input-border-focus    : $bc-accent;
-$c-input-placeholder     : $f-text-neutral;
+$c-input-border          : gc(muted);
+$c-input-bg              : gc(muted);
+$c-input-border-focus    : gc(accent);
+$c-input-placeholder     : gc(muted);
 //$c-input-text          : $f-text;
 
-$c-fieldset-border       : $bc-neutral;
-$c-fieldset-border-light : $bc-muted;
+$c-fieldset-border       : gc(neutral);
+$c-fieldset-border-light : gc(muted);
 
 
 // BUTTONS --------------------------------------------------------------------

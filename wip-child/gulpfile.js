@@ -193,7 +193,7 @@ gulp.task('sass', function () {
     // .pipe( plugins.sourcemaps.write('./', {includeContent: false, sourceRoot: '../../src/sass/'}) )
     // .pipe( plugins.sourcemaps.write('./') )
     .pipe( plugins.autoprefixer (
-      "last 1 versions", "> 10%", "ie 9"
+      "last 1 versions"
       ))
     .pipe( gulp.dest( config.SASS.build ) )
     .pipe( plugins.filter( '**/*.css') ) // Filtering stream to only css files

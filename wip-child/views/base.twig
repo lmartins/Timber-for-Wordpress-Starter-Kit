@@ -19,11 +19,12 @@
                     </div>
                     <nav class="main-navigation" role="navigation">
                         <ul class="nav">
-                        {% for item in mainMenu.items %}
-                            <li class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
-                                <a href="{{item.link}}">{{item.title}}</a>
-                            </li>
-                        {% endfor %}
+                            {% for item in mainMenu.items %}
+                                <li class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
+                                    <a href="{{item.link}}">{{item.title}}</a>
+                                </li>
+                            {% endfor %}
+                            {% do action('mw_mainMenu_options') %}
                         </ul>
                     </nav><!-- #access -->
 
@@ -47,6 +48,7 @@
             <section role="main" class="site-content">
 
                 <div class="inner">
+
                     {% if title %}<h1>{{title}}</h1>{% endif %}
 
                     {% block content %}

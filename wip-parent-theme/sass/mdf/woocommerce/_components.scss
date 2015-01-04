@@ -1,0 +1,35 @@
+
+
+.site-header-cart{
+
+    position: relative;
+
+    &:hover{
+        .widget_shopping_cart{
+            visibility: visible;
+        }
+    }
+
+    .widget_shopping_cart{
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 100%;
+    }
+
+    p.total,
+    p.buttons{
+        text-align: center;
+    }
+
+}
+
+
+.product_list_widget{
+    min-width: 260px;
+    li{
+        display: flex;
+    }
+
+}

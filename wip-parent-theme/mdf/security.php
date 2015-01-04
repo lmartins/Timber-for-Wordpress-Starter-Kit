@@ -4,7 +4,9 @@ if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 
 /**
- * Disable pingbacks
+ * ----------------------------------------------------------------------------
+ * DISABLE PINGBACKS
+ * ----------------------------------------------------------------------------
  *
  * See: http://wptavern.com/how-to-prevent-wordpress-from-participating-in-pingback-denial-of-service-attacks
  *

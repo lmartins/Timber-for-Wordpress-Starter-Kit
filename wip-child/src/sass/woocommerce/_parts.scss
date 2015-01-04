@@ -1,0 +1,56 @@
+
+.price{
+
+    font-size: $f-size-l;
+
+    .single-product-details & {
+        font-size: $f-size-xl;
+    }
+
+}
+.woocommerce-price-suffix{
+    font-size: $f-size-xxs;
+    color: gc(neutral);
+}
+
+
+// Legenda onsale
+.onsale{
+    font-size: $f-size-s;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    border: 2px solid gc(muted);
+    line-height: 1.2;
+    vertical-align: baseline;
+    padding: space(element, small) space(element);
+    text-transform: uppercase;
+    margin-bottom: space(element);
+}
+
+
+
+/**
+ * WOOCOMMERCE MESSAGE
+ */
+.woocommerce-message{
+
+    @include span(full);
+    display: flex;
+    justify-content: space-between;
+    padding: space(element);
+    margin-bottom: space(box);
+    background: gc(text, info);
+    color: white;
+
+    a{
+        order: 2;
+        display: inline-block;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-left: 1px solid lighten(gc(text, info), 10%);
+        padding-left: space(element);
+        margin-left: space(element);
+    }
+}

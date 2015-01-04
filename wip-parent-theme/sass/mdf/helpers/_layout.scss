@@ -1,4 +1,43 @@
 
+
+@mixin phone{
+    @include mq( $bp-phone ){
+        @content;
+    }
+}
+
+@mixin phone-large{
+    @include mq( $bp-phone-l ){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @include mq( $bp-tablet ){
+        @content;
+    }
+}
+
+@mixin tablet-large{
+    @include mq( $bp-tablet-l ){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @include mq( $bp-desktop ){
+        @content;
+    }
+}
+
+@mixin desktop-large{
+    @include mq( $bp-desktop-l ){
+        @content;
+    }
+}
+
+
+
 @mixin clearfix {
   *zoom: 1;
 
@@ -12,3 +51,4 @@
     clear: both;
   }
 }
+

@@ -3,7 +3,7 @@
 
 body{
     font-family: $f-sans;
-    color: $f-text;
+    color: gc(text);
     font-size: $f-size;
     line-height: $f-line-height-ratio;
     -webkit-font-smoothing: antialiased;
@@ -23,7 +23,7 @@ h6{ font-size: $f-size-h6; }
 
 
 h1, h2, h3, h4, h5, h6{
-  color: $f-text-accent;
+  color: gc(text, accent);
   font-family: $f-sans2;
   font-weight: 600;
   // transition: all 0.25s ease-in;
@@ -42,7 +42,7 @@ p{
 
   &.note{
     font-size: $f-size-xs;
-    color: $f-text-neutral;
+    color: gc(text, neutral);
   }
 }
 
@@ -54,25 +54,25 @@ blockquote{
     // font-size: 1.3em;
     font-size: $f-size-l;
     line-height: 1.4;
-    color: $f-text-neutral;
+    color: gc(text, neutral);
 }
 
 
 
 strong{
-  color: $f-text-accent;
-  font-weight: bold;
+    color: gc(text, accent);
+    font-weight: bold;
 }
 
 a {
-  text-decoration: none;
-  outline: none;
+    text-decoration: none;
+    outline: none;
 }
 
 hr{
-  border: none;
-  border-top: 1px solid $bc-muted;
-  margin: $box-spacing * 2 0;
+    border: none;
+    border-top: 1px solid $bc-muted;
+    margin: $box-spacing * 2 0;
 }
 
 // LISTS ----------------------------------------------------------------------
@@ -92,10 +92,10 @@ ul, dl{
 }
 
 dl{
-  dt{
-    color: $f-text-accent;
-  }
-  dd{
-    margin-bottom: $box-spacing;
-  }
+    dt{
+        color: gc(text, accent);
+    }
+    dd{
+        margin-bottom: $box-spacing;
+    }
 }

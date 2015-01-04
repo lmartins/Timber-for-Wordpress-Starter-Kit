@@ -1,11 +1,12 @@
 
 
 var
-  events   = require('./helpers/pubsub'),
-  Emitter  = require('emitter'),
-  routes   = require('./views/routes');
-  // velocity = require('velocity-animate'),
-  // isMobile = require('is-mobile')();
+    events   = require('./helpers/pubsub'),
+    component = require('./component'),
+    Emitter  = component('component-emitter'),
+    routes   = component('component-routes');
+    // velocity = require('velocity-animate'),
+    // isMobile = require('is-mobile')();
 
 
 (function() {

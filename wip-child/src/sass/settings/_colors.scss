@@ -1,16 +1,54 @@
 
+$colors: (
+    accent:(
+        base  : hsla(213, 89%, 56%, 1),
+        light : hsla(213, 89%, 66%, 1),
+        dark  : hsla(213, 89%, 46%, 1),
+    ),
+    neutral:(
+        base  : hsla(203, 7%, 77%, 1),
+        light : hsla(203, 7%, 87%, 1),
+        dark  : hsla(203, 7%, 67%, 1),
+    ),
+    muted:(
+        base  : hsla(0, 0%, 95%, 1),
+        light : hsla(0, 0%, 98%, 1),
+        dark  : hsla(0, 0%, 90%, 1),
+    ),
+    text: (
+        base     : hsla(220, 7%, 36%, 1),
+        primary  : hsla(220, 7%, 26%, 1),
+        accent   : hsla(0, 0%, 20%, 1),
+        neutral  : hsla(210,10%,48%,1),
+        muted    : hsla(210,10%,62%,1),
+        info     : hsla(205, 100%, 51%, 1),
+        negative : red,
+        warning  : orange,
+        positive : hsl(93, 68%, 42%),
+        link: (
+            normal  : black,
+            visited : black,
+            hover   : red,
+            active  : red
+        )
+    )
+);
+
+
+
+
 // ============================================================================
 // COLOR SETTINGS (PREFIXO BC- )
 // ============================================================================
 
-$bc-neutral        : hsla(203, 7%, 77%, 1);
-$bc-accent         : hsla(184, 56%, 53%, 1);
-$bc-accent2        : hsla(79, 71%, 47%, 1);
-$bc-dark           : hsla(203, 7%, 28%, 1);
-$bc-muted          : hsla(0, 0%, 95%, 1);
+$bc-neutral         : hsla(203, 7%, 77%, 1);
+$bc-accent          : hsla(184, 56%, 53%, 1);
+$bc-accent2         : hsla(79, 71%, 47%, 1);
+$bc-dark            : hsla(203, 7%, 28%, 1);
+$bc-muted           : hsla(0, 0%, 95%, 1);
 
-$bc-body-bg        : hsla(0, 0%, 100%, 1);
-$bc_main_background: hsla(0, 0%, 95%, 1);
+$bc-body-bg         : hsla(0, 0%, 100%, 1);
+$bc_main_background : hsla(0, 0%, 95%, 1);
 
 $bc-info            : hsla(210, 96%, 57%, 1);
 $bc-negative        : hsla(358, 94%, 65%, 1);
@@ -19,52 +57,31 @@ $bc-positive        : hsla(158, 55%, 55%, 1);
 
 
 $profiles: (
-    bandcamp: #4e9bac,
-    delicious: #248cff,
-    dribbble: #c32361,
-    email: #a1a1a1,
-    facebook: #3b5998,
-    flickr: #0063db,
-    github: #4183c4,
-    gplus: #dd4b39,
-    instagram: #517fa4,
-    lastfm: #d51007,
-    linkedin: #007bb6,
-    photodrop: #cdb6e3,
-    pinterest: #cb2027,
-    rdio: #0088da,
-    rss: #ff8151,
-    soundcloud: #f60,
-    stumbleupon: #eb4924,
-    twitter: #00aced,
-    vimeo: #aad450,
-    youtube: #b00
+    bandcamp    : #4e9bac,
+    delicious   : #248cff,
+    dribbble    : #c32361,
+    email       : #a1a1a1,
+    facebook    : #3b5998,
+    flickr      : #0063db,
+    github      : #4183c4,
+    gplus       : #dd4b39,
+    instagram   : #517fa4,
+    lastfm      : #d51007,
+    linkedin    : #007bb6,
+    photodrop   : #cdb6e3,
+    pinterest   : #cb2027,
+    rdio        : #0088da,
+    rss         : #ff8151,
+    soundcloud  : #f60,
+    stumbleupon : #eb4924,
+    twitter     : #00aced,
+    vimeo       : #aad450,
+    youtube     : #b00
 );
 
 
 
 
-/**
- * ----------------------------------------------------------------------------
- * COLORS
- * ----------------------------------------------------------------------------
- */
 
-$f-text          : hsla(220, 7%, 36%, 1);
-$f-text-primary  : darken($f-text, 20%);
-$f-text-accent   : hsla(0, 0%, 20%, 1);
-$f-text-light    : hsla(210,10%,88%,1);
-$f-text-neutral  : hsla(210,10%,48%,1);
-$f-text-muted    : hsla(210,10%,62%,1);
-
-$f-text-info     : hsla(205, 100%, 51%, 1);
-$f-text-negative : red;
-$f-text-warning  : orange;
-$f-text-positive : hsl(93, 68%, 42%);
-
-$f-link          : $f-text-accent;
-$f-link-visited  : $f-link;
-$f-link-hover    : lighten($f-link, 10%);
-$f-link-active   : darken($f-link, 10%);
 
 

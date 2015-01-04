@@ -1,0 +1,12 @@
+
+
+@function gc($color, $value: "base") {
+    @return map-get( map-get($colors, $color), $value );
+}
+
+// Get Layout Spacers
+@function space($type, $variation: "base") {
+    @return map-get( map-get($spacing, $type), $variation );
+}
+
+

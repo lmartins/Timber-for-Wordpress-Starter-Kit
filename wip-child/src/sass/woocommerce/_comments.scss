@@ -1,0 +1,26 @@
+
+.comment{
+    img.avatar{
+        border-radius: 100%;
+    }
+}
+
+.comment_container{
+
+    display: flex;
+    align-items: flex-start;
+    padding: space(element) 0;
+
+    .star-rating{
+        // font-size: $f-size-l;
+    }
+    .meta{
+        // font-size: $f-size-s;
+    }
+
+    .avatar{
+        flex: 0 0 8%;
+        margin-right: 2%;
+        height: auto;
+    }
+}

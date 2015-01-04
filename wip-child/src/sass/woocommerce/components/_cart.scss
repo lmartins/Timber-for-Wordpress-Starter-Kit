@@ -1,0 +1,46 @@
+
+.site-header-cart{
+
+    background: gc(muted);
+    display: inline-block;
+    padding: space(element);
+
+
+
+    .count{
+        font-weight: normal;
+        color: gc(text, muted);
+        padding-left: space(element);
+        margin-left: space(element);
+        border-left: 1px solid gc(neutral);
+    }
+
+    .widget_shopping_cart{
+        width: 170%;
+        left: auto;
+        right: 0;
+        background: white;
+        box-shadow: hsla(0, 0%, 13%, 0.2) 0 3px 24px;
+        transform: translateY(10%);
+        transition: all 0.25s;
+        opacity: 0;
+    }
+    &:hover{
+        .widget_shopping_cart{
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+
+    .product_list_widget{
+        padding: space(element);
+        padding-bottom: space(element);
+    }
+
+    .total,
+    .buttons{
+        background: gc(muted);
+        font-size: $f-size-s;
+        padding: space(element);
+    }
+}

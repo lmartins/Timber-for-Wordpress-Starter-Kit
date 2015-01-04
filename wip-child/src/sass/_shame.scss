@@ -32,7 +32,7 @@
 
     .entry-meta{
         font-size: $f-size-s;
-        color: $f-text-muted;
+        // color: $f-text-muted;
     }
 
     p{
@@ -256,25 +256,25 @@
 
     }
 
-    // &.loop--categories{
-    //     justify-content: flex-start;
-    //     .item{
-    //         flex: 1 0 100%;
-    //         flex-flow: row wrap;
-    //     }
-    //     @include phone-large{
-    //         .item{
-    //             flex-basis: 50%;
-    //             max-width: 50%;
-    //         }
-    //     }
-    //     @include tablet{
-    //         .item{
-    //             flex-basis: 33.333%;
-    //             max-width: 33%;
-    //         }
-    //     }
-    // }
+    &.loop--categories{
+        justify-content: flex-start;
+        .item{
+            flex: 1 0 100%;
+            flex-flow: row wrap;
+        }
+        @include phone-large{
+            .item{
+                flex-basis: 50%;
+                max-width: 50%;
+            }
+        }
+        @include tablet{
+            .item{
+                flex-basis: 33.333%;
+                max-width: 33%;
+            }
+        }
+    }
 
 }
 
@@ -289,11 +289,11 @@
  */
 
 .loop--posts{
-    // @include border(red);
-    // .Media-figure{
-    //     @include span(4);
-    // }
-    // .Media-details{
-    //     @include span(8);
-    // }
+
+    .Media-figure{
+        @include span(4);
+    }
+    .Media-details{
+        @include span(8);
+    }
 }

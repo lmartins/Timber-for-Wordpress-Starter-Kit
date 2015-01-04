@@ -2,7 +2,7 @@
 
 if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-add_theme_support( 'woocommerce' );
+// add_theme_support( 'woocommerce' ); - Mudei para a activação de tema
 
 // Remove WooCommerce Updater Notice from the admin
 remove_action('admin_notices', 'woothemes_updater_notice');

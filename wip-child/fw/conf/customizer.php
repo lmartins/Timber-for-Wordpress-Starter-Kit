@@ -195,7 +195,6 @@ function thsp_dynamic_css() {
 
   $theme_logo = $theme_options['theme_logo'];
 
-
   ?>
 
     <style type="text/css">

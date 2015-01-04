@@ -3,23 +3,43 @@
 if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 require_once( get_template_directory() . '/mdf/init.php' );
+require_once( PARENT_DIR . '/mdf/extras.php' );
 
 // TODO: Ver se isto é necessário
 // require_once( CHILD_DIR . '/lib/underscores/inc/customizer.php' );
 
-require_once( CHILD_DIR . '/fw/customizer.php' );
-require_once( CHILD_DIR . '/fw/head.php' );
-require_once( CHILD_DIR . '/fw/header.php' );
-require_once( CHILD_DIR . '/fw/media.php' );
-require_once( CHILD_DIR . '/fw/menus.php' );
+
+
+/**
+ * SETUP
+ * Enqueue styles, register widget regions, etc.
+ */
+require_once( CHILD_DIR . '/fw/setup.php' );
+require_once( CHILD_DIR . '/fw/hooks.php' );
+
+/**
+ * CONF
+ */
+require_once( CHILD_DIR . '/fw/conf/customizer.php' );
+require_once( CHILD_DIR . '/fw/conf/media.php' );
 require_once( CHILD_DIR . '/fw/post-types.php' );
-require_once( CHILD_DIR . '/fw/sidebars.php' );
-require_once( CHILD_DIR . '/fw/theme.php' );
+
+/**
+ * PARTS
+ * Funções que geram código para apresentação nos templates
+ */
+require_once( CHILD_DIR . '/fw/parts/header.php' );
+require_once( CHILD_DIR . '/fw/parts/maincontent.php' );
+
+
 require_once( CHILD_DIR . '/fw/shame.php' );
 
 
-if ( ! isset( $content_width ) )
-    $content_width = 960;
+if ( is_woocommerce_activated() ) {
+    require_once( CHILD_DIR . '/fw/woocommerce/hooks.php' );
+}
+
+
 
 
 class StarterSite extends TimberSite {
@@ -27,7 +47,7 @@ class StarterSite extends TimberSite {
     function __construct(){
 
         add_theme_support('post-formats');
-        add_theme_support('post-thumbnails');
+        // add_theme_support('post-thumbnails'); Adicionei no ficheiro Setup
         add_theme_support('menus');
 
         add_filter('timber_context', array($this, 'add_to_context'));
@@ -50,7 +70,14 @@ class StarterSite extends TimberSite {
     function add_to_context($context){
 
         $context['layout'] = 'content-sidebar';
-        $context['sidebar'] = Timber::get_widgets('sidebar-1');
+
+        $context['main_sidebar'] = Timber::get_widgets('sidebar-1');
+        $context['home_widgets'] = Timber::get_widgets('home-widgets');
+        $context['footerWidgets1'] = Timber::get_widgets('footer-1');
+        $context['footerWidgets2'] = Timber::get_widgets('footer-2');
+        $context['footerWidgets3'] = Timber::get_widgets('footer-3');
+        $context['footerWidgets4'] = Timber::get_widgets('footer-4');
+
         $context['mainMenu'] = new TimberMenu('main_menu');
         $context['footerNav'] = new TimberMenu('footer_menu');
         $context['headerImage'] = new TimberImage( get_header_image() );

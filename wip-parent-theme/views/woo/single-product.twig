@@ -2,11 +2,15 @@
 
 {% block content %}
 
+    {% do action('tha_content_top') %}
     {% do action('woocommerce_before_single_product') %}
 
-    <article itemscope itemtype="http://schema.org/Product" class="{{post.class}}">
+    <article itemscope itemtype="http://schema.org/Product" class="single-product-details {{post.class}}">
 
-        {% do action('woocommerce_before_single_product_summary') %}
+        <div class="entry-images">
+            {% do action('woocommerce_before_single_product_summary') %}
+            <img src="{{ post.thumbnail.src('shop_single') }}" />
+        </div>
 
         <div class="summary entry-summary">
             {% do action('woocommerce_single_product_summary') %}
@@ -19,5 +23,6 @@
     </article>
 
     {% do action('woocommerce_after_single_product') %}
+    {% do action('tha_content_bottom') %}
 
 {% endblock  %}

@@ -41,6 +41,7 @@
  * ----------------------------------------------------------------------------
  */
 
+@import "mdf/helpers/_utilities.scss";
 @import "mdf/helpers/_border.scss";
 @import "mdf/helpers/_layout.scss";
 @import "mdf/helpers/_links.scss";
@@ -63,6 +64,7 @@
  */
 
 
+
 @import "mdf/base/_reset.scss";
 @import "mdf/base/_layout.scss";
 @import "mdf/base/_tables.scss";
@@ -80,7 +82,8 @@
  * ----------------------------------------------------------------------------
  */
 
-@import "mdf/vendor/_woocommerce.scss";
+// @import "mdf/vendor/_woocommerce.scss";
+@import "mdf/woocommerce/_components.scss";
 
 
 
@@ -113,6 +116,20 @@
 // @import "components/_forms.scss";
 
 @import "components/_site-banner.scss";
+
+
+/**
+ * WOOCOMMERCE
+ */
+@import "woocommerce/_parts.scss";
+@import "woocommerce/_comments.scss";
+
+@import "woocommerce/components/_cart.scss";
+@import "woocommerce/components/_lists.scss";
+
+@import "woocommerce/views/_product.scss";
+@import "woocommerce/views/_cart.scss";
+
 
 /**
  * ----------------------------------------------------------------------------

@@ -5,18 +5,29 @@
     {% do action('woocommerce_before_main_content') %}
 
     <h1>{{ fn('__','Store','woocommerce')}}</h1>
-    <div class="product-cats">
-    {% for cat in cats %}
-        <a href="{{cat.link}}">{{cat.name}}</a>
-          {% if not loop.last %} // {% endif %}
-    {% endfor %}
+
+    <div class="loop loop--cards product-cats">
+        {% for cat in cats %}
+            <div class="entry">
+
+                {{ TimberImage( cat.meta('thumbnail_id') ).src }}
+                {{ cat.thumbnail_id }}
+                {{ cat.thumbnail.src }}
+
+                <a href="{{cat.link}}" class="entry-title">{{cat.name}}</a>
+                {% if cat.description %}
+                    <div class="entry-details">{{ cat.description }}</div>
+                {% endif %}
+                <!-- {% if not loop.last %} / {% endif %} -->
+            </div>
+        {% endfor %}
     </div>
 
     {% do action( 'woocommerce_before_shop_loop') %}
     <div class="loop loop--cards">
         {% for entry in products %}
 
-            {% include ["partials/entry-"~post.post_type~".twig", "partials/entry-product.twig"] %}
+            {% include ["woo/tease-product.twig"] %}
 
         {% endfor %}
     </div>

@@ -1,0 +1,51 @@
+
+
+
+
+/**
+ * CART LIST TABLE
+ */
+
+.shop_table{
+    thead{
+        th{
+            border-top: 3px solid gc(muted);
+            border-bottom: 1px solid gc(muted);
+            font-size: $f-size-xs;
+            text-transform: uppercase;
+        }
+    }
+    .cart_item{
+        td{
+            border-bottom: 1px solid gc(muted);
+        }
+    }
+
+    /**
+     * Barra de Acções
+     */
+    .actions{}
+    .coupon{
+        float: left;
+    }
+    [name="update_cart"]{
+        float: right;
+    }
+}
+
+
+
+.cart_totals{
+    td, th{
+        padding: space(element, small);
+    }
+    th{
+        text-align: right;
+    }
+    p{
+        margin: 0;
+    }
+    table{
+        background: gc(muted);
+    }
+}

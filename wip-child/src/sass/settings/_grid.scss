@@ -59,6 +59,22 @@ $element-spacing       : $f-line-height / 2;
 $element-spacing-large : $f-line-height;
 $gap                   : $f-line-height / 2;
 
+$spacing: (
+    trim: (
+        base  : 30px,
+        small : 15px
+    ),
+    box: (
+        base  : 2em,
+        large : 4em,
+        small : 1em
+    ),
+    element: (
+        base  : $f-line-height / 2,
+        large : $f-line-height,
+        small : $f-line-height / 3
+    )
+);
 
 
 // Breakpoints ----------------------------------------------------------------
@@ -66,42 +82,14 @@ $gap                   : $f-line-height / 2;
 // where a min-width is used, remember to +1 to break correctly.
 // If these are changed, they must also be updated in app.js
 
-$bp-xs: 0px;
-$bp-sm: 740px;
-$bp-md: 980px;
-$bp-lg: 1200px;
 
-//$bp-phone      : 0px;
-//$bp-phone-l    : 320px;
-//$bp-tablet     : 700px;
-//$bp-tablet-l   : 900px;
-//$bp-desktop    : 1024px;
-//$bp-desktop-l  : 1200px;
-//$bp-desktop-xl : 1400px;
-
-@mixin phone-large{
-    @media (min-width: 360px) {
-        @content;
-    }
-}
-
-@mixin tablet{
-    @media (min-width: #{$bp-sm}) {
-        @content;
-    }
-}
-
-@mixin desktop{
-    @media (min-width: #{$bp-md}) {
-        @content;
-    }
-}
-
-@mixin desktop-large{
-    @media (min-width: #{$bp-lg}) {
-        @content;
-    }
-}
+$bp-phone      : 0px;
+$bp-phone-l    : 320px;
+$bp-tablet     : 700px;
+$bp-tablet-l   : 900px;
+$bp-desktop    : 1024px;
+$bp-desktop-l  : 1200px;
+$bp-desktop-xl : 1400px;
 
 
 
@@ -115,24 +103,23 @@ $mq-responsive: true;
 // across team members. It will improve communication between
 // stakeholders, designers, developers, and testers.
 $mq-breakpoints: (
-    mobile:  320px,
-    tablet:  740px,
-    desktop: 980px,
-    wide:    1400px,
-
-    // Tweakpoints
-    desktopAd: 810px,
-    mobileLandscape: 480px
+    mobile              :  $bp-phone,
+    mobile large        :  $bp-phone-l,
+    tablet              :  $bp-tablet,
+    tablet large        :  $bp-tablet-l,
+    desktop             : $bp-desktop,
+    desktop large       :    $bp-desktop-l,
+    desktop extra large :    $bp-desktop-xl,
 );
 
 // Define the breakpoint from the $mq-breakpoints list that should
 // be used as the target width when outputting a static stylesheet
 // (i.e. when $mq-responsive is set to 'false').
-$mq-static-breakpoint: desktop;
+// $mq-static-breakpoint: desktop;
 
 // If you want to display the currently active breakpoint in the top
 // right corner of your site during development, add the breakpoints
 // to this list, ordered by width, e.g. (mobile, tablet, desktop).
-// $mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, wide);
+$mq-show-breakpoints: (mobile, mobile large, tablet, tablet large, desktop, desktop large, desktop extra large);
 
 
