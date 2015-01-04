@@ -16,4 +16,9 @@ var
     gulpLoadPlugins = require('gulp-load-plugins');
 
 // Require all tasks in gulp/tasks, including subfolders
-requireDir('./gulp/tasks', { recurse: true });
+// requireDir('./gulp/tasks', { recurse: true });
+
+require('./gulp/tasks/browserSync.js');
+require('./gulp/tasks/sass.js');
+require('./gulp/tasks/watch.js');
+// require('./gulp/tasks/watchify.js');

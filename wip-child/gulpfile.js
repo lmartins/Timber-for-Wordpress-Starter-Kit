@@ -7,10 +7,7 @@ var gulp            = require('gulp'),
     dev             = require('gulp-dev'),
     browserSync     = require('browser-sync'),
     plugins         = gulpLoadPlugins(),
-    webpack         = require('webpack'),
-    ComponentPlugin = require("component-webpack-plugin"),
-    info            = require('./package.json'),
-    webpackCompiler;
+    info            = require('./package.json');
 
 var config = {
 
@@ -67,109 +64,6 @@ gulp.task('browser-sync', function() {
 });
 
 
-// WEBPACK --------------------------------------------------------------------
-gulp.task('webpack', function(callback) {
-  webpackCompiler.run(function(err, stats) {
-    if (err) {
-      throw new plugins.util.PluginError('webpack', err);
-    }
-    plugins.util.log('webpack', stats.toString({
-      colors: true,
-    }));
-    callback();
-  });
-});
-
-var webpackConfig = {
-  cache: true,
-  debug: true,
-  progress: true,
-  colors: true,
-  devtool: 'source-map',
-  entry: {
-    app: './src/js/app.js',
-    // maps: './src/js/maps.js',
-    vendor: [
-      // 'salvattore',
-      // 'masonry',
-      // 'slick.js',
-      // 'Stickyfill'
-    ]
-  },
-  output: {
-    path: config.JS.build ,
-    filename: '[name].bundle.js',
-    chunkFilename: '[id].chunk.js',
-    publicPath: '/app/js/',
-  },
-  module:{
-    loaders: [
-      { test: /\.html$/, loader: "html" },
-      { test: /\.css$/, loader: "css" }
-    ]
-  },
-  resolve: {
-    modulesDirectories: ['node_modules', 'bower_components'],
-    alias: {
-      'underscore'  : 'lodash',
-      'shifter'     : 'Shifter/jquery.fs.shifter.js',
-      // 'Stickyfill'  : 'Stickyfill/dist/stickyfill.js',
-      // 'owl'         : 'owl-carousel2/dist/owl.carousel.js',
-      // 'pikabu'      : 'pikabu/build/pikabu.min.js',
-      // 'intentionjs' : 'intentionjs/code/intention.min.js'
-      // 'firebase'     : 'firebase/firebase.js'
-    }
-  },
-  externals: {
-    // require("jquery") is external and available
-    //  on the global var jQuery
-    // "angular": "angular",
-    "$": "jQuery",
-    "jquery": "jQuery"
-  }
-
-};
-
-gulp.task('set-env-dev', function() {
-  webpackConfig.plugins = [
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js"),
-    new webpack.BannerPlugin(info.name + '\n' + info.version + ':' + Date.now() + ' [development build]'),
-    new ComponentPlugin(),
-    new webpack.ResolverPlugin(
-      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-    ),
-    new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery",
-        "windows.jQuery": "jquery"
-    })
-  ];
-  webpackCompiler = webpack( webpackConfig );
-});
-
-gulp.task('set-env-prod', function() {
-  webpackConfig.debug = false;
-  webpackConfig.devtool = "";
-  webpackConfig.plugins = [
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js"),
-    // new ngminPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      mangle: false
-    }),
-    new ComponentPlugin(),
-    new webpack.ResolverPlugin(
-      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-    ),
-    new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery",
-        "windows.jQuery": "jquery"
-    })
-  ];
-  webpackCompiler = webpack( webpackConfig );
-});
-
-
 
 
 // SASS -----------------------------------------------------------------------
@@ -177,7 +71,7 @@ gulp.task('set-env-prod', function() {
 gulp.task('sass', function () {
   gulp.src( config.SASS.src )
     .pipe( plugins.plumber() )
-    // .pipe( plugins.sourcemaps.init() )
+    .pipe( plugins.sourcemaps.init() )
     .pipe( plugins.sass({
         includePaths: [
             '../wip-parent-theme/sass/',
@@ -190,40 +84,17 @@ gulp.task('sass', function () {
         browserSync.notify(err.message, 35000);
         this.emit('end');
     })
-    // .pipe( plugins.sourcemaps.write('./', {includeContent: false, sourceRoot: '../../src/sass/'}) )
-    // .pipe( plugins.sourcemaps.write('./') )
     .pipe( plugins.autoprefixer (
       "last 1 versions"
       ))
+    .pipe( plugins.sourcemaps.write('./', {includeContent: false, sourceRoot: '../../src/sass/'}) )
+    // .pipe( plugins.sourcemaps.write('./') )
     .pipe( gulp.dest( config.SASS.build ) )
     .pipe( plugins.filter( '**/*.css') ) // Filtering stream to only css files
     .pipe( browserSync.reload({ stream: true }) );
 });
 
-gulp.task('sass-build', function () {
-  gulp.src( config.SASS.src )
-    .pipe( plugins.plumber() )
-    .pipe( plugins.sass({
-      outputStyle: 'normal',
-      // sourceComments: 'map',
-      // includePaths : [paths.styles.src]
-      // source_map_embed: false
-      }) )
-    .pipe( plugins.autoprefixer (
-      "last 1 versions", "> 10%", "ie 9"
-      ))
-    .pipe( gulp.dest( config.SASS.build ) )
-    .pipe( plugins.filter( '**/*.css') ) // Filtering stream to only css files
-    .pipe( browserSync.reload({ stream: true }) );
-});
 
-gulp.task('sass-prefixer', function () {
-  gulp.src( config.SASS.build + "*.css" )
-    .pipe( plugins.autoprefixer (
-      "last 1 versions", "> 10%", "ie 9"
-      ))
-    .pipe( gulp.dest( config.SASS.build ) );
-});
 
 // gulp.task('sass', function() {
 //   return gulp.src( config.SASS.src )
@@ -354,6 +225,6 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default', ['set-env-prod', 'browser-sync', 'watch']);
-gulp.task('dev', ['set-env-dev', 'browser-sync', 'watch']);
+gulp.task('dev', ['browser-sync', 'watch']);
 gulp.task('build', ['set-env-prod', 'webpack', 'sass-build'] );
 gulp.task('server', ['browser-sync'] );
