@@ -248,6 +248,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #333333;
   font-family: Montserrat, 'Helvetica Neue', Verdana, Arial, sans-serif;
   font-weight: 600;
+  margin-bottom: 0.35em;
   line-height: 1.1;
   text-transform: uppercase; }
 
@@ -322,32 +323,124 @@ figure.wp-caption {
  * VENDOR
  * ----------------------------------------------------------------------------
  */
-/* line 3, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
+/**
+ * inputs de quantidade
+ */
+/* line 5, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
+input.qty {
+  width: 4em;
+  text-align: center; }
+
+/* line 14, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
 .site-header-cart {
   position: relative; }
-  /* line 8, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
+  /* line 19, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
   .site-header-cart:hover .widget_shopping_cart {
     visibility: visible; }
-  /* line 13, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
+  /* line 24, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
   .site-header-cart .widget_shopping_cart {
     visibility: hidden;
     position: absolute;
     z-index: 1;
     left: 0;
     top: 100%; }
-  /* line 22, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
+  /* line 33, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
   .site-header-cart p.total, .site-header-cart p.buttons {
     text-align: center; }
 
-/* line 29, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
+/* line 40, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
 .product_list_widget {
   min-width: 260px; }
-  /* line 31, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
+  /* line 42, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
   .product_list_widget li {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * VIEWS
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * ----------------------------------------------------------------------------
+ * TABLE CART
+ * List Products in the Cart
+ * ----------------------------------------------------------------------------
+ */
+@media (max-width: 43.74em) {
+  /* line 11, ../wip-parent-theme/sass/mdf/helpers/_specificity.scss */
+  table.cart thead th:nth-child(n) {
+    padding: 0;
+    text-indent: -9999px;
+    font-size: 0;
+    border: none; }
+
+  /* line 20, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  table.cart .product-thumbnail {
+    display: none; }
+
+  /* line 24, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  table.cart .actions {
+    padding-top: 0.675em; }
+    /* line 26, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    table.cart .actions label {
+      display: none; }
+    /* line 29, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    table.cart .actions input {
+      width: 100%; }
+
+  /* line 34, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  table.cart .coupon {
+    margin-bottom: 0.675em; }
+ }
+
+/**
+ * ----------------------------------------------------------------------------
+ * CART COLLATERALS
+ * Cross-selling, Cart Totals and Shipping Costs
+ * ----------------------------------------------------------------------------
+ */
+/* line 53, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+.cart-collaterals {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap; }
+  /* line 58, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  .cart-collaterals > * {
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%; }
+  /* line 65, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  .cart-collaterals .product {
+    margin-bottom: 0.675em; }
+  @media (max-width: 43.74em) {
+    /* line 70, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    .cart-collaterals .cart_totals {
+      margin-bottom: 4em; }
+
+    /* line 73, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    .cart-collaterals .cross-sells {
+      -webkit-box-ordinal-group: 3;
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2; }
+ }
+  @media (min-width: 43.75em) {
+    .cart-collaterals {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; }
+      /* line 81, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+      .cart-collaterals .cross-sells {
+        margin-right: 5%; } }
 
 /**
  * ----------------------------------------------------------------------------
@@ -650,17 +743,25 @@ html, body {
  */
 /* line 2, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
 .price {
-  font-size: 1.28145em; }
-  /* line 6, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
+  font-size: 1.28145em;
+  display: block; }
+  /* line 7, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
   .single-product-details .price {
     font-size: 1.82456em; }
+  /* line 11, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
+  .price del {
+    font-size: 0.8em; }
+  /* line 14, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
+  .price ins {
+    text-decoration: none; }
 
-/* line 11, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
-.woocommerce-price-suffix {
+/* line 22, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
+.includes_tax, .woocommerce-price-suffix {
+  display: block;
   font-size: 0.6321em;
   color: #c0c5c8; }
 
-/* line 18, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
+/* line 30, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
 .onsale {
   font-size: 0.8em;
   text-transform: uppercase;
@@ -676,7 +777,7 @@ html, body {
 /**
  * WOOCOMMERCE MESSAGE
  */
-/* line 36, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
+/* line 48, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
 .woocommerce-message {
   
   
@@ -705,7 +806,7 @@ html, body {
   margin-bottom: 2em;
   background: #0597ff;
   color: white; }
-  /* line 46, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
+  /* line 58, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
   .woocommerce-message a {
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
@@ -718,6 +819,41 @@ html, body {
     border-left: 1px solid #38acff;
     padding-left: 0.675em;
     margin-left: 0.675em; }
+
+/**
+ * BEFORE-SHOP-LOOP
+ * Contém os elementos que controlam a listagem de produtos
+ */
+/* line 75, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
+.before-shop-loop {
+  
+  
+  
+  width: 98.33333%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+  
+  display: -webkit-box;
+  
+  
+  display: -webkit-flex;
+  
+  
+  display: -ms-flexbox;
+  
+  
+  display: flex; }
+  /* line 80, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
+  .before-shop-loop .woocommerce-result-count {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #949ea8; }
 
 /* line 3, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_comments.scss */
 .comment img.avatar {
@@ -931,39 +1067,36 @@ html, body {
           border-bottom: 1px solid #f2f2f2; } }
 
 /**
- * CART LIST TABLE
+ * ----------------------------------------------------------------------------
+ * TABLE CART
+ * List Products in the Cart
+ * ----------------------------------------------------------------------------
  */
-/* line 9, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
-.shop_table {
+/* line 12, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+table.cart {
   /**
      * Barra de Acções
      */ }
-  /* line 11, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
-  .shop_table thead th {
+  /* line 14, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+  table.cart thead th {
     border-top: 3px solid #f2f2f2;
     border-bottom: 1px solid #f2f2f2;
     font-size: 0.71111em;
     text-transform: uppercase; }
-  /* line 19, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
-  .shop_table .cart_item td {
+  /* line 22, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+  table.cart .cart_item td {
     border-bottom: 1px solid #f2f2f2; }
-  /* line 28, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
-  .shop_table .coupon {
-    float: left; }
-  /* line 31, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
-  .shop_table [name="update_cart"] {
-    float: right; }
 
-/* line 39, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 42, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 .cart_totals td, .cart_totals th {
   padding: 0.45em; }
-/* line 42, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 45, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 .cart_totals th {
   text-align: right; }
-/* line 45, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 48, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 .cart_totals p {
   margin: 0; }
-/* line 48, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 51, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 .cart_totals table {
   background: #f2f2f2; }
 
@@ -972,10 +1105,6 @@ html, body {
  * VIEWS
  * ----------------------------------------------------------------------------
  */
-/* line 148, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/main.scss */
-body {
-  border: 10px solid green; }
-
 /* line 2, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
 .read-more {
   font-weight: 600;
@@ -1074,25 +1203,26 @@ body {
  * ----------------------------------------------------------------------------
  */
 /* line 88, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-.loop--cards .item {
+.loop--cards .entry {
   position: relative;
-  margin-bottom: 2em; }
-/* line 93, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  margin-bottom: 2em;
+  text-align: center; }
+/* line 94, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
 .loop--cards img {
   height: auto;
   display: block;
   margin: 0 0 1em; }
-/* line 99, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+/* line 100, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
 .loop--cards .thumb-placeholder {
   margin: 0 0 1em; }
-/* line 105, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+/* line 106, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
 .loop--cards .Media, .loop--cards .Media-figure, .loop--cards .Media-details {
   display: block; }
-/* line 109, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+/* line 110, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
 .loop--cards .Media-content {
   padding: 0 0.83333%; }
 @media (min-width: 20em) {
-  /* line 117, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 118, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--cards .entry {
     width: 48.33333%;
     float: left;
@@ -1120,7 +1250,7 @@ body {
       clear: none; }
  }
 @media (min-width: 43.75em) {
-  /* line 122, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 123, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--cards .entry {
     width: 31.66667%;
     float: left;
@@ -1157,7 +1287,7 @@ body {
       clear: none; }
  }
 @media (min-width: 64em) {
-  /* line 128, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 129, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--cards .entry {
     width: 23.33333%;
     float: left;
@@ -1202,7 +1332,7 @@ body {
       
       clear: none; }
  }
-/* line 140, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+/* line 141, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
 .sidebar .loop--cards .entry {
   float: none;
   width: 100%; }
@@ -1213,7 +1343,7 @@ body {
  * Lista de artigos apenas com imagem e título por cima da image
  * ----------------------------------------------------------------------------
  */
-/* line 158, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+/* line 159, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
 .loop--minibanners {
   margin-bottom: 2em;
   /**
@@ -1239,16 +1369,16 @@ body {
           -ms-transform: translateX(-50%) translateY(-50%);
               transform: translateX(-50%) translateY(-50%);
       color: #a6a6a6; }
-  /* line 163, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 164, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--minibanners .entry {
     position: relative;
     overflow: hidden;
     -webkit-transition: all 0.25s;
             transition: all 0.25s; }
-    /* line 170, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+    /* line 171, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
     .loop--minibanners .entry:hover .Media-figure {
       opacity: 0.3; }
-    /* line 173, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+    /* line 174, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
     .loop--minibanners .entry:hover .entry-title {
       opacity: 0;
       -webkit-transform: translateY(100%);
@@ -1256,7 +1386,7 @@ body {
               transform: translateY(100%);
       -webkit-transition-delay: 0s;
               transition-delay: 0s; }
-    /* line 178, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+    /* line 179, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
     .loop--minibanners .entry:hover .entry-details {
       opacity: 1;
       -webkit-transform: translateY(0%);
@@ -1264,35 +1394,35 @@ body {
               transform: translateY(0%);
       -webkit-transition-delay: 0.3s;
               transition-delay: 0.3s; }
-  /* line 188, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 189, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--minibanners .Media, .loop--minibanners .Media-figure, .loop--minibanners .Media-content {
     display: block; }
-  /* line 193, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 194, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--minibanners .Media-figure, .loop--minibanners .entry-title {
     -webkit-transition: 0.3s all 0.25s ease;
             transition: 0.3s all 0.25s ease; }
-  /* line 196, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 197, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--minibanners .excerpt {
     -webkit-transition: all 0.35s ease;
             transition: all 0.35s ease;
     font-size: 0.8em; }
-    /* line 199, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+    /* line 200, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
     .loop--minibanners .excerpt p {
       margin: 0; }
-  /* line 204, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 205, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--minibanners .Media-content {
     position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
     width: 100%; }
-  /* line 212, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 213, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--minibanners .entry-title {
     margin: 0;
     font-size: 1.28145em;
     background: rgba(41, 41, 41, 0.55);
     padding: 0.75em; }
-  /* line 219, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 220, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--minibanners .entry-details {
     opacity: 0;
     -webkit-transform: translateY(100%);
@@ -1302,14 +1432,14 @@ body {
     bottom: 0em;
     left: 0;
     padding: 2em; }
-  /* line 228, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 229, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--minibanners .thumb-placeholder {
     padding: 0; }
-  /* line 233, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 234, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--minibanners a h4 {
     color: white; }
   @media (min-width: 43.75em) {
-    /* line 246, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+    /* line 247, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
     .loop--minibanners:not(.owl-carousel) .entry {
       width: 48.33333%;
       float: left;
@@ -1337,7 +1467,7 @@ body {
         clear: none; }
  }
   @media (min-width: 64em) {
-    /* line 252, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+    /* line 253, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
     .loop--minibanners:not(.owl-carousel) .entry {
       width: 31.66667%;
       float: left;
@@ -1373,13 +1503,13 @@ body {
         
         clear: none; }
  }
-  /* line 259, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 260, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .loop--minibanners.loop--categories {
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
             justify-content: flex-start; }
-    /* line 261, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+    /* line 262, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
     .loop--minibanners.loop--categories .item {
       -webkit-box-flex: 1;
       -webkit-flex: 1 0 100%;
@@ -1389,7 +1519,7 @@ body {
           -ms-flex-flow: row wrap;
               flex-flow: row wrap; }
     @media (min-width: 20em) {
-      /* line 266, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+      /* line 267, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
       .loop--minibanners.loop--categories .item {
         -webkit-flex-basis: 50%;
             -ms-flex-preferred-size: 50%;
@@ -1397,7 +1527,7 @@ body {
         max-width: 50%; }
  }
     @media (min-width: 43.75em) {
-      /* line 272, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+      /* line 273, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
       .loop--minibanners.loop--categories .item {
         -webkit-flex-basis: 33.333%;
             -ms-flex-preferred-size: 33.333%;
@@ -1410,7 +1540,7 @@ body {
  * LOOP--POSTS
  * ----------------------------------------------------------------------------
  */
-/* line 293, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+/* line 294, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
 .loop--posts .Media-figure {
   
   
@@ -1421,7 +1551,7 @@ body {
   margin-right: 0.83333%;
   
    }
-/* line 296, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+/* line 297, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
 .loop--posts .Media-details {
   
   

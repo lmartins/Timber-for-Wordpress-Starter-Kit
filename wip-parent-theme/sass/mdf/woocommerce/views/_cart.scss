@@ -1,0 +1,86 @@
+/**
+ * ----------------------------------------------------------------------------
+ * TABLE CART
+ * List Products in the Cart
+ * ----------------------------------------------------------------------------
+ */
+
+table.cart{
+
+    @include mq($until: tablet){
+        thead th{
+            @include increase-specificity{
+                padding: 0;
+                text-indent: -9999px;
+                font-size: 0;
+                border: none;
+            }
+        }
+
+        .product-thumbnail{
+            display: none;
+        }
+
+        .actions{
+            padding-top: space(element);
+            label{
+                display: none;
+            }
+            input{
+                width: 100%;
+            }
+        }
+
+        .coupon{
+            margin-bottom: space(element);
+        }
+
+    }
+
+
+
+
+}
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * CART COLLATERALS
+ * Cross-selling, Cart Totals and Shipping Costs
+ * ----------------------------------------------------------------------------
+ */
+
+.cart-collaterals{
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    > * {
+        flex-basis: 50%;
+    }
+
+    // .cross-sells{}
+    // .cart_totals {}
+
+    .product{
+        margin-bottom: space(element);
+    }
+
+    @include mq($until: tablet){
+        .cart_totals {
+            margin-bottom: space(box, large);
+        }
+        .cross-sells{
+            order: 2;
+        }
+    }
+
+
+    @include tablet{
+        flex-direction: row;
+        .cross-sells{
+            margin-right: 5%;
+        }
+    }
+
+}

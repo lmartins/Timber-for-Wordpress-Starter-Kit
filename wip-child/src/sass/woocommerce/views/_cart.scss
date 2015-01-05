@@ -3,10 +3,13 @@
 
 
 /**
- * CART LIST TABLE
+ * ----------------------------------------------------------------------------
+ * TABLE CART
+ * List Products in the Cart
+ * ----------------------------------------------------------------------------
  */
 
-.shop_table{
+ table.cart{
     thead{
         th{
             border-top: 3px solid gc(muted);
@@ -24,13 +27,13 @@
     /**
      * Barra de Acções
      */
-    .actions{}
-    .coupon{
-        float: left;
-    }
-    [name="update_cart"]{
-        float: right;
-    }
+    // .actions{}
+    // .coupon{
+    //     float: left;
+    // }
+    // [name="update_cart"]{
+    //     float: right;
+    // }
 }
 
 

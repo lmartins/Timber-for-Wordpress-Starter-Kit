@@ -2,13 +2,25 @@
 .price{
 
     font-size: $f-size-l;
+    display: block;
 
     .single-product-details & {
         font-size: $f-size-xl;
     }
 
+    del{
+        font-size: $f-size-s;
+    }
+    ins{
+        text-decoration: none;
+    }
+
 }
+
+
+.includes_tax,
 .woocommerce-price-suffix{
+    display: block;
     font-size: $f-size-xxs;
     color: gc(neutral);
 }
@@ -53,4 +65,23 @@
         padding-left: space(element);
         margin-left: space(element);
     }
+}
+
+
+/**
+ * BEFORE-SHOP-LOOP
+ * Contém os elementos que controlam a listagem de produtos
+ */
+.before-shop-loop{
+
+    @include span(full);
+    display: flex;
+
+    .woocommerce-result-count{
+        flex: 1;
+        font-size: $f-size-s;
+        text-transform: uppercase;
+        color: gc(text, muted);
+    }
+
 }

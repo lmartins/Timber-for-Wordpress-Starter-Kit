@@ -83,7 +83,7 @@
  */
 
 // @import "mdf/vendor/_woocommerce.scss";
-@import "mdf/woocommerce/_components.scss";
+@import "mdf/_woocommerce.scss";
 
 
 
@@ -145,9 +145,6 @@
 
 
 // -----------------------------------------------------------------------------------
-body{
-    @include border(green, 10px);
-}
 
 @import "_shame.scss";
 

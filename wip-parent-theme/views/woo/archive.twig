@@ -23,7 +23,10 @@
         {% endfor %}
     </div>
 
-    {% do action( 'woocommerce_before_shop_loop') %}
+    <div class="before-shop-loop">
+        {% do action( 'woocommerce_before_shop_loop') %}
+    </div>
+
     <div class="loop loop--cards">
         {% for entry in products %}
 
