@@ -47,7 +47,6 @@
  */
 .woocommerce-message{
 
-    @include span(full);
     display: flex;
     justify-content: space-between;
     padding: space(element);

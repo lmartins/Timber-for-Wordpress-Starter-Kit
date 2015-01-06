@@ -359,8 +359,60 @@ input.qty {
     display: flex; }
 
 /**
+ * DEMO STORE NOTIFICATION
+ */
+/* line 52, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
+.demo_store {
+  text-align: center; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * COMPONENTS
+ * ----------------------------------------------------------------------------
+ */
+/* line 2, ../wip-parent-theme/sass/mdf/woocommerce/components/_layout.scss */
+.col2-set {
+  max-width: 64em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 12, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/output/support/clearfix */
+  .col2-set:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  /* line 7, ../wip-parent-theme/sass/mdf/woocommerce/components/_layout.scss */
+  .col2-set .col-1, .col2-set .col-2 {
+    
+    
+    
+    width: 98.33333%;
+    float: left;
+    margin-left: 0.83333%;
+    margin-right: 0.83333%;
+    
+     }
+  @media (min-width: 43.75em) {
+    /* line 13, ../wip-parent-theme/sass/mdf/woocommerce/components/_layout.scss */
+    .col2-set .col-1, .col2-set .col-2 {
+      
+      
+      
+      width: 48.33333%;
+      float: left;
+      margin-left: 0.83333%;
+      margin-right: 0.83333%;
+      
+       }
+ }
+
+/**
  * ----------------------------------------------------------------------------
  * VIEWS
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * ----------------------------------------------------------------------------
+ * TABLE SHOP TABLE
  * ----------------------------------------------------------------------------
  */
 /**
@@ -369,32 +421,60 @@ input.qty {
  * List Products in the Cart
  * ----------------------------------------------------------------------------
  */
-@media (max-width: 43.74em) {
-  /* line 11, ../wip-parent-theme/sass/mdf/helpers/_specificity.scss */
-  table.cart thead th:nth-child(n) {
-    padding: 0;
-    text-indent: -9999px;
-    font-size: 0;
-    border: none; }
+/* line 17, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+table.cart {
+  clear: both; }
+  @media (max-width: 43.74em) {
+    table.cart {
+      /**
+         * Zona de produtos
+         */
+      /**
+         * Zona de Acções
+         */ }
+      /* line 11, ../wip-parent-theme/sass/mdf/helpers/_specificity.scss */
+      table.cart thead th:nth-child(n) {
+        padding: 0;
+        text-indent: -9999px;
+        font-size: 0;
+        border: none; }
+      /* line 36, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+      table.cart .product-thumbnail {
+        display: none; }
+      /* line 44, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+      table.cart .actions {
+        padding-top: 0.675em; }
+        /* line 48, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+        table.cart .actions label {
+          display: none; }
+        /* line 51, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+        table.cart .actions input {
+          width: 100%; }
+      /* line 57, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+      table.cart .coupon {
+        margin-bottom: 0.675em; } }
+  @media (min-width: 43.75em) {
+    /* line 66, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    table.cart .actions > .button {
+      float: right; }
 
-  /* line 20, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
-  table.cart .product-thumbnail {
-    display: none; }
-
-  /* line 24, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
-  table.cart .actions {
-    padding-top: 0.675em; }
-    /* line 26, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
-    table.cart .actions label {
-      display: none; }
-    /* line 29, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
-    table.cart .actions input {
-      width: 100%; }
-
-  /* line 34, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
-  table.cart .coupon {
-    margin-bottom: 0.675em; }
+    /* line 70, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    table.cart .coupon {
+      float: left; }
  }
+
+/**
+ * ----------------------------------------------------------------------------
+ * WOOCOMMERCE CHECKOUT REVIEW ORDER TABLE
+ * Shows the order values in checkout page
+ * ----------------------------------------------------------------------------
+ */
+/* line 86, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+.woocommerce-checkout-review-order-table td, .woocommerce-checkout-review-order-table th {
+  text-align: center; }
+/* line 90, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+.woocommerce-checkout-review-order-table tfoot td {
+  font-weight: bold; }
 
 /**
  * ----------------------------------------------------------------------------
@@ -402,7 +482,7 @@ input.qty {
  * Cross-selling, Cart Totals and Shipping Costs
  * ----------------------------------------------------------------------------
  */
-/* line 53, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+/* line 103, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
 .cart-collaterals {
   display: -webkit-box;
   display: -webkit-flex;
@@ -411,20 +491,21 @@ input.qty {
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap; }
-  /* line 58, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  /* line 108, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
   .cart-collaterals > * {
-    -webkit-flex-basis: 50%;
-        -ms-flex-preferred-size: 50%;
-            flex-basis: 50%; }
-  /* line 65, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 50%;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%; }
+  /* line 115, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
   .cart-collaterals .product {
     margin-bottom: 0.675em; }
   @media (max-width: 43.74em) {
-    /* line 70, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    /* line 120, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
     .cart-collaterals .cart_totals {
       margin-bottom: 4em; }
 
-    /* line 73, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    /* line 123, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
     .cart-collaterals .cross-sells {
       -webkit-box-ordinal-group: 3;
       -webkit-order: 2;
@@ -438,9 +519,14 @@ input.qty {
       -webkit-flex-direction: row;
           -ms-flex-direction: row;
               flex-direction: row; }
-      /* line 81, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+      /* line 131, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
       .cart-collaterals .cross-sells {
         margin-right: 5%; } }
+
+/* line 140, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+.wc-proceed-to-checkout {
+  padding: 0.675em;
+  text-align: center; }
 
 /**
  * ----------------------------------------------------------------------------
@@ -779,24 +865,9 @@ html, body {
  */
 /* line 48, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
 .woocommerce-message {
-  
-  
-  
-  width: 98.33333%;
-  float: left;
-  margin-left: 0.83333%;
-  margin-right: 0.83333%;
-  
-  
   display: -webkit-box;
-  
-  
   display: -webkit-flex;
-  
-  
   display: -ms-flexbox;
-  
-  
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -806,7 +877,7 @@ html, body {
   margin-bottom: 2em;
   background: #0597ff;
   color: white; }
-  /* line 58, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
+  /* line 57, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
   .woocommerce-message a {
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
@@ -824,7 +895,7 @@ html, body {
  * BEFORE-SHOP-LOOP
  * Contém os elementos que controlam a listagem de produtos
  */
-/* line 75, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
+/* line 74, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
 .before-shop-loop {
   
   
@@ -845,7 +916,7 @@ html, body {
   
   
   display: flex; }
-  /* line 80, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
+  /* line 79, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/_parts.scss */
   .before-shop-loop .woocommerce-result-count {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -878,47 +949,6 @@ html, body {
             flex: 0 0 8%;
     margin-right: 2%;
     height: auto; }
-
-/* line 2, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/components/_cart.scss */
-.site-header-cart {
-  background: #f2f2f2;
-  display: inline-block;
-  padding: 0.675em; }
-  /* line 10, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/components/_cart.scss */
-  .site-header-cart .count {
-    font-weight: normal;
-    color: #949ea8;
-    padding-left: 0.675em;
-    margin-left: 0.675em;
-    border-left: 1px solid #c0c5c8; }
-  /* line 18, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/components/_cart.scss */
-  .site-header-cart .widget_shopping_cart {
-    width: 170%;
-    left: auto;
-    right: 0;
-    background: white;
-    box-shadow: rgba(33, 33, 33, 0.2) 0 3px 24px;
-    -webkit-transform: translateY(10%);
-        -ms-transform: translateY(10%);
-            transform: translateY(10%);
-    -webkit-transition: all 0.25s;
-            transition: all 0.25s;
-    opacity: 0; }
-  /* line 29, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/components/_cart.scss */
-  .site-header-cart:hover .widget_shopping_cart {
-    -webkit-transform: translateY(0%);
-        -ms-transform: translateY(0%);
-            transform: translateY(0%);
-    opacity: 1; }
-  /* line 35, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/components/_cart.scss */
-  .site-header-cart .product_list_widget {
-    padding: 0.675em;
-    padding-bottom: 0.675em; }
-  /* line 41, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/components/_cart.scss */
-  .site-header-cart .total, .site-header-cart .buttons {
-    background: #f2f2f2;
-    font-size: 0.8em;
-    padding: 0.675em; }
 
 /* line 3, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_product.scss */
 .single-product-details {
@@ -1068,35 +1098,102 @@ html, body {
 
 /**
  * ----------------------------------------------------------------------------
+ * TABLE SHOP TABLE
+ * ----------------------------------------------------------------------------
+ */
+/* line 8, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+table.shop_table thead th {
+  border-top: 3px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0.71111em;
+  text-transform: uppercase; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * SITE HEADER CART
+ * Disponibiliza valores e resumo de produtos
+ * ----------------------------------------------------------------------------
+ */
+/* line 27, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+.site-header-cart {
+  background: #f2f2f2;
+  display: inline-block;
+  padding: 0.675em; }
+  /* line 33, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+  .site-header-cart .count {
+    font-weight: normal;
+    color: #949ea8;
+    padding-left: 0.675em;
+    margin-left: 0.675em;
+    border-left: 1px solid #c0c5c8; }
+  /* line 41, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+  .site-header-cart .widget_shopping_cart {
+    width: 170%;
+    left: auto;
+    right: 0;
+    background: white;
+    box-shadow: rgba(33, 33, 33, 0.2) 0 3px 24px;
+    -webkit-transform: translateY(10%);
+        -ms-transform: translateY(10%);
+            transform: translateY(10%);
+    -webkit-transition: all 0.25s;
+            transition: all 0.25s;
+    opacity: 0; }
+  /* line 52, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+  .site-header-cart:hover .widget_shopping_cart {
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1; }
+  /* line 58, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+  .site-header-cart .product_list_widget {
+    padding: 0.675em;
+    padding-bottom: 0.675em; }
+  /* line 64, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+  .site-header-cart .total, .site-header-cart .buttons {
+    background: #f2f2f2;
+    font-size: 0.8em;
+    padding: 0.675em; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * WOOCOMMERCE CHECKOUT REVIEW ORDER TABLE
+ * Shows the order values in checkout page
+ * ----------------------------------------------------------------------------
+ */
+/* line 79, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+.woocommerce-checkout-review-order-table {
+  border-collapse: collapse; }
+  /* line 87, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+  .woocommerce-checkout-review-order-table tfoot td, .woocommerce-checkout-review-order-table tfoot th {
+    background: #fafafa; }
+  /* line 90, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+  .woocommerce-checkout-review-order-table tfoot td {
+    font-weight: bold; }
+  /* line 93, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+  .woocommerce-checkout-review-order-table tfoot th {
+    text-align: right; }
+
+/**
+ * ----------------------------------------------------------------------------
  * TABLE CART
  * List Products in the Cart
  * ----------------------------------------------------------------------------
  */
-/* line 12, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
-table.cart {
-  /**
-     * Barra de Acções
-     */ }
-  /* line 14, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
-  table.cart thead th {
-    border-top: 3px solid #f2f2f2;
-    border-bottom: 1px solid #f2f2f2;
-    font-size: 0.71111em;
-    text-transform: uppercase; }
-  /* line 22, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
-  table.cart .cart_item td {
-    border-bottom: 1px solid #f2f2f2; }
+/* line 111, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+table.cart .cart_item td {
+  border-bottom: 1px solid #f2f2f2; }
 
-/* line 42, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 121, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 .cart_totals td, .cart_totals th {
   padding: 0.45em; }
-/* line 45, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 124, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 .cart_totals th {
   text-align: right; }
-/* line 48, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 127, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 .cart_totals p {
   margin: 0; }
-/* line 51, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 130, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 .cart_totals table {
   background: #f2f2f2; }
 
