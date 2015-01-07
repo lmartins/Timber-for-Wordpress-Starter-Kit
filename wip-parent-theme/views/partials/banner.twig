@@ -1,26 +1,29 @@
 
-<div am-banner-inner style="background-image: url({{ TimberImage( banner.meta('banner_top_image') ).src }});">
-    <div class="container">
+<div class="home-banner-top">
+    <div class="inner">
+        <div class="container">
+            <article style="background-image: url({{ TimberImage( banner.meta('banner_top_image') ).src }});">
 
-        <article>
+                {% set link = fn('get_permalink', banner.get_field('link')[0].id ) %}
 
-            {% set link = fn('get_permalink', banner.get_field('link')[0].id ) %}
+                <div class="wrapper">
+                    <h2>
+                        {% if link %}
+                            <a href="{{ link }}">{{banner.title}}</a>
+                        {% else %}
+                            {{banner.title}}
+                        {% endif %}
+                    </h2>
+                    <div class="description">
+                        <p>{{ banner.description }}</p>
+                        {% if banner.button_text and link %}
+                            <a href="{{ link }}" am-button>{{ banner.button_text }}</a>
+                        {% endif %}
+                    </div>
+                </div>
 
-            <h2>
-                {% if link %}
-                    <a href="{{ link }}">{{banner.title}}</a>
-                {% else %}
-                    {{banner.title}}
-                {% endif %}
-            </h2>
+            </article>
+        </div> <!-- container -->
+    </div> <!-- inner -->
+</div> <!-- home-banner-top -->
 
-            <p>{{ banner.description }}</p>
-
-            {% if banner.button_text and link %}
-                <a href="{{ link }}" am-button>{{ banner.button_text }}</a>
-            {% endif %}
-
-        </article>
-
-    </div>
-</div>

@@ -794,35 +794,125 @@ html, body {
   .Media--vertical .Media-content, .Media--vertical .Media-figure {
     display: block; }
 
-/* line 2, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
-[am-banner] {
-  margin-bottom: 2em;
-  color: white; }
-  /* line 5, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
-  [am-banner] a {
+/*
+ * ----------------------------------------------------------------------------
+ * BANNER TOP
+ * ----------------------------------------------------------------------------
+ */
+/* line 9, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+.home-banner-top {
+  /**
+     * OWL SLIDER
+     */ }
+  /* line 11, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+  .home-banner-top .container {
+    height: 70vmin;
+    max-height: 40vh;
+    max-width: 1800px;
+    margin: 0 auto;
+    position: relative; }
+  /* line 19, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+  .home-banner-top article {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    margin: 0; }
+    /* line 31, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+    .home-banner-top article:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0.3;
+      z-index: 1; }
+  /* line 40, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+  .home-banner-top .wrapper {
+    width: 100%;
+    max-width: 64em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64em;
+    padding: 30px;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%); }
+    /* line 12, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/output/support/clearfix */
+    .home-banner-top .wrapper:after {
+      content: " ";
+      display: block;
+      clear: both; }
+  /* line 52, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+  .home-banner-top .title {
+    font-size: 1.44163em;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+    display: inline-block;
+    margin: 0; }
+  /* line 61, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+  .home-banner-top p {
+    font-family: Fira Sans, 'Helvetica Neue', Verdana, Arial, sans-serif;
+    text-shadow: rgba(33, 33, 33, 0.2) 0 1px 6px;
+    margin: 0; }
+  /* line 11, ../wip-parent-theme/sass/mdf/helpers/_specificity.scss */
+  .home-banner-top a:nth-child(n) {
     color: white; }
-  /* line 8, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
-  [am-banner] p {
-    margin: 0; }
+  /* line 73, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+  .home-banner-top a.button {
+    background: none;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    color: white; }
+    /* line 77, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+    .home-banner-top a.button:hover {
+      border-color: white;
+      padding: 0 2em; }
+  /* line 89, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+  .home-banner-top .owl-dots:nth-child(n) span {
+    background: white; }
+  /* line 95, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+  .home-banner-top .owl-nav i {
+    font-size: 2.92259em;
+    color: white; }
+  @media (min-width: 43.75em) {
+    /* line 102, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+    .home-banner-top p {
+      font-size: 1.13906em; }
+ }
+  @media (min-width: 64em) {
+    /* line 109, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+    .home-banner-top .container {
+      max-height: 50vh; }
 
-/* line 13, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
-[am-banner-inner] {
-  background-repeat: no-repeat;
-  background-size: cover; }
-  /* line 17, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
-  [am-banner-inner] article {
-    
-    
-    
-    width: 48.33333%;
-    float: left;
-    margin-left: 0.83333%;
-    margin-right: 0.83333%;
-    
-    
-    padding-top: 2em;
-    padding-bottom: 2em;
-    margin: 0; }
+    /* line 112, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+    .home-banner-top .wrapper {
+      bottom: 50%;
+      -webkit-transform: translateX(-50%) translateY(55%);
+          -ms-transform: translateX(-50%) translateY(55%);
+              transform: translateX(-50%) translateY(55%); }
+
+    /* line 116, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+    .home-banner-top .title {
+      font-size: 2.59786em;
+      font-weight: 300; }
+
+    /* line 120, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
+    .home-banner-top .owl-dots {
+      bottom: 9vh; }
+ }
 
 /**
  * WOOCOMMERCE

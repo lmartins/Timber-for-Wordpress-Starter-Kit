@@ -1,23 +1,150 @@
 
-[am-banner]{
-    margin-bottom: $box-spacing;
-    color: white;
-    a{
-        color: white;
-    }
-    p{
-        margin: 0;
-    }
-}
 
-[am-banner-inner]{
-    background-repeat: no-repeat;
-    background-size: cover;
+/*
+ * ----------------------------------------------------------------------------
+ * BANNER TOP
+ * ----------------------------------------------------------------------------
+ */
+
+.home-banner-top{
+
+    .container{
+        height: 70vmin;
+        max-height: 40vh;
+        max-width: 1800px;
+        margin: 0 auto;
+        position: relative;
+    }
 
     article{
-        @include span(6);
-        padding-top: 2em;
-        padding-bottom: 2em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        color: white;
+        margin: 0;
+        &:after{
+            content: "";
+            display: block;
+            @include absolute(0, 0, 0, 0);
+            opacity: 0.3;
+            z-index: 1;
+        }
+    }
+
+    .wrapper{
+        width: 100%;
+        @include container;
+        max-width: $max-content-width;
+        padding: $trim;
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .title{
+        font-size: ms(4);
+        text-transform: uppercase;
+        color: white;
+        font-weight: 500;
+        display: inline-block;
         margin: 0;
     }
+
+    p{
+        font-family: $f-sans;
+        text-shadow: hsla(0, 0%, 13%, .2) 0 1px 6px;
+        margin: 0;
+    }
+
+    a{
+        @include increase-specificity{
+            color: white;
+        }
+    }
+
+    a.button{
+        background: none;
+        border: 2px solid hsla(0, 0%, 100%, 0.45);
+        color: white;
+        &:hover{
+            border-color: white;
+            padding: 0 2em;
+        }
+    }
+
+    /**
+     * OWL SLIDER
+     */
+
+    .owl-dots{
+        @include increase-specificity{
+            span{
+                background: white;
+            }
+        }
+    }
+    .owl-nav{
+        i{
+            font-size: ms(10);
+            color: white;
+        }
+    }
+
+    @include tablet{
+        p{
+            font-size: ms(2);
+        }
+    }
+
+
+    @include desktop{
+        .container{
+            max-height: 50vh;
+        }
+        .wrapper{
+            bottom: 50%;
+            transform: translateX(-50%) translateY(55%);
+        }
+        .title{
+            font-size: ms(9);
+            font-weight: 300;
+        }
+        .owl-dots{
+            bottom: 9vh;
+        }
+    }
+
 }
+
+
+
+// [am-banner]{
+//     margin-bottom: $box-spacing;
+//     color: white;
+//     a{
+//         color: white;
+//     }
+//     p{
+//         margin: 0;
+//     }
+// }
+
+// [am-banner-inner]{
+//     background-repeat: no-repeat;
+//     background-size: cover;
+
+//     article{
+//         @include span(6);
+//         padding-top: 2em;
+//         padding-bottom: 2em;
+//         margin: 0;
+//     }
+// }

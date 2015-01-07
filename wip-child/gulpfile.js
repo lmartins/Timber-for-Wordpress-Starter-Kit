@@ -52,11 +52,7 @@ var config = {
 // SERVER ---------------------------------------------------------------------
 gulp.task('browser-sync', function() {
   browserSync({
-    // server: {
-    //   baseDir: "./app/"
-    // },
-    proxy: "http://wptimber.dev/",
-    // port: 80,
+    proxy: "http://wp-beta.dev/",
     browser: "",
     online: true,
     open: false
