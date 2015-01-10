@@ -124,6 +124,16 @@ function child_theme_setup() {
 function mw_widgets_init() {
 
     register_sidebar( array(
+        'name'          => __( 'Home Contents', 'wip' ),
+        'id'            => 'home-widgets',
+        'description'   => __( 'Display widgetized information in your website Homepage', 'wip' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+
+    register_sidebar( array(
         'name'          => __( 'Main Sidebar', 'wip' ),
         'id'            => 'sidebar-1',
         'description'   => '',
@@ -134,11 +144,11 @@ function mw_widgets_init() {
     ) );
 
     register_sidebar( array(
-        'name'          => __( 'Home Contents', 'wip' ),
-        'id'            => 'home-widgets',
-        'description'   => __( 'Display widgetized information in your website Homepage', 'wip' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
+        'name'          => __( 'Shop Sidebar', 'wip' ),
+        'id'            => 'shop-sidebar',
+        'description'   => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ) );

@@ -29,14 +29,26 @@ $prefix-for-spec:      false; // required for keyframe mixin
 
 
 // FORMS ----------------------------------------------------------------------
-$c-input-height          : 2.5em;
-$c-input-radius          : 0em;
-$c-input-padding         : 0.8em;
+$forms: (
+    input:(
+        height     : 3em,
+        radius     : 0em,
+        padding    : 0 0.8em,
+        color      : ( red, green, gc(muted) ),
+        background : gc(muted),
+        border     : 1px solid gc(muted)
+    ),
+);
 
-$c-input-border          : gc(muted);
-$c-input-bg              : gc(muted);
-$c-input-border-focus    : gc(accent);
-$c-input-placeholder     : gc(muted);
+
+// $c-input-height          : 1.5em;
+// $c-input-radius          : 0em;
+// $c-input-padding         : 0.8em;
+
+// $c-input-border          : gc(muted);
+// $c-input-bg              : gc(muted);
+// $c-input-border-focus    : gc(accent);
+// $c-input-placeholder     : gc(muted);
 //$c-input-text          : $f-text;
 
 $c-fieldset-border       : gc(neutral);

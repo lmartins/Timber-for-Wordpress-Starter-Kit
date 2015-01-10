@@ -68,5 +68,6 @@ summary {
 // [2] elimina espaçamento após as imagens
 img{
   max-width: 100%; //[1]
+  height: auto;
   display: block;
 }

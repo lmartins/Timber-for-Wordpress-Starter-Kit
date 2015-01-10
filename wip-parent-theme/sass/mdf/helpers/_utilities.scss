@@ -10,3 +10,14 @@
 }
 
 
+@function mg($map: "forms", $setting: "base", $variation: "") {
+
+    @if map-has-key($map, $setting) {
+        @return map-get( map-get($map, $setting), $variation );
+    }
+
+    @warn "Unknown `#{$setting}` in $map.";
+    @return null;
+
+}
+

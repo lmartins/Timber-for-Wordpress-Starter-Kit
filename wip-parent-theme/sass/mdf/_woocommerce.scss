@@ -8,7 +8,8 @@
  * ----------------------------------------------------------------------------
  */
 @import "woocommerce/components/_layout.scss";
-
+@import "woocommerce/components/_tables.scss";
+@import "woocommerce/components/_widgets.scss";
 
 
 /**
@@ -17,3 +18,5 @@
  * ----------------------------------------------------------------------------
  */
 @import "woocommerce/views/_cart.scss";
+@import "woocommerce/views/_checkout.scss";
+@import "woocommerce/views/_order.scss";

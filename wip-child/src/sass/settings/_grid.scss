@@ -6,7 +6,7 @@
  * ----------------------------------------------------------------------------
  */
 
-$max-content-width       : 64em;
+$max-content-width       : 72em;
  // $max-container-width     : $trim + $max-content-width + $trim;
  // $max-std-formatted-width : 50em;
 
@@ -61,7 +61,7 @@ $spacing: (
         large : 4em,
         small : 1em
     ),
-    element: (
+    el: (
         base  : $f-line-height / 2,
         large : $f-line-height,
         small : $f-line-height / 3

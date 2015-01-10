@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 p{
-  margin-bottom: $box-spacing;
+  margin-bottom: space(el);
 
   &.lead{
     font-size: $f-size-l;
@@ -67,6 +67,7 @@ strong{
 a {
     text-decoration: none;
     outline: none;
+    font-weight: 600;
 }
 
 hr{

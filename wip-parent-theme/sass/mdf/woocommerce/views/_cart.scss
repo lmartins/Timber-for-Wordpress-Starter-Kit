@@ -1,97 +1,48 @@
 
-/**
- * ----------------------------------------------------------------------------
- * TABLE SHOP TABLE
- * ----------------------------------------------------------------------------
- */
-table.shop_table{}
-
-
-/**
- * ----------------------------------------------------------------------------
- * TABLE CART
- * List Products in the Cart
- * ----------------------------------------------------------------------------
- */
-
-table.cart{
-
-    clear: both;
-
-
-    @include mq($until: tablet){
-        thead th{
-            @include increase-specificity{
-                padding: 0;
-                text-indent: -9999px;
-                font-size: 0;
-                border: none;
-            }
-        }
-
-        /**
-         * Zona de produtos
-         */
-
-        .product-thumbnail{
-            display: none;
-        }
-
-        /**
-         * Zona de Acções
-         */
-
-        .actions{
-
-            padding-top: space(element);
-
-            label{
-                display: none;
-            }
-            input{
-                width: 100%;
-            }
-
-        }
-
-        .coupon{
-            margin-bottom: space(element);
-        }
-
-    }
-
-    @include tablet{
-
-        .actions{
-            > .button{
-                float: right;
-            }
-        }
-        .coupon{
-            float: left;
-        }
-
-    }
-
-}
-
 
 /**
  * ----------------------------------------------------------------------------
  * WOOCOMMERCE CHECKOUT REVIEW ORDER TABLE
- * Shows the order values in checkout page
+ * TABLE.ORDER_DETAILS
+ * Shows the order values in checkout page and order confirmation
  * ----------------------------------------------------------------------------
  */
+
+table.order_details,
 .woocommerce-checkout-review-order-table{
-    td, th{
-        text-align: center;
+
+    border-collapse: collapse;
+
+    tr{
+        // Last column contais values
+        td:last-child,
+        th:last-child{
+            width: 30%;
+            text-align: center;
+        }
     }
+
     tfoot{
+        td, th{
+            background: gc(muted, light);
+        }
         td{
             font-weight: bold;
         }
+        th{
+            text-align: right;
+        }
+        // Last Row shows order total
+        tr:last-of-type{
+            td, th{
+                font-size: $f-size-l;
+            }
+        }
     }
 }
+
+
+
 
 /**
  * ----------------------------------------------------------------------------
@@ -113,7 +64,7 @@ table.cart{
     // .cart_totals {}
 
     .product{
-        margin-bottom: space(element);
+        margin-bottom: space(el);
     }
 
     @include mq($until: tablet){
@@ -136,8 +87,11 @@ table.cart{
 }
 
 
-
 .wc-proceed-to-checkout{
-    padding: space(element);
+    padding: space(el);
     text-align: center;
 }
+
+
+
+

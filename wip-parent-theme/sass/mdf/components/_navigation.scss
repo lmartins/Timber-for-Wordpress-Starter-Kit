@@ -1,0 +1,13 @@
+
+
+[am-nav]{
+
+}
+
+[am-nav*="breadcrumbs"]{
+    font-size: $f-size-xs;
+    // text-transform: uppercase;
+    a{
+        font-weight: 500;
+    }
+}

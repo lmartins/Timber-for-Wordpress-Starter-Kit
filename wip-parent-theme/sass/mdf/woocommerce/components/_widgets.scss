@@ -1,0 +1,209 @@
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * CART WIDGET
+ * Displays the Cart widget
+ * ----------------------------------------------------------------------------
+ */
+.widget_shopping_cart_content{
+
+    li{
+        padding-bottom: space(el);
+        margin-bottom: space(el);
+    }
+    .Media{
+        align-items: center;
+    }
+    .Media-content,
+    .Media-figure{
+        flex: 1 1 auto;
+    }
+    .Media-figure{
+        order: 2;
+        flex: 0 1 3em;
+    }
+    .remove{
+        order: 3;
+        padding-left: 0.3em;
+    }
+    .quantity{
+        display: block;
+        font-size: $f-size-s;
+    }
+
+    .total,
+    .buttons{
+        text-align: center
+    }
+}
+
+
+/**
+ * Quando disponibilizado no header
+ * Mostra o resumo de cart num widget aplicável a vários pontos do site
+ */
+.site-header-cart{
+
+    position: relative;
+    z-index: 10;
+    text-align: left;
+    text-transform: none;
+
+    &:hover{
+        .widget_shopping_cart{
+            visibility: visible;
+        }
+    }
+
+    .widget_shopping_cart{
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 100%;
+
+        .cart_list{
+            padding: 0;
+        }
+        li{
+            padding: space(el);
+        }
+    }
+
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * RECENT REVIEWS
+ *
+ * ----------------------------------------------------------------------------
+ */
+
+.widget_recent_reviews{
+
+    img{
+        float: right;
+        width: 3em;
+    }
+    .product_list_widget{
+        overflow: hidden;
+    }
+
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * PRODUCT SEARCH
+ * ----------------------------------------------------------------------------
+ */
+
+.widget_product_search{
+
+    form{
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    label{
+        display: block
+    }
+
+    input[type=search]{
+        flex: 1 1 70%;
+        border: 1px solid red !important;
+    }
+    input[type=submit]{
+        flex: 1 1 30%;
+    }
+}
+
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * PRICE FILTER WIDGET
+ *
+ * ----------------------------------------------------------------------------
+ */
+
+
+.widget_price_filter {
+
+    .price_slider {
+        margin: space(el, large) 0;
+    }
+
+    .price_slider_amount {
+
+        display: flex;
+        justify-content: space-between;
+
+        button{
+            order: 2
+        }
+
+    }
+
+    .ui-slider {
+        position: relative;
+    }
+
+    .ui-slider-handle {
+
+        position: absolute;
+        z-index: 2;
+        width: 1em;
+        height: 1em;
+        background-color: gc(accent);
+        border-radius: 1em;
+        cursor: ew-resize;
+        outline: none;
+        top: -.3em;
+        box-shadow: hsla(0, 0%, 12%, 0.5) 0 1px 1px;
+
+        &:last-child {
+            margin-left: -.8em;
+        }
+    }
+
+
+    .ui-slider-range {
+        position: absolute;
+        z-index: 1;
+        font-size: .7em;
+        display: block;
+        border: 0;
+        border-radius: 1em;
+        background-color: gc(accent);
+    }
+
+    .ui-widget-content {
+        border-radius: 1em;
+        background-color: gc(muted);
+        border: 0;
+    }
+
+    .ui-slider-horizontal {
+        height: .5em;
+    }
+
+    .ui-slider-range {
+        top: 0;
+        height: 100%;
+    }
+
+    .ui-slider-range-min {
+        left: -1px;
+    }
+
+    .ui-slider-range-max {
+        right: -1px;
+    }
+}

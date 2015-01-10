@@ -1,5 +1,14 @@
 /**
  * ----------------------------------------------------------------------------
+ * HELPERS
+ * The helpers/ folder (sometimes called utils/) gathers all Sass tools and helpers
+ * we’ll use across the project. Got a function? A mixin? Put it in there. This folder
+ * also contains a _variables.scss file (sometimes _config.scss) which holds all
+ * global variables for the project (for typography, color schemes, and so on).
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * ----------------------------------------------------------------------------
  * SETUP
  * ----------------------------------------------------------------------------
  */
@@ -62,15 +71,6 @@ body:before {
 
 /**
  * ----------------------------------------------------------------------------
- * HELPERS
- * The helpers/ folder (sometimes called utils/) gathers all Sass tools and helpers
- * we’ll use across the project. Got a function? A mixin? Put it in there. This folder
- * also contains a _variables.scss file (sometimes _config.scss) which holds all
- * global variables for the project (for typography, color schemes, and so on).
- * ----------------------------------------------------------------------------
- */
-/**
- * ----------------------------------------------------------------------------
  * BASE
  * The base/ folder holds what we might call the boilerplate stuff for your project.
  * In there, you might find the reset (or Normalize.css, or whatever), probably some
@@ -107,24 +107,8 @@ fieldset, article, aside, footer, main, summary {
 /* line 69, ../wip-parent-theme/sass/mdf/base/_reset.scss */
 img {
   max-width: 100%;
+  height: auto;
   display: block; }
-
-/* line 5, ../wip-parent-theme/sass/mdf/base/_layout.scss */
-.content-sidebar .main-wrapper {
-  display: table;
-  width: 95%;
-  margin: 0 auto; }
-/* line 11, ../wip-parent-theme/sass/mdf/base/_layout.scss */
-.content-sidebar .content-wrapper, .content-sidebar .layout-sidebar {
-  display: table-cell;
-  padding: 1.5em; }
-/* line 16, ../wip-parent-theme/sass/mdf/base/_layout.scss */
-.content-sidebar .content-wrapper {
-  width: 70%; }
-/* line 20, ../wip-parent-theme/sass/mdf/base/_layout.scss */
-.content-sidebar .layout-sidebar {
-  width: 30%;
-  background: #eee; }
 
 /* line 7, ../wip-parent-theme/sass/mdf/base/_tables.scss */
 table {
@@ -254,7 +238,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* line 35, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
 p {
-  margin-bottom: 2em; }
+  margin-bottom: 0.675em; }
   /* line 38, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
   p.lead {
     font-size: 1.28145em; }
@@ -281,27 +265,28 @@ strong {
 /* line 67, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
 a {
   text-decoration: none;
-  outline: none; }
+  outline: none;
+  font-weight: 600; }
 
-/* line 72, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
+/* line 73, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
 hr {
   border: none;
   border-top: 1px solid #f2f2f2;
   margin: 4em 0; }
 
-/* line 81, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
+/* line 82, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
 ul p, dl p {
   margin: 0; }
 
-/* line 88, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
+/* line 89, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
 .tab-pane ul {
   list-style: disc;
   margin: 0 0 2em 2em; }
 
-/* line 95, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
+/* line 96, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
 dl dt {
   color: #333333; }
-/* line 98, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
+/* line 99, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
 dl dd {
   margin-bottom: 2em; }
 
@@ -331,48 +316,58 @@ input.qty {
   width: 4em;
   text-align: center; }
 
-/* line 14, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
-.site-header-cart {
-  position: relative; }
-  /* line 19, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
-  .site-header-cart:hover .widget_shopping_cart {
-    visibility: visible; }
-  /* line 24, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
-  .site-header-cart .widget_shopping_cart {
-    visibility: hidden;
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    top: 100%; }
-  /* line 33, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
-  .site-header-cart p.total, .site-header-cart p.buttons {
-    text-align: center; }
-
-/* line 40, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
-.product_list_widget {
-  min-width: 260px; }
-  /* line 42, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
-  .product_list_widget li {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-
 /**
  * DEMO STORE NOTIFICATION
  */
-/* line 52, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
+/* line 14, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
 .demo_store {
   text-align: center; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * NOTIFICAÇÕES DE LOJA
+ * Mensagens de notificação para o utilizador
+ * ----------------------------------------------------------------------------
+ */
+/* line 25, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
+.woocommerce-info {
+  
+  
+  
+  width: 98.33333%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+  
+  margin-bottom: 0.675em;
+  padding: 0.675em;
+  background: #d1ecff;
+  color: #0597ff; }
+  /* line 31, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
+  .woocommerce-info a {
+    color: #0597ff; }
+
+/* line 41, ../wip-parent-theme/sass/mdf/woocommerce/_components.scss */
+form.login .lost_password {
+  
+  
+  
+  width: 98.33333%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+   }
 
 /**
  * ----------------------------------------------------------------------------
  * COMPONENTS
  * ----------------------------------------------------------------------------
  */
-/* line 2, ../wip-parent-theme/sass/mdf/woocommerce/components/_layout.scss */
+/* line 4, ../wip-parent-theme/sass/mdf/woocommerce/components/_layout.scss */
 .col2-set {
-  max-width: 64em;
+  max-width: 72em;
   margin-left: auto;
   margin-right: auto; }
   /* line 12, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/output/support/clearfix */
@@ -380,7 +375,7 @@ input.qty {
     content: " ";
     display: block;
     clear: both; }
-  /* line 7, ../wip-parent-theme/sass/mdf/woocommerce/components/_layout.scss */
+  /* line 9, ../wip-parent-theme/sass/mdf/woocommerce/components/_layout.scss */
   .col2-set .col-1, .col2-set .col-2 {
     
     
@@ -392,7 +387,7 @@ input.qty {
     
      }
   @media (min-width: 43.75em) {
-    /* line 13, ../wip-parent-theme/sass/mdf/woocommerce/components/_layout.scss */
+    /* line 15, ../wip-parent-theme/sass/mdf/woocommerce/components/_layout.scss */
     .col2-set .col-1, .col2-set .col-2 {
       
       
@@ -407,21 +402,27 @@ input.qty {
 
 /**
  * ----------------------------------------------------------------------------
- * VIEWS
- * ----------------------------------------------------------------------------
- */
-/**
- * ----------------------------------------------------------------------------
  * TABLE SHOP TABLE
+ * Formatação genérica para várias tabelas usadas em views da Loja
  * ----------------------------------------------------------------------------
  */
+/* line 8, ../wip-parent-theme/sass/mdf/woocommerce/components/_tables.scss */
+table.shop_table {
+  border: 1px solid #f2f2f2; }
+  /* line 10, ../wip-parent-theme/sass/mdf/woocommerce/components/_tables.scss */
+  table.shop_table td, table.shop_table th {
+    padding: 0.675em; }
+  /* line 15, ../wip-parent-theme/sass/mdf/woocommerce/components/_tables.scss */
+  table.shop_table.customer_details th {
+    width: 20%; }
+
 /**
  * ----------------------------------------------------------------------------
  * TABLE CART
  * List Products in the Cart
  * ----------------------------------------------------------------------------
  */
-/* line 17, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+/* line 30, ../wip-parent-theme/sass/mdf/woocommerce/components/_tables.scss */
 table.cart {
   clear: both; }
   @media (max-width: 43.74em) {
@@ -438,43 +439,252 @@ table.cart {
         text-indent: -9999px;
         font-size: 0;
         border: none; }
-      /* line 36, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+      /* line 48, ../wip-parent-theme/sass/mdf/woocommerce/components/_tables.scss */
       table.cart .product-thumbnail {
         display: none; }
-      /* line 44, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+      /* line 56, ../wip-parent-theme/sass/mdf/woocommerce/components/_tables.scss */
       table.cart .actions {
         padding-top: 0.675em; }
-        /* line 48, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+        /* line 60, ../wip-parent-theme/sass/mdf/woocommerce/components/_tables.scss */
         table.cart .actions label {
           display: none; }
-        /* line 51, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+        /* line 63, ../wip-parent-theme/sass/mdf/woocommerce/components/_tables.scss */
         table.cart .actions input {
           width: 100%; }
-      /* line 57, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+      /* line 69, ../wip-parent-theme/sass/mdf/woocommerce/components/_tables.scss */
       table.cart .coupon {
         margin-bottom: 0.675em; } }
   @media (min-width: 43.75em) {
-    /* line 66, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    /* line 78, ../wip-parent-theme/sass/mdf/woocommerce/components/_tables.scss */
     table.cart .actions > .button {
       float: right; }
 
-    /* line 70, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    /* line 82, ../wip-parent-theme/sass/mdf/woocommerce/components/_tables.scss */
     table.cart .coupon {
       float: left; }
  }
 
 /**
  * ----------------------------------------------------------------------------
- * WOOCOMMERCE CHECKOUT REVIEW ORDER TABLE
- * Shows the order values in checkout page
+ * CART WIDGET
+ * Displays the Cart widget
  * ----------------------------------------------------------------------------
  */
-/* line 86, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
-.woocommerce-checkout-review-order-table td, .woocommerce-checkout-review-order-table th {
+/* line 12, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_shopping_cart_content li {
+  padding-bottom: 0.675em;
+  margin-bottom: 0.675em; }
+/* line 16, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_shopping_cart_content .Media {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+/* line 20, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_shopping_cart_content .Media-content, .widget_shopping_cart_content .Media-figure {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto; }
+/* line 23, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_shopping_cart_content .Media-figure {
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 3em;
+      -ms-flex: 0 1 3em;
+          flex: 0 1 3em; }
+/* line 27, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_shopping_cart_content .remove {
+  -webkit-box-ordinal-group: 4;
+  -webkit-order: 3;
+      -ms-flex-order: 3;
+          order: 3;
+  padding-left: 0.3em; }
+/* line 31, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_shopping_cart_content .quantity {
+  display: block;
+  font-size: 0.8em; }
+/* line 37, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_shopping_cart_content .total, .widget_shopping_cart_content .buttons {
   text-align: center; }
-/* line 90, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
-.woocommerce-checkout-review-order-table tfoot td {
-  font-weight: bold; }
+
+/**
+ * Quando disponibilizado no header
+ * Mostra o resumo de cart num widget aplicável a vários pontos do site
+ */
+/* line 47, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.site-header-cart {
+  position: relative;
+  z-index: 10;
+  text-align: left;
+  text-transform: none; }
+  /* line 55, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+  .site-header-cart:hover .widget_shopping_cart {
+    visibility: visible; }
+  /* line 60, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+  .site-header-cart .widget_shopping_cart {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 100%; }
+    /* line 67, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+    .site-header-cart .widget_shopping_cart .cart_list {
+      padding: 0; }
+    /* line 70, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+    .site-header-cart .widget_shopping_cart li {
+      padding: 0.675em; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * RECENT REVIEWS
+ *
+ * ----------------------------------------------------------------------------
+ */
+/* line 88, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_recent_reviews img {
+  float: right;
+  width: 3em; }
+/* line 92, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_recent_reviews .product_list_widget {
+  overflow: hidden; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * PRODUCT SEARCH
+ * ----------------------------------------------------------------------------
+ */
+/* line 108, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_product_search form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap; }
+/* line 113, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_product_search label {
+  display: block; }
+/* line 117, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_product_search input[type=search] {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 70%;
+      -ms-flex: 1 1 70%;
+          flex: 1 1 70%;
+  border: 1px solid red !important; }
+/* line 121, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_product_search input[type=submit] {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 30%;
+      -ms-flex: 1 1 30%;
+          flex: 1 1 30%; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * PRICE FILTER WIDGET
+ *
+ * ----------------------------------------------------------------------------
+ */
+/* line 139, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_price_filter .price_slider {
+  margin: 1.35em 0; }
+/* line 143, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_price_filter .price_slider_amount {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  /* line 148, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+  .widget_price_filter .price_slider_amount button {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2; }
+/* line 154, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_price_filter .ui-slider {
+  position: relative; }
+/* line 158, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_price_filter .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 1em;
+  height: 1em;
+  background-color: #2b85f3;
+  border-radius: 1em;
+  cursor: ew-resize;
+  outline: none;
+  top: -0.3em;
+  box-shadow: rgba(31, 31, 31, 0.5) 0 1px 1px; }
+  /* line 171, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+  .widget_price_filter .ui-slider-handle:last-child {
+    margin-left: -0.8em; }
+/* line 177, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_price_filter .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: 0.7em;
+  display: block;
+  border: 0;
+  border-radius: 1em;
+  background-color: #2b85f3; }
+/* line 187, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_price_filter .ui-widget-content {
+  border-radius: 1em;
+  background-color: #f2f2f2;
+  border: 0; }
+/* line 193, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_price_filter .ui-slider-horizontal {
+  height: 0.5em; }
+/* line 197, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_price_filter .ui-slider-range {
+  top: 0;
+  height: 100%; }
+/* line 202, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_price_filter .ui-slider-range-min {
+  left: -1px; }
+/* line 206, ../wip-parent-theme/sass/mdf/woocommerce/components/_widgets.scss */
+.widget_price_filter .ui-slider-range-max {
+  right: -1px; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * VIEWS
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * ----------------------------------------------------------------------------
+ * WOOCOMMERCE CHECKOUT REVIEW ORDER TABLE
+ * TABLE.ORDER_DETAILS
+ * Shows the order values in checkout page and order confirmation
+ * ----------------------------------------------------------------------------
+ */
+/* line 12, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+table.order_details, .woocommerce-checkout-review-order-table {
+  border-collapse: collapse; }
+  /* line 19, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  table.order_details tr td:last-child, table.order_details tr th:last-child, .woocommerce-checkout-review-order-table tr td:last-child, .woocommerce-checkout-review-order-table tr th:last-child {
+    width: 30%;
+    text-align: center; }
+  /* line 26, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  table.order_details tfoot td, table.order_details tfoot th, .woocommerce-checkout-review-order-table tfoot td, .woocommerce-checkout-review-order-table tfoot th {
+    background: #fafafa; }
+  /* line 29, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  table.order_details tfoot td, .woocommerce-checkout-review-order-table tfoot td {
+    font-weight: bold; }
+  /* line 32, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  table.order_details tfoot th, .woocommerce-checkout-review-order-table tfoot th {
+    text-align: right; }
+  /* line 37, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  table.order_details tfoot tr:last-of-type td, table.order_details tfoot tr:last-of-type th, .woocommerce-checkout-review-order-table tfoot tr:last-of-type td, .woocommerce-checkout-review-order-table tfoot tr:last-of-type th {
+    font-size: 1.28145em; }
 
 /**
  * ----------------------------------------------------------------------------
@@ -482,7 +692,7 @@ table.cart {
  * Cross-selling, Cart Totals and Shipping Costs
  * ----------------------------------------------------------------------------
  */
-/* line 103, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+/* line 54, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
 .cart-collaterals {
   display: -webkit-box;
   display: -webkit-flex;
@@ -491,21 +701,21 @@ table.cart {
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap; }
-  /* line 108, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  /* line 59, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
   .cart-collaterals > * {
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 50%;
         -ms-flex: 1 1 50%;
             flex: 1 1 50%; }
-  /* line 115, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+  /* line 66, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
   .cart-collaterals .product {
     margin-bottom: 0.675em; }
   @media (max-width: 43.74em) {
-    /* line 120, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    /* line 71, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
     .cart-collaterals .cart_totals {
       margin-bottom: 4em; }
 
-    /* line 123, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+    /* line 74, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
     .cart-collaterals .cross-sells {
       -webkit-box-ordinal-group: 3;
       -webkit-order: 2;
@@ -519,14 +729,168 @@ table.cart {
       -webkit-flex-direction: row;
           -ms-flex-direction: row;
               flex-direction: row; }
-      /* line 131, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+      /* line 82, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
       .cart-collaterals .cross-sells {
         margin-right: 5%; } }
 
-/* line 140, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
+/* line 90, ../wip-parent-theme/sass/mdf/woocommerce/views/_cart.scss */
 .wc-proceed-to-checkout {
   padding: 0.675em;
   text-align: center; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * LAYOUT
+ * ----------------------------------------------------------------------------
+ */
+/* line 8, ../wip-parent-theme/sass/mdf/woocommerce/views/_checkout.scss */
+form.checkout {
+  max-width: 72em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 12, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/output/support/clearfix */
+  form.checkout:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  /* line 11, ../wip-parent-theme/sass/mdf/helpers/_specificity.scss */
+  form.checkout .col-1:nth-child(n), form.checkout .col-2:nth-child(n) {
+    
+    
+    
+    width: 101.66667%;
+    float: left;
+    margin-left: 0.83333%;
+    margin-right: 0.83333%;
+    
+     }
+
+/* line 19, ../wip-parent-theme/sass/mdf/woocommerce/views/_checkout.scss */
+#customer_details {
+  
+  
+  
+  width: 40%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+   }
+
+/* line 22, ../wip-parent-theme/sass/mdf/woocommerce/views/_checkout.scss */
+#order_review {
+  
+  
+  
+  width: 56.66667%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+   }
+
+/**
+ * ----------------------------------------------------------------------------
+ * FORMULÁRIOS LOGIN / ADD COUPON
+ * Formulários para login e adição de coupon na página de Checkout
+ * ----------------------------------------------------------------------------
+ */
+/* line 37, ../wip-parent-theme/sass/mdf/woocommerce/views/_checkout.scss */
+form.login, form.checkout_coupon {
+  
+  
+  
+  width: 98.33333%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+  
+  padding: 0.675em; }
+  /* line 40, ../wip-parent-theme/sass/mdf/woocommerce/views/_checkout.scss */
+  form.login > p:first-child, form.checkout_coupon > p:first-child {
+    
+    
+    
+    width: 98.33333%;
+    float: left;
+    margin-left: 0.83333%;
+    margin-right: 0.83333%;
+    
+    
+    color: #0597ff; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * WOOCOMMERCE CHECKOUT REVIEW ORDER TABLE
+ * Shows the order values in checkout page
+ * ----------------------------------------------------------------------------
+ */
+/* line 54, ../wip-parent-theme/sass/mdf/woocommerce/views/_checkout.scss */
+.woocommerce-checkout-review-order-table td, .woocommerce-checkout-review-order-table th {
+  text-align: center; }
+/* line 58, ../wip-parent-theme/sass/mdf/woocommerce/views/_checkout.scss */
+.woocommerce-checkout-review-order-table tfoot td {
+  font-weight: bold; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * WOOCOMMERCE CHECKOUT PAYMENT
+ * Selector de métodos de pagamento
+ * ----------------------------------------------------------------------------
+ */
+/* line 73, ../wip-parent-theme/sass/mdf/woocommerce/views/_checkout.scss */
+.woocommerce-checkout-payment {
+  border-top: 3px solid #f2f2f2; }
+  /* line 77, ../wip-parent-theme/sass/mdf/woocommerce/views/_checkout.scss */
+  .woocommerce-checkout-payment li {
+    border-bottom: 1px solid #f2f2f2;
+    padding: 0.675em; }
+    /* line 80, ../wip-parent-theme/sass/mdf/woocommerce/views/_checkout.scss */
+    .woocommerce-checkout-payment li:last-of-type {
+      border: none; }
+  /* line 85, ../wip-parent-theme/sass/mdf/woocommerce/views/_checkout.scss */
+  .woocommerce-checkout-payment .place-order {
+    padding: 0.675em; }
+  /* line 89, ../wip-parent-theme/sass/mdf/woocommerce/views/_checkout.scss */
+  .woocommerce-checkout-payment input[type=submit] {
+    font-size: 1.28145em;
+    height: 2.5em;
+    line-height: 2.5em;
+    width: 100%; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * ORDER_DETAILS
+ * Lista de dados de identificação da encomenda
+ * ----------------------------------------------------------------------------
+ */
+/* line 10, ../wip-parent-theme/sass/mdf/woocommerce/views/_order.scss */
+ul.order_details {
+  border: 1px solid #f2f2f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2em; }
+  /* line 14, ../wip-parent-theme/sass/mdf/woocommerce/views/_order.scss */
+  ul.order_details li {
+    border-right: 1px solid #f2f2f2;
+    margin: 0;
+    padding: 0.675em 2em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    text-transform: uppercase;
+    font-size: 0.71111em; }
+    /* line 23, ../wip-parent-theme/sass/mdf/woocommerce/views/_order.scss */
+    ul.order_details li strong {
+      text-transform: none;
+      font-size: 1.82456em; }
 
 /**
  * ----------------------------------------------------------------------------
@@ -541,7 +905,7 @@ table.cart {
 *, *:before, *:after {
   box-sizing: border-box; }
 
-/* line 4, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_common.scss */
+/* line 4, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_layout.scss */
 html, body {
   height: 100%;
   min-height: 100%;
@@ -549,9 +913,9 @@ html, body {
   padding: 0;
   background: #eaeaec; }
 
-/* line 13, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_common.scss */
+/* line 13, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_layout.scss */
 .container {
-  max-width: 64em;
+  max-width: 72em;
   margin-left: auto;
   margin-right: auto; }
   /* line 12, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/output/support/clearfix */
@@ -560,23 +924,48 @@ html, body {
     display: block;
     clear: both; }
 
-/* line 17, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_common.scss */
+/* line 17, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_layout.scss */
 .main-wrapper {
   background: white;
   position: relative;
   z-index: 2; }
 
-/* line 29, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_common.scss */
+/* line 24, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_layout.scss */
 .content-wrapper {
-  max-width: 64em;
+  max-width: 72em;
   margin-left: auto;
-  margin-right: auto;
-  padding-top: 4em; }
+  margin-right: auto; }
   /* line 12, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/output/support/clearfix */
   .content-wrapper:after {
     content: " ";
     display: block;
     clear: both; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * CONTENT-SIDEBAR
+ * ----------------------------------------------------------------------------
+ */
+/* line 39, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_layout.scss */
+.content-sidebar .site-content > .inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+/* line 43, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_layout.scss */
+.content-sidebar main.content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 73.33333%;
+      -ms-flex: 1 1 73.33333%;
+          flex: 1 1 73.33333%;
+  margin: 0 0.83333%; }
+/* line 48, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_layout.scss */
+.content-sidebar .layout-sidebar {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 23.33333%;
+      -ms-flex: 1 0 23.33333%;
+          flex: 1 0 23.33333%;
+  margin: 0 0.83333%; }
 
 /* line 3, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_header.scss */
 .site-header {
@@ -674,7 +1063,7 @@ html, body {
   background: white; }
   /* line 4, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_main.scss */
   .site-content .inner {
-    max-width: 64em;
+    max-width: 72em;
     margin-left: auto;
     margin-right: auto; }
     /* line 12, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/output/support/clearfix */
@@ -794,6 +1183,40 @@ html, body {
   .Media--vertical .Media-content, .Media--vertical .Media-figure {
     display: block; }
 
+/* line 3, ../wip-parent-theme/sass/mdf/components/_forms.scss */
+label, .label {
+  font-weight: bold; }
+
+/* line 7, ../wip-parent-theme/sass/mdf/components/_forms.scss */
+input {
+  line-height: 3em;
+  height: 3em; }
+
+/* line 13, ../wip-parent-theme/sass/mdf/components/_forms.scss */
+input[type=checkbox], input[type=radio] {
+  line-height: 1;
+  height: auto;
+  border: 1px solid red; }
+
+/* line 20, ../wip-parent-theme/sass/mdf/components/_forms.scss */
+input, textarea {
+  border: 2px solid #f2f2f2;
+  border-radius: 0em;
+  background: #f2f2f2;
+  padding: 0 0.8em;
+  -webkit-transition: all 0.15s ease-in 0;
+          transition: all 0.15s ease-in 0;
+  outline: none;
+  font-weight: 400;
+  font-family: Fira Sans, 'Helvetica Neue', Verdana, Arial, sans-serif; }
+
+/* line 7, ../wip-parent-theme/sass/mdf/components/_navigation.scss */
+[am-nav*="breadcrumbs"] {
+  font-size: 0.71111em; }
+  /* line 10, ../wip-parent-theme/sass/mdf/components/_navigation.scss */
+  [am-nav*="breadcrumbs"] a {
+    font-weight: 500; }
+
 /*
  * ----------------------------------------------------------------------------
  * BANNER TOP
@@ -838,10 +1261,10 @@ html, body {
   /* line 40, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_site-banner.scss */
   .home-banner-top .wrapper {
     width: 100%;
-    max-width: 64em;
+    max-width: 72em;
     margin-left: auto;
     margin-right: auto;
-    max-width: 64em;
+    max-width: 72em;
     padding: 30px;
     position: absolute;
     z-index: 2;
@@ -1247,45 +1670,93 @@ table.shop_table thead th {
 
 /**
  * ----------------------------------------------------------------------------
- * WOOCOMMERCE CHECKOUT REVIEW ORDER TABLE
- * Shows the order values in checkout page
- * ----------------------------------------------------------------------------
- */
-/* line 79, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
-.woocommerce-checkout-review-order-table {
-  border-collapse: collapse; }
-  /* line 87, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
-  .woocommerce-checkout-review-order-table tfoot td, .woocommerce-checkout-review-order-table tfoot th {
-    background: #fafafa; }
-  /* line 90, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
-  .woocommerce-checkout-review-order-table tfoot td {
-    font-weight: bold; }
-  /* line 93, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
-  .woocommerce-checkout-review-order-table tfoot th {
-    text-align: right; }
-
-/**
- * ----------------------------------------------------------------------------
  * TABLE CART
  * List Products in the Cart
  * ----------------------------------------------------------------------------
  */
-/* line 111, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 83, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 table.cart .cart_item td {
   border-bottom: 1px solid #f2f2f2; }
 
-/* line 121, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 93, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 .cart_totals td, .cart_totals th {
   padding: 0.45em; }
-/* line 124, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 96, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 .cart_totals th {
   text-align: right; }
-/* line 127, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 99, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 .cart_totals p {
   margin: 0; }
-/* line 130, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+/* line 102, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
 .cart_totals table {
   background: #f2f2f2; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * CREATE ACCOUNT
+ * No formulário de checkout, opçõe para criação de conta cliente
+ * ----------------------------------------------------------------------------
+ */
+/* line 113, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+p.create-account {
+  
+  
+  
+  width: 98.33333%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+   }
+  /* line 11, ../wip-parent-theme/sass/mdf/helpers/_specificity.scss */
+  p.create-account input:nth-child(n), p.create-account label:nth-child(n) {
+    display: inline-block;
+    width: auto; }
+
+/* line 122, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+div.create-account {
+  
+  
+  
+  width: 98.33333%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+  
+  margin-bottom: 2em; }
+  /* line 125, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_cart.scss */
+  div.create-account p {
+    margin: 0; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * LAYOUT
+ * ----------------------------------------------------------------------------
+ */
+/* line 15, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_checkout.scss */
+#order_review_heading {
+  
+  
+  
+  width: 56.66667%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+  
+  padding: 0.675em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: 3px solid #f2f2f2;
+  border-bottom: none; }
+
+/* line 24, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/woocommerce/views/_checkout.scss */
+#order_review {
+  padding: 0.675em 0;
+  padding-bottom: 0;
+  border: 3px solid #f2f2f2;
+  border-top: none; }
 
 /**
  * ----------------------------------------------------------------------------
@@ -1750,5 +2221,52 @@ table.cart .cart_item td {
   
    }
 
+/* line 306, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+.form-row {
+  clear: left;
+  
+  
+  
+  width: 98.33333%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+  
+  margin-bottom: 0.675em; }
+  /* line 312, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  .form-row label {
+    display: block; }
+  /* line 316, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  .form-row label.inline {
+    display: inline-block;
+    width: auto; }
+  /* line 323, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  .form-row input, .form-row textarea, .form-row select {
+    width: 100%;
+    max-width: 100%; }
+  /* line 330, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  .form-row input[type=checkbox], .form-row input[type=radio], .form-row .button {
+    width: auto; }
+  /* line 335, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  .form-row.form-row-first, .form-row.form-row-last {
+    
+    
+    
+    width: 48.33333%;
+    float: left;
+    margin-left: 0.83333%;
+    margin-right: 0.83333%;
+    
+     }
+  /* line 338, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  .form-row.form-row-last {
+    clear: none; }
 
+/* line 345, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+.relevanssi-query-term {
+  background: yellow; }
+
+
+/*# sourceMappingURL=main.css.map */
 /*# sourceMappingURL=main.css.map */

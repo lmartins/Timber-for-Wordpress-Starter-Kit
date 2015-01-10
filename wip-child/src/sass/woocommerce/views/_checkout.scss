@@ -1,0 +1,29 @@
+/**
+ * ----------------------------------------------------------------------------
+ * LAYOUT
+ * ----------------------------------------------------------------------------
+ */
+
+form.checkout{
+
+}
+
+#customer_details{
+
+}
+
+#order_review_heading{
+    @include span(7);
+    padding: space(el);
+    padding-bottom: 0;
+    margin-bottom: 0;
+    @include border( gc(muted), 3px );
+    border-bottom: none;
+}
+
+#order_review{
+    padding: space(el) 0;
+    padding-bottom: 0;
+    @include border( gc(muted), 3px );
+    border-top: none;
+}

@@ -84,31 +84,12 @@ gulp.task('sass', function () {
       "last 1 versions"
       ))
     .pipe( plugins.sourcemaps.write('./', {includeContent: false, sourceRoot: '../../src/sass/'}) )
-    // .pipe( plugins.sourcemaps.write('./') )
+    .pipe( plugins.sourcemaps.write('./') )
     .pipe( gulp.dest( config.SASS.build ) )
     .pipe( plugins.filter( '**/*.css') ) // Filtering stream to only css files
     .pipe( browserSync.reload({ stream: true }) );
 });
 
-
-
-// gulp.task('sass', function() {
-//   return gulp.src( config.SASS.src )
-//     .pipe(plugins.plumber())
-//     .pipe(plugins.sass({
-//       outputStyle: 'compressed'
-//       }))
-//     .on("error", plugins.notify.onError())
-//     // .on("error", function (err) {
-//     //   console.log("Error:", err);
-//     // })
-//     .pipe(plugins.plumber.stop())
-//     .pipe( plugins.autoprefixer (
-//         "last 1 versions", "> 10%", "ie 9"
-//         ))
-//     .pipe( gulp.dest( config.SASS.build ) )
-//     .pipe( browserSync.reload({ stream: true }) );
-// });
 
 
 
@@ -163,22 +144,6 @@ gulp.task('bs-reload', function () {
 
 
 // ICONS ----------------------------------------------------------------------
-// gulp.task('icons', function(){
-//   gulp.src([ config.ICONS.src ])
-//     .pipe( plugins.iconfontCss({
-//       fontName: config.ICONS.fontname,
-//       path: './src/sass/components/icons/_icons-template.scss',
-//       targetPath: '../../../src/sass/components/icons/_icons.scss',
-//       fontPath: './fonts/',
-//     }))
-//     .pipe( plugins.iconfont({
-//       fontName: config.ICONS.fontname,
-//       fixedWidth: true,
-//       appendCodepoints: false
-//     }))
-//     .pipe(gulp.dest( config.ICONS.build ));
-// });
-
 gulp.task('icons', function(){
   gulp.src("src/sass/components/icons/icons.sketch")
     .pipe( plugins.sketch({

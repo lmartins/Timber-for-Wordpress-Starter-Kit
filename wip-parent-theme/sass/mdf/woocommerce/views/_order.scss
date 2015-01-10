@@ -1,0 +1,28 @@
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * ORDER_DETAILS
+ * Lista de dados de identificação da encomenda
+ * ----------------------------------------------------------------------------
+ */
+ul.order_details{
+    @include border(gc(muted));
+    display: flex;
+    margin-bottom: space(box);
+    li{
+        @include border-right(gc(muted));
+        margin: 0;
+        // margin-right: space(el);
+        padding: space(el) space(box);
+        display: flex;
+        flex-flow: column;
+        text-transform: uppercase;
+        font-size: $f-size-xs;
+        strong{
+            text-transform: none;
+            font-size: $f-size-xl;
+        }
+    }
+}

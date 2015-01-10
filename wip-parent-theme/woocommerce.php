@@ -30,6 +30,8 @@ if (is_singular('product')) {
     }
 
     $context['products'] = $posts;
+    $context['sidebar'] = Timber::get_widgets('shop-sidebar');
+
     Timber::render('views/woo/archive.twig', $context);
 
 }

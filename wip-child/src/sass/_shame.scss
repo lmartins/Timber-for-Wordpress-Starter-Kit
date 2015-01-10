@@ -298,3 +298,50 @@
         @include span(8);
     }
 }
+
+
+
+
+
+.form-row{
+
+    clear: left;
+    @include span(full);
+    margin-bottom: space(el);
+
+    label{
+        display: block;
+    }
+
+    label.inline{
+        display: inline-block;
+        width: auto;
+    }
+
+    input,
+    textarea,
+    select{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    input[type=checkbox],
+    input[type=radio],
+    .button{
+        width: auto;
+    }
+
+    &.form-row-first,
+    &.form-row-last{
+        @include span(6);
+    }
+    &.form-row-last{
+        clear: none;
+    }
+
+}
+
+
+.relevanssi-query-term{
+    background: yellow;
+}

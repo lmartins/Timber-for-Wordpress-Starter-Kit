@@ -45,15 +45,32 @@
 
             {% do action('tha_content_before') %}
 
-            <section role="main" class="site-content">
+            <section class="site-content">
 
                 <div class="inner">
+                    <main class="content" role="main">
+                        {% do action('tha_content_top') %}
+                        {% if title %}<h1>{{title}}</h1>{% endif %}
+                        {% block content %}
+                            Sorry, no content
+                        {% endblock %}
+                        {% do action('tha_content_bottom') %}
+                    </main>
 
-                    {% if title %}<h1>{{title}}</h1>{% endif %}
+                    {% if sidebar %}
 
-                    {% block content %}
-                        Sorry, no content
-                    {% endblock %}
+                        {% do action('tha_sidebars_before') %}
+
+                        <aside class="layout-sidebar" role="aside">
+                            {% do action('tha_sidebars_top') %}
+                            {{sidebar}}
+                            {% do action('tha_sidebars_bottom') %}
+                        </aside>
+
+                        {% do action('tha_sidebars_after') %}
+
+                    {% endif %}
+
                 </div>
 
             </section>

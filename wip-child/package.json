@@ -4,11 +4,13 @@
   "version": "0.1.0",
   "dependencies": {},
   "browserify": {
-      "transform": ["decomponentify" ]
-    },
+    "transform": [
+      "decomponentify"
+    ]
+  },
   "devDependencies": {
     "browser-sync": "^1.8.3",
-    "browserify": "^8.0.3",
+    "browserify": "^8.1.0",
     "component-webpack-plugin": "^0.2.1",
     "css-loader": "^0.9.0",
     "decomponentify": "0.0.3",

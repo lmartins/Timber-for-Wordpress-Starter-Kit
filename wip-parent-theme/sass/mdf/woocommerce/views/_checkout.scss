@@ -1,0 +1,97 @@
+
+/**
+ * ----------------------------------------------------------------------------
+ * LAYOUT
+ * ----------------------------------------------------------------------------
+ */
+
+form.checkout{
+    @include container(nested);
+    .col-1,
+    .col-2{
+        @include increase-specificity{
+            @include span(full wider);
+            // @include container(nested);
+        }
+    }
+}
+
+#customer_details{
+    @include span(5);
+}
+#order_review{
+    @include span(7);
+}
+
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * FORMULÁRIOS LOGIN / ADD COUPON
+ * Formulários para login e adição de coupon na página de Checkout
+ * ----------------------------------------------------------------------------
+ */
+
+form.login,
+form.checkout_coupon{
+    @include span(full);
+    padding: space(el);
+    > p:first-child {
+        @include span(full);
+        color: gc(info, text);
+    }
+}
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * WOOCOMMERCE CHECKOUT REVIEW ORDER TABLE
+ * Shows the order values in checkout page
+ * ----------------------------------------------------------------------------
+ */
+.woocommerce-checkout-review-order-table{
+    td, th{
+        text-align: center;
+    }
+    tfoot{
+        td{
+            font-weight: bold;
+        }
+    }
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * WOOCOMMERCE CHECKOUT PAYMENT
+ * Selector de métodos de pagamento
+ * ----------------------------------------------------------------------------
+ */
+
+.woocommerce-checkout-payment{
+
+    border-top: 3px solid gc(muted);
+
+    li{
+        border-bottom: 1px solid gc(muted);
+        padding: space(el);
+        &:last-of-type{
+            border: none;
+        }
+    }
+
+    .place-order{
+        padding: space(el);
+    }
+
+    input[type=submit]{
+        font-size: $f-size-l;
+        height: 2.5em;
+        line-height: 2.5em;
+        width: 100%;
+    }
+
+}
+

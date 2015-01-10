@@ -1,0 +1,88 @@
+
+/**
+ * ----------------------------------------------------------------------------
+ * TABLE SHOP TABLE
+ * Formatação genérica para várias tabelas usadas em views da Loja
+ * ----------------------------------------------------------------------------
+ */
+table.shop_table{
+    border: 1px solid gc(muted);
+    td, th{
+        padding: space(el);
+    }
+
+    &.customer_details{
+        th{
+            width: 20%;
+        }
+    }
+}
+
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * TABLE CART
+ * List Products in the Cart
+ * ----------------------------------------------------------------------------
+ */
+
+table.cart{
+
+    clear: both;
+
+    @include mq($until: tablet){
+        thead th{
+            @include increase-specificity{
+                padding: 0;
+                text-indent: -9999px;
+                font-size: 0;
+                border: none;
+            }
+        }
+
+        /**
+         * Zona de produtos
+         */
+
+        .product-thumbnail{
+            display: none;
+        }
+
+        /**
+         * Zona de Acções
+         */
+
+        .actions{
+
+            padding-top: space(el);
+
+            label{
+                display: none;
+            }
+            input{
+                width: 100%;
+            }
+
+        }
+
+        .coupon{
+            margin-bottom: space(el);
+        }
+
+    }
+
+    @include tablet{
+
+        .actions{
+            > .button{
+                float: right;
+            }
+        }
+        .coupon{
+            float: left;
+        }
+
+    }
+
+}

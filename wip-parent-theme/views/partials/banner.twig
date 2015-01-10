@@ -15,7 +15,9 @@
                         {% endif %}
                     </h2>
                     <div class="description">
-                        <p>{{ banner.description }}</p>
+                        <?php if (banner.description): ?>
+                            <p>{{ banner.description }}</p>
+                        <?php endif ?>
                         {% if banner.button_text and link %}
                             <a href="{{ link }}" am-button>{{ banner.button_text }}</a>
                         {% endif %}

@@ -4,32 +4,6 @@
 @import "../../bower_components/modular-scale/stylesheets/_modular-scale.scss";
 
 
-/**
- * ----------------------------------------------------------------------------
- * SETUP
- * ----------------------------------------------------------------------------
- */
-
-@import "settings/_colors.scss";
-@import "settings/_typography.scss";
-@import "settings/_grid.scss";
-@import "settings/_components.scss";
-
-
-
-/**
- * ----------------------------------------------------------------------------
- * VENDORS
- * ----------------------------------------------------------------------------
- */
-
-@import "../../bower_components/susy/sass/_susy.scss";
-// @import "../../bower_components/normalize.scss/_normalize.scss";
-@import "../../bower_components/sass-mq/_mq.scss";
-// @import "vendors/libs/bourbon/_bourbon.scss";
-
-
-
 
 /**
  * ----------------------------------------------------------------------------
@@ -51,6 +25,34 @@
 @import "mdf/helpers/_thumbnails.scss";
 
 
+/**
+ * ----------------------------------------------------------------------------
+ * SETUP
+ * ----------------------------------------------------------------------------
+ */
+
+@import "settings/_colors.scss";
+@import "settings/_typography.scss";
+@import "settings/_grid.scss";
+@import "settings/_components.scss";
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * VENDORS
+ * ----------------------------------------------------------------------------
+ */
+
+@import "../../bower_components/susy/sass/_susy.scss";
+// @import "../../bower_components/normalize.scss/_normalize.scss";
+@import "../../bower_components/sass-mq/_mq.scss";
+// @import "vendors/libs/bourbon/_bourbon.scss";
+
+
+
+
+
+
 
 /**
  * ----------------------------------------------------------------------------
@@ -66,7 +68,6 @@
 
 
 @import "mdf/base/_reset.scss";
-@import "mdf/base/_layout.scss";
 @import "mdf/base/_tables.scss";
 @import "mdf/base/_wp-core.scss";
 
@@ -97,7 +98,7 @@
  * ----------------------------------------------------------------------------
  */
 
-@import "layout/_common.scss";
+@import "layout/_layout.scss";
 @import "layout/_header.scss";
 @import "layout/_main.scss";
 @import "layout/_footer.scss";
@@ -114,7 +115,8 @@
 // @import "../../../wip-parent-theme/src/sass/components/_media.scss";
 
 @import "mdf/components/_media.scss";
-// @import "components/_forms.scss";
+@import "mdf/components/_forms.scss";
+@import "mdf/components/_navigation.scss";
 
 @import "components/_site-banner.scss";
 
@@ -129,6 +131,8 @@
 
 @import "woocommerce/views/_product.scss";
 @import "woocommerce/views/_cart.scss";
+@import "woocommerce/views/_checkout.scss";
+
 
 
 /**

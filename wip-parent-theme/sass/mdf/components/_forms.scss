@@ -1,0 +1,31 @@
+
+label,
+.label{
+    font-weight: bold;
+}
+
+input{
+    line-height : mg($forms, input, height);
+    height      : mg($forms, input, height);
+}
+
+input[type=checkbox],
+input[type=radio]{
+    line-height: 1;
+    height: auto;
+    @include border(red);
+}
+
+input,
+textarea{
+
+    // width      : 100%;
+    border        : 2px solid mg($forms, input, background);
+    border-radius : mg($forms, input, radius);
+    background    : mg($forms, input, background);
+    padding       : mg($forms, input, padding);
+    transition    : all 0.15s ease-in 0;
+    outline       : none;
+    font-weight   : 400;
+    font-family   : $f-sans;
+}

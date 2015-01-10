@@ -74,9 +74,9 @@ class StarterSite extends TimberSite {
         $context['main_sidebar'] = Timber::get_widgets('sidebar-1');
         $context['home_widgets'] = Timber::get_widgets('home-widgets');
         $context['footerWidgets1'] = Timber::get_widgets('footer-1');
-        $context['footerWidgets2'] = Timber::get_widgets('footer-2');
-        $context['footerWidgets3'] = Timber::get_widgets('footer-3');
-        $context['footerWidgets4'] = Timber::get_widgets('footer-4');
+        // $context['footerWidgets2'] = Timber::get_widgets('footer-2');
+        // $context['footerWidgets3'] = Timber::get_widgets('footer-3');
+        // $context['footerWidgets4'] = Timber::get_widgets('footer-4');
 
         $context['mainMenu'] = new TimberMenu('main_menu');
         $context['footerNav'] = new TimberMenu('footer_menu');

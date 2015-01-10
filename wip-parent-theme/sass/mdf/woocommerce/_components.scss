@@ -8,47 +8,38 @@ input.qty{
 }
 
 
-
-
-
-.site-header-cart{
-
-    position: relative;
-
-    &:hover{
-        .widget_shopping_cart{
-            visibility: visible;
-        }
-    }
-
-    .widget_shopping_cart{
-        visibility: hidden;
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        top: 100%;
-    }
-
-    p.total,
-    p.buttons{
-        text-align: center;
-    }
-
-}
-
-
-.product_list_widget{
-    min-width: 260px;
-    li{
-        display: flex;
-    }
-
-}
-
-
 /**
  * DEMO STORE NOTIFICATION
  */
 .demo_store{
     text-align: center;
+}
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * NOTIFICAÇÕES DE LOJA
+ * Mensagens de notificação para o utilizador
+ * ----------------------------------------------------------------------------
+ */
+.woocommerce-info{
+    @include span(full);
+    margin-bottom: space(el);
+    padding: space(el);
+    background: gc(info);
+    color: gc(info, text);
+    a{
+        color: gc(info, text);
+    }
+}
+
+
+
+
+form.login{
+
+    .lost_password{
+        @include span(full);
+    }
+
 }

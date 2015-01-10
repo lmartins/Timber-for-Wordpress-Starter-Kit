@@ -28,13 +28,13 @@ table.shop_table{
 
     background: gc(muted);
     display: inline-block;
-    padding: space(element);
+    padding: space(el);
 
     .count{
         font-weight: normal;
         color: gc(text, muted);
-        padding-left: space(element);
-        margin-left: space(element);
+        padding-left: space(el);
+        margin-left: space(el);
         border-left: 1px solid gc(neutral);
     }
 
@@ -56,43 +56,15 @@ table.shop_table{
     }
 
     .product_list_widget{
-        padding: space(element);
-        padding-bottom: space(element);
+        padding: space(el);
+        padding-bottom: space(el);
     }
 
     .total,
     .buttons{
         background: gc(muted);
         font-size: $f-size-s;
-        padding: space(element);
-    }
-}
-
-
-
-/**
- * ----------------------------------------------------------------------------
- * WOOCOMMERCE CHECKOUT REVIEW ORDER TABLE
- * Shows the order values in checkout page
- * ----------------------------------------------------------------------------
- */
-.woocommerce-checkout-review-order-table{
-
-    // @include border(gc(muted), 2px);
-    border-collapse: collapse;
-
-    td, th{}
-
-    tfoot{
-        td, th{
-            background: gc(muted, light);
-        }
-        td{
-            font-weight: bold;
-        }
-        th{
-            text-align: right;
-        }
+        padding: space(el);
     }
 }
 
@@ -119,7 +91,7 @@ table.shop_table{
 
 .cart_totals{
     td, th{
-        padding: space(element, small);
+        padding: space(el, small);
     }
     th{
         text-align: right;
@@ -129,5 +101,28 @@ table.shop_table{
     }
     table{
         background: gc(muted);
+    }
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * CREATE ACCOUNT
+ * No formulário de checkout, opçõe para criação de conta cliente
+ * ----------------------------------------------------------------------------
+ */
+p.create-account{
+    @include span(full);
+    input, label{
+        @include increase-specificity{
+            display: inline-block;
+            width: auto;
+        }
+    }
+}
+div.create-account{
+    @include span(full);
+    margin-bottom: space(box);
+    p{
+        margin: 0;
     }
 }

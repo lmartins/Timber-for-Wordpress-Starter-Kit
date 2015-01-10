@@ -13,6 +13,15 @@ add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 
 /**
+ * Remove WooCommerce Breadcrumbs
+ */
+add_action( 'init', 'mw_remove_wc_breadcrumbs' );
+function mw_remove_wc_breadcrumbs() {
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+}
+
+
+/**
  * ----------------------------------------------------------------------------
  * Configura as colunas que devem permanecer visiveis na lista de produtos
  * ----------------------------------------------------------------------------

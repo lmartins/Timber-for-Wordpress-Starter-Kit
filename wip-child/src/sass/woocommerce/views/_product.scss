@@ -31,7 +31,7 @@
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid gc(muted);
-        padding: space(element) 0;
+        padding: space(el) 0;
     }
 }
 
@@ -74,7 +74,7 @@
 
         a{
             display: inline-block;
-            padding: space(element);
+            padding: space(el);
         }
         .active{
             a{
