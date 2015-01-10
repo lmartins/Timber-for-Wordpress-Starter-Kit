@@ -6,12 +6,18 @@
 {% endblock %}
 
     <body class="{{body_class}} {{layout}}" data-template="base.twig" data-view="{{site_view}}">
+
+        {% do action('tha_body_top') %}
+
         <div class="site-container">
 
             {% do action('tha_header_before') %}
+
             <header class="site-header" >
-                {% block header %}
+
                 {% do action('tha_header_top') %}
+
+                {% block header %}
                 <div class="wrapper container">
                     <div class="site-logo" role="banner">
                         <a class="hdr-logo-link" href="/" rel="home">{{site.name}}</a>
@@ -27,10 +33,11 @@
                             {% do action('mw_mainMenu_options') %}
                         </ul>
                     </nav><!-- #access -->
-
                 </div>
-                {% do action('tha_header_bottom') %}
                 {% endblock %}
+
+                {% do action('tha_header_bottom') %}
+
             </header>
             {% do action('tha_header_after') %}
 
@@ -43,39 +50,37 @@
                 </div>
             {% endblock %}
 
-            {% do action('tha_content_before') %}
+
 
             <section class="site-content">
 
                 <div class="inner">
+
+                    {% do action('tha_content_before') %}
                     <main class="content" role="main">
                         {% do action('tha_content_top') %}
-                        {% if title %}<h1>{{title}}</h1>{% endif %}
+                        {% if title %}<h1>{{title}}..</h1>{% endif %}
                         {% block content %}
                             Sorry, no content
                         {% endblock %}
                         {% do action('tha_content_bottom') %}
                     </main>
+                    {% do action('tha_content_after') %}
 
                     {% if sidebar %}
-
                         {% do action('tha_sidebars_before') %}
-
                         <aside class="layout-sidebar" role="aside">
                             {% do action('tha_sidebars_top') %}
                             {{sidebar}}
                             {% do action('tha_sidebars_bottom') %}
                         </aside>
-
                         {% do action('tha_sidebars_after') %}
-
                     {% endif %}
 
                 </div>
 
             </section>
 
-            {% do action('tha_content_after') %}
 
             {% do action('tha_footer_before') %}
             <footer class="site-footer" >
@@ -92,6 +97,8 @@
         </div>
 
         {{ function('wp_footer') }}
+
+        {% do action('tha_body_bottom') %}
 
     </body>
 </html>

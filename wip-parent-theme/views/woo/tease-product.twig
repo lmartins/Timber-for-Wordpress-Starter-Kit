@@ -1,3 +1,5 @@
+{% do action('tha_entry_before') %}
+
 <article {{ fn('post_class', ['$classes', 'entry'] ) }}>
 
     {{ fn('timber_set_product', entry)}}
@@ -19,13 +21,13 @@
         <div class="Media-content">
         {{product}}
             {% do action('woocommerce_before_shop_loop_item_title') %}
-            <!-- {% if entry.product.is_on_sale %}SALE!{% endif %} -->
-            <h2 class="entry-title"><a href="{{entry.link}}">{{entry.title}}</a></h2>
-            <!-- <p class="price">{{entry.product.get_price_html}}</p> -->
+            {% if entry.title %}
+                <h2 class="entry-title"><a href="{{entry.link}}">{{ entry.title }}</a></h2>
+            {% else %}
+                <h2 class="entry-title"><a href="{{entry.link}}">{{ fn('the_title') }}</a></h2>
+            {% endif %}
             {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
             {% do action( 'woocommerce_after_shop_loop_item' ) %}
-
-            <!-- <a href="{{item.product.add_to_cart_url}}" class="button">Add to Cart</a> -->
         </div>
 
         {% do action('tha_entry_bottom') %}
@@ -33,3 +35,5 @@
     </div>
 
 </article>
+
+{% do action('tha_entry_after') %}

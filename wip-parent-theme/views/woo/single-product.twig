@@ -3,6 +3,7 @@
 {% block content %}
 
     {% do action('woocommerce_before_single_product') %}
+    {% do action('tha_entry_content') %}
 
     <article itemscope itemtype="http://schema.org/Product" class="single-product-details {{post.class}}">
 
@@ -21,6 +22,7 @@
 
     </article>
 
+    {% do action('tha_entry_footer') %}
     {% do action('woocommerce_after_single_product') %}
 
 {% endblock  %}

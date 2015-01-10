@@ -7,6 +7,7 @@ if (is_singular('product')) {
     $context['post'] = Timber::get_post();
     $product = get_product( $context['post']->ID );
     $context['product'] = $product;
+    $context['sidebar'] = Timber::get_widgets('shop-sidebar');
     add_action( 'mc_attributes', function($product){
         $product->list_attributes();
     });
@@ -19,15 +20,6 @@ if (is_singular('product')) {
 } else {
 
     $posts = Timber::get_posts();
-
-    /**
-     * Hack para estabelecer contexto correcto dentro do loop de produtos.
-     * Resolve problem em que hooks corriam todos com o mesmo contexto.
-     */
-    function timber_set_product($post) {
-        global $product;
-        $product = get_product($post->ID);
-    }
 
     $context['products'] = $posts;
     $context['sidebar'] = Timber::get_widgets('shop-sidebar');

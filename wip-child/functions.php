@@ -88,6 +88,8 @@ class StarterSite extends TimberSite {
         $context["commentReplyArgs"] = array('reply_text' => "Reply", 'depth' => 1, 'max_depth' => 5);
         $context['site'] = $this;
 
+
+
         return $context;
     }
 
@@ -95,6 +97,7 @@ class StarterSite extends TimberSite {
         /* this is where you can add your own fuctions to twig */
         $twig->addExtension(new Twig_Extension_StringLoader());
         // $twig->addFilter('myfoo', new Twig_Filter_Function('myfoo'));
+
         return $twig;
     }
 
@@ -102,3 +105,19 @@ class StarterSite extends TimberSite {
 
 new StarterSite();
 
+
+
+/**
+ * Hack para estabelecer contexto correcto dentro do loop de produtos.
+ * Resolve problem em que hooks corriam todos com o mesmo contexto.
+ */
+function timber_set_product($post) {
+    global $product;
+    if ( is_woocommerce() ) {
+        $product = get_product($post->ID);
+    }
+    // global $woocommerce;
+    //
+    // var_dump($product);
+    // $product = get_product($post->ID);
+}

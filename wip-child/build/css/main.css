@@ -205,11 +205,11 @@ body {
 
 /* line 16, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
 h1 {
-  font-size: 3.6989em; }
+  font-size: 2.59786em; }
 
 /* line 17, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
 h2 {
-  font-size: 1.44163em; }
+  font-size: 1.62183em; }
 
 /* line 18, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/base/_typography.scss */
 h3 {
@@ -965,7 +965,9 @@ html, body {
   -webkit-flex: 1 0 23.33333%;
       -ms-flex: 1 0 23.33333%;
           flex: 1 0 23.33333%;
-  margin: 0 0.83333%; }
+  margin: 0 0.83333%;
+  margin-left: 5.83333%;
+   }
 
 /* line 3, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/layout/_header.scss */
 .site-header {
@@ -1210,9 +1212,19 @@ input, textarea {
   font-weight: 400;
   font-family: Fira Sans, 'Helvetica Neue', Verdana, Arial, sans-serif; }
 
-/* line 7, ../wip-parent-theme/sass/mdf/components/_navigation.scss */
+/* line 5, ../wip-parent-theme/sass/mdf/components/_navigation.scss */
 [am-nav*="breadcrumbs"] {
-  font-size: 0.71111em; }
+  max-width: 72em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 12, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/output/support/clearfix */
+  [am-nav*="breadcrumbs"]:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  /* line 7, ../wip-parent-theme/sass/mdf/components/_navigation.scss */
+  [am-nav*="breadcrumbs"] nav {
+    font-size: 0.71111em; }
   /* line 10, ../wip-parent-theme/sass/mdf/components/_navigation.scss */
   [am-nav*="breadcrumbs"] a {
     font-weight: 500; }
@@ -1336,6 +1348,30 @@ input, textarea {
     .home-banner-top .owl-dots {
       bottom: 9vh; }
  }
+
+/**
+ * ----------------------------------------------------------------------------
+ * SEARCH RESULTS
+ * ----------------------------------------------------------------------------
+ */
+/* line 10, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_loops.scss */
+.search-results .entry {
+  
+  
+  
+  width: 31.66667%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+   }
+/* line 13, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_loops.scss */
+.search-results .Media {
+  display: block; }
+/* line 16, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_loops.scss */
+.search-results .Media-figure {
+  width: 6em;
+  float: right; }
 
 /**
  * WOOCOMMERCE

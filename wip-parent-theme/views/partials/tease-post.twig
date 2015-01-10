@@ -1,3 +1,5 @@
+{% do action('tha_entry_before') %}
+
 <article {{ fn('post_class', ['$classes', 'entry'] ) }}>
 
     <div class="Media">
@@ -25,3 +27,4 @@
 
 </article>
 
+{% do action('tha_entry_after') %}

@@ -1,11 +1,16 @@
 {% extends "base.twig" %}
 
+{% do action('tha_entry_before') %}
+
 {% block content %}
 
 	<div class="content-wrapper">
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
+
+                {% do action('tha_entry_top') %}
+
+                <h1 class="article-h1">{{post.title}}</h1>
                 {% if post.post_excerpt %}
                     <p class="lead">{{ post.post_excerpt }} </p>
                 {% endif %}
@@ -33,6 +38,9 @@
 				<div class="article-body">
 					{{post.content}}
 				</div>
+
+                {% do action('tha_entry_bottom') %}
+
 			</section>
 
 
@@ -76,3 +84,5 @@
 	</div> <!-- /content-wrapper -->
 
 {% endblock %}
+
+{% do action('tha_entry_after') %}
