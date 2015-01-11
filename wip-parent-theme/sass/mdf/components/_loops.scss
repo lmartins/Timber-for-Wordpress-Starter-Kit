@@ -1,11 +1,4 @@
 
-.read-more{
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: $f-size-s;
-}
-
-// TODO: Arrumar loops dentro do MDF e theme
 
 /*
  * ----------------------------------------------------------------------------
@@ -15,7 +8,9 @@
 
 .loop{
 
-    @include clearfix;
+    overflow: hidden;
+
+    // @include clearfix; - Parte as grids flexbox
     @include thumb-placeholder(75%);
 
     clear: both;
@@ -32,7 +27,6 @@
 
     .entry-meta{
         font-size: $f-size-s;
-        // color: $f-text-muted;
     }
 
     p{
@@ -40,6 +34,7 @@
     }
 
 }
+
 
 
 
@@ -77,11 +72,93 @@
 
 
 
+
 /**
  * ----------------------------------------------------------------------------
  * CARDS
  * ----------------------------------------------------------------------------
  */
+
+// .loop--cards{
+
+//     clear          : both;
+//     display        : flex;
+//     flex-direction : row;
+//     flex-wrap      : wrap;
+//     align-items: stretch;
+
+
+//     .entry{
+//         flex-basis : span(4);
+//         margin     : gutter();
+//         // background : gc(muted);
+//         // padding    : gutter();
+//         // text-align : center;
+//         display    : flex;
+//     }
+//     .Media{
+//         flex-direction: column;
+//         // flex: 1;
+//         @include border(black);
+//     }
+//     .Media-figure{
+//         // margin-bottom: 1em;
+//         @include border(red);
+//         // flex-shrink: 0;
+//         // width: 100%;
+//         // flex: 1 0 75%;
+//         a{
+//             display: block;
+//             @include border(yellow);
+//             position: relative;
+//             padding-top: 75%
+//         }
+//         img{
+//             position: absolute;
+//             display: none;
+//         }
+//     }
+//     .Media-content{
+//         padding-top: 1em;
+//         @include border(green,2px);
+//         display: flex;
+//         flex-flow: row wrap;
+//         flex: 1 0;
+//         // flex: 0 0 auto;
+//     }
+//     .post-title{
+//         width: 100%;
+//     }
+//     .price{
+//     }
+//     .add_to_cart_button{
+//         @include border(red);
+//         width: 100%;
+//     }
+//     // .Media{
+//     //     flex-direction: column;
+//     //     align-items: stretch;
+//     // }
+//     // .Media-figure{
+//     //     margin-bottom: 1em;
+//     // }
+//     // .Media-content{
+//     //     display: flex;
+//     //     flex-flow: row wrap;
+//     //     justify-content: space-between;
+//     //     align-items: center;
+//     //     flex: 1 1 auto;
+//     //     @include border(red);
+//     //     // flex: 1 1 auto;
+//     // }
+//     // .entry-title{
+//     //     flex-basis: 100%;
+//     // }
+// }
+
+
+
+
 
 .loop--cards{
 
@@ -145,6 +222,8 @@
     }
 
 }
+
+
 
 
 
@@ -277,71 +356,4 @@
         }
     }
 
-}
-
-
-
-
-
-/*
- * ----------------------------------------------------------------------------
- * LOOP--POSTS
- * ----------------------------------------------------------------------------
- */
-
-.loop--posts{
-
-    .Media-figure{
-        @include span(4);
-    }
-    .Media-details{
-        @include span(8);
-    }
-}
-
-
-
-
-
-.form-row{
-
-    clear: left;
-    @include span(full);
-    margin-bottom: space(el);
-
-    label{
-        display: block;
-    }
-
-    label.inline{
-        display: inline-block;
-        width: auto;
-    }
-
-    input,
-    textarea,
-    select{
-        width: 100%;
-        max-width: 100%;
-    }
-
-    input[type=checkbox],
-    input[type=radio],
-    .button{
-        width: auto;
-    }
-
-    &.form-row-first,
-    &.form-row-last{
-        @include span(6);
-    }
-    &.form-row-last{
-        clear: none;
-    }
-
-}
-
-
-.relevanssi-query-term{
-    background: yellow;
 }

@@ -2,29 +2,31 @@
 
 <article {{ fn('post_class', ['$classes', 'entry'] ) }}>
 
-    {{ fn('timber_set_product', entry)}}
+    {{ fn('timber_set_product', post)}}
 
     <div class="Media">
 
         {% do action('tha_entry_top') %}
 
-        <div class="Media-figure">
-            <a href="{{entry.link}}">
-                {% if entry.thumbnail %}
-                    <img src="{{ entry.thumbnail.src|resize(300, 225) }}" />
-                {% else %}
-                    <span class="thumb-placeholder"><i class="icon-camera"></i></span>
-                {% endif %}
-            </a>
-        </div>
+        {% if post.thumbnail and showthumb %}
+            <div class="Media-figure">
+                <a href="{{post.link}}">
+                    {% if post.thumbnail %}
+                        <img src="{{ post.thumbnail.src|resize(300, 225) }}" />
+                    {% else %}
+                        teste
+                        <span class="thumb-placeholder"><i class="icon-camera"></i></span>
+                    {% endif %}
+                </a>
+            </div>
+        {% endif %}
 
         <div class="Media-content">
-        {{product}}
             {% do action('woocommerce_before_shop_loop_item_title') %}
-            {% if entry.title %}
-                <h2 class="entry-title"><a href="{{entry.link}}">{{ entry.title }}</a></h2>
+            {% if post.title %}
+                <h2 class="post-title"><a href="{{post.link}}">{{ post.title }}</a></h2>
             {% else %}
-                <h2 class="entry-title"><a href="{{entry.link}}">{{ fn('the_title') }}</a></h2>
+                <h2 class="post-title"><a href="{{post.link}}">{{ fn('the_title') }}</a></h2>
             {% endif %}
             {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
             {% do action( 'woocommerce_after_shop_loop_item' ) %}

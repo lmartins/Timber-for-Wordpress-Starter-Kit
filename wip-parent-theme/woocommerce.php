@@ -22,6 +22,7 @@ if (is_singular('product')) {
     $posts = Timber::get_posts();
 
     $context['products'] = $posts;
+    $context['showthumb'] = true;
     $context['sidebar'] = Timber::get_widgets('shop-sidebar');
 
     Timber::render('views/woo/archive.twig', $context);

@@ -3,9 +3,11 @@
 {% block content %}
 
     {% do action('woocommerce_before_single_product') %}
-    {% do action('tha_entry_content') %}
 
+    {% do action('tha_entry_before') %}
     <article itemscope itemtype="http://schema.org/Product" class="single-product-details {{post.class}}">
+
+        {% do action('tha_entry_top') %}
 
         <div class="entry-images">
             {% do action('woocommerce_before_single_product_summary') %}
@@ -17,12 +19,13 @@
         </div>
 
         {% do action('woocommerce_after_single_product_summary') %}
+        {% do action('tha_entry_bottom') %}
 
         <meta itemprop="url" content="{{ post.link }}" />
 
     </article>
 
-    {% do action('tha_entry_footer') %}
+    {% do action('tha_entry_after') %}
     {% do action('woocommerce_after_single_product') %}
 
 {% endblock  %}

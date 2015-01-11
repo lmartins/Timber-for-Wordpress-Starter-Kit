@@ -24,7 +24,5 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-if ( !is_cart() AND !is_checkout() ) {
-    $context['sidebar'] = Timber::get_widgets('sidebar-1');
-}
+
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

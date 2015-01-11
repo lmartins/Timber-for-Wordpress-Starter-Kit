@@ -18,7 +18,7 @@ add_action( 'wp_enqueue_scripts',           'mw_scripts', 10 );
  * ----------------------------------------------------------------------------
  */
 // add_action('mwh_banner', 'mw_add_header_banner');
-
+add_action( 'mw_mainMenu_options', 'storefront_header_cart', 10, 2 );
 
 
 
@@ -39,6 +39,7 @@ add_action('tha_content_top','mw_add_breadcrumbs', 1);
  * ----------------------------------------------------------------------------
  */
 
+
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail');
 
 
@@ -53,8 +54,8 @@ remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_l
 
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
 
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
-add_action( 'woocommerce_after_single_product', 'woocommerce_output_related_products', 20 );
+// remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+// add_action( 'woocommerce_after_single_product', 'woocommerce_output_related_products', 20 );
 
 
 /**

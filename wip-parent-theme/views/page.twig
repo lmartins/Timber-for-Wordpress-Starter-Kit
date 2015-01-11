@@ -4,20 +4,24 @@
 
     <div class="content-wrapper">
 
+        {% do action('tha_entry_before') %}
+
         <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
     		<section class="article-content">
-    			<h1 class="article-h1">{{post.title}}</h1>
 
-                {% do action('tha_entry_content') %}
+                {% do action('tha_entry_top') %}
 
+                <h1 class="article-h1">{{post.title}}</h1>
                 <div class="article-body">
     				{{post.content}}
     			</div>
 
-                {% do action('tha_entry_footer') %}
+                {% do action('tha_entry_botoom') %}
 
     		</section>
     	</article>
+
+        {% do action('tha_entry_after') %}
 
     </div>
 

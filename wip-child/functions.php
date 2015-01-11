@@ -2,8 +2,8 @@
 
 if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-require_once( get_template_directory() . '/mdf/init.php' );
-require_once( PARENT_DIR . '/mdf/extras.php' );
+require_once( get_template_directory() . '/mdf/setup/init.php' );
+require_once( PARENT_DIR . '/mdf/utils/extras.php' );
 
 // TODO: Ver se isto é necessário
 // require_once( CHILD_DIR . '/lib/underscores/inc/customizer.php' );
@@ -14,30 +14,29 @@ require_once( PARENT_DIR . '/mdf/extras.php' );
  * SETUP
  * Enqueue styles, register widget regions, etc.
  */
-require_once( CHILD_DIR . '/fw/setup.php' );
-require_once( CHILD_DIR . '/fw/hooks.php' );
+require_once( CHILD_DIR . '/fw/setup/init.php' );
+require_once( CHILD_DIR . '/fw/setup/post-types.php' );
+// require_once( CHILD_DIR . '/fw/setup/taxonomies.php' );
+require_once( CHILD_DIR . '/fw/setup/media.php' );
+require_once( CHILD_DIR . '/fw/setup/customizer.php' );
+require_once( CHILD_DIR . '/fw/setup/sidebars.php' );
+
 
 /**
- * CONF
+ * RENDER
+ *
  */
-require_once( CHILD_DIR . '/fw/conf/customizer.php' );
-require_once( CHILD_DIR . '/fw/conf/media.php' );
-require_once( CHILD_DIR . '/fw/post-types.php' );
-
-/**
- * PARTS
- * Funções que geram código para apresentação nos templates
- */
-require_once( CHILD_DIR . '/fw/parts/header.php' );
-require_once( CHILD_DIR . '/fw/parts/maincontent.php' );
+require_once( CHILD_DIR . '/fw/render/hooks.php' );
+require_once( CHILD_DIR . '/fw/render/header.php' );
+require_once( CHILD_DIR . '/fw/render/maincontent.php' );
+// require_once( CHILD_DIR . '/fw/render/footer.php' );
+// if ( is_woocommerce_activated() ) {
+//     require_once( CHILD_DIR . '/fw/render/woo.php' );
+// }
 
 
 require_once( CHILD_DIR . '/fw/shame.php' );
 
-
-if ( is_woocommerce_activated() ) {
-    require_once( CHILD_DIR . '/fw/woocommerce/hooks.php' );
-}
 
 
 
@@ -71,7 +70,10 @@ class StarterSite extends TimberSite {
 
         $context['layout'] = 'content-sidebar';
 
-        $context['main_sidebar'] = Timber::get_widgets('sidebar-1');
+        if ( !is_cart() AND !is_checkout() ) {
+            $context['sidebar'] = Timber::get_widgets('sidebar-1');
+        }
+
         $context['home_widgets'] = Timber::get_widgets('home-widgets');
         $context['footerWidgets1'] = Timber::get_widgets('footer-1');
         // $context['footerWidgets2'] = Timber::get_widgets('footer-2');

@@ -24,7 +24,7 @@ function my_function_with_args($context){
  */
 function mw_add_search_loop_markup_start(){
     if ( is_search() ) {
-        echo '<div class="loop-search-results">';
+        echo '<div am-loop="list search">';
         add_action( 'genesis_loop', 'mw_close_div', 99 );
     }
 }

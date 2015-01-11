@@ -1185,6 +1185,423 @@ html, body {
   .Media--vertical .Media-content, .Media--vertical .Media-figure {
     display: block; }
 
+/*
+ * ----------------------------------------------------------------------------
+ * LOOP DEFAULTS
+ * ----------------------------------------------------------------------------
+ */
+/* line 9, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+.loop {
+  overflow: hidden;
+  clear: both;
+  margin-bottom: 2em; }
+  /* line 3, ../wip-parent-theme/sass/mdf/helpers/_thumbnails.scss */
+  .loop .thumb-placeholder {
+    display: block;
+    padding-top: 75%;
+    background: #f2f2f2;
+    position: relative; }
+    /* line 9, ../wip-parent-theme/sass/mdf/helpers/_thumbnails.scss */
+    .loop .thumb-placeholder i {
+      font-size: 2.59786em;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+          -ms-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%);
+      color: #a6a6a6; }
+  /* line 19, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop .entry-title {
+    font-family: Fira Sans, 'Helvetica Neue', Verdana, Arial, sans-serif;
+    font-size: 1.28145em; }
+  /* line 24, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop .entry {
+    margin-bottom: 0.675em; }
+  /* line 28, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop .entry-meta {
+    font-size: 0.8em; }
+  /* line 32, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop p {
+    margin: 0; }
+
+/*
+ * ----------------------------------------------------------------------------
+ * LOOPLIST
+ * Artigos em modo listagem, com ou sem colunas
+ * ----------------------------------------------------------------------------
+ */
+/* line 48, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+.loop--list {
+  margin-bottom: 2em; }
+  /* line 52, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--list .entry {
+    
+    
+    
+    width: 98.33333%;
+    float: left;
+    margin-left: 0.83333%;
+    margin-right: 0.83333%;
+    
+     }
+  /* line 56, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--list .Media {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  /* line 59, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--list .Media-figure {
+    -webkit-flex-basis: 31.66667%;
+        -ms-flex-preferred-size: 31.66667%;
+            flex-basis: 31.66667%;
+    margin-right: 0.83333%; }
+  /* line 63, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--list .Media-content {
+    -webkit-flex-basis: 65%;
+        -ms-flex-preferred-size: 65%;
+            flex-basis: 65%;
+    margin-left: 0.83333%; }
+
+/**
+ * ----------------------------------------------------------------------------
+ * CARDS
+ * ----------------------------------------------------------------------------
+ */
+/* line 165, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+.loop--cards .entry {
+  position: relative;
+  margin-bottom: 2em;
+  text-align: center; }
+/* line 171, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+.loop--cards img {
+  height: auto;
+  display: block;
+  margin: 0 0 1em; }
+/* line 177, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+.loop--cards .thumb-placeholder {
+  margin: 0 0 1em; }
+/* line 183, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+.loop--cards .Media, .loop--cards .Media-figure, .loop--cards .Media-details {
+  display: block; }
+/* line 187, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+.loop--cards .Media-content {
+  padding: 0 0.83333%; }
+@media (min-width: 20em) {
+  /* line 195, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--cards .entry {
+    width: 48.33333%;
+    float: left;
+    
+    
+    
+     }
+    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+    .loop--cards .entry:nth-child(2n+1) {
+      
+      
+      margin-left: 0.83333%;
+      margin-right: -100%;
+      
+      
+      clear: both; }
+    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+    .loop--cards .entry:nth-child(2n+2) {
+      
+      
+      margin-left: 50.83333%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+ }
+@media (min-width: 43.75em) {
+  /* line 200, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--cards .entry {
+    width: 31.66667%;
+    float: left;
+    
+    
+    
+     }
+    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+    .loop--cards .entry:nth-child(3n+1) {
+      
+      
+      margin-left: 0.83333%;
+      margin-right: -100%;
+      
+      
+      clear: both; }
+    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+    .loop--cards .entry:nth-child(3n+2) {
+      
+      
+      margin-left: 34.16667%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+    .loop--cards .entry:nth-child(3n+3) {
+      
+      
+      margin-left: 67.5%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+ }
+@media (min-width: 64em) {
+  /* line 206, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--cards .entry {
+    width: 23.33333%;
+    float: left;
+    
+    
+    
+     }
+    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+    .loop--cards .entry:nth-child(4n+1) {
+      
+      
+      margin-left: 0.83333%;
+      margin-right: -100%;
+      
+      
+      clear: both; }
+    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+    .loop--cards .entry:nth-child(4n+2) {
+      
+      
+      margin-left: 25.83333%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+    .loop--cards .entry:nth-child(4n+3) {
+      
+      
+      margin-left: 50.83333%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+    .loop--cards .entry:nth-child(4n+4) {
+      
+      
+      margin-left: 75.83333%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+ }
+/* line 218, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+.sidebar .loop--cards .entry {
+  float: none;
+  width: 100%; }
+
+/*
+ * ----------------------------------------------------------------------------
+ * MINIBANNERS
+ * Lista de artigos apenas com imagem e título por cima da image
+ * ----------------------------------------------------------------------------
+ */
+/* line 238, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+.loop--minibanners {
+  margin-bottom: 2em;
+  /**
+     * Quando sem slider activo
+     */ }
+  /* line 86, ../wip-parent-theme/sass/mdf/helpers/_media.scss */
+  .loop--minibanners .thumb-placeholder {
+    display: block;
+    background: #f2f2f2;
+    position: relative; }
+    /* line 90, ../wip-parent-theme/sass/mdf/helpers/_media.scss */
+    .loop--minibanners .thumb-placeholder:before {
+      content: "";
+      display: block;
+      padding-top: 75%; }
+    /* line 96, ../wip-parent-theme/sass/mdf/helpers/_media.scss */
+    .loop--minibanners .thumb-placeholder i {
+      font-size: 2.59786em;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+          -ms-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%);
+      color: #a6a6a6; }
+  /* line 243, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--minibanners .entry {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all 0.25s;
+            transition: all 0.25s; }
+    /* line 250, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+    .loop--minibanners .entry:hover .Media-figure {
+      opacity: 0.3; }
+    /* line 253, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+    .loop--minibanners .entry:hover .entry-title {
+      opacity: 0;
+      -webkit-transform: translateY(100%);
+          -ms-transform: translateY(100%);
+              transform: translateY(100%);
+      -webkit-transition-delay: 0s;
+              transition-delay: 0s; }
+    /* line 258, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+    .loop--minibanners .entry:hover .entry-details {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+          -ms-transform: translateY(0%);
+              transform: translateY(0%);
+      -webkit-transition-delay: 0.3s;
+              transition-delay: 0.3s; }
+  /* line 268, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--minibanners .Media, .loop--minibanners .Media-figure, .loop--minibanners .Media-content {
+    display: block; }
+  /* line 273, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--minibanners .Media-figure, .loop--minibanners .entry-title {
+    -webkit-transition: 0.3s all 0.25s ease;
+            transition: 0.3s all 0.25s ease; }
+  /* line 276, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--minibanners .excerpt {
+    -webkit-transition: all 0.35s ease;
+            transition: all 0.35s ease;
+    font-size: 0.8em; }
+    /* line 279, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+    .loop--minibanners .excerpt p {
+      margin: 0; }
+  /* line 284, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--minibanners .Media-content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%; }
+  /* line 292, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--minibanners .entry-title {
+    margin: 0;
+    font-size: 1.28145em;
+    background: rgba(41, 41, 41, 0.55);
+    padding: 0.75em; }
+  /* line 299, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--minibanners .entry-details {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
+    position: absolute;
+    bottom: 0em;
+    left: 0;
+    padding: 2em; }
+  /* line 308, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--minibanners .thumb-placeholder {
+    padding: 0; }
+  /* line 313, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--minibanners a h4 {
+    color: white; }
+  @media (min-width: 43.75em) {
+    /* line 326, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+    .loop--minibanners:not(.owl-carousel) .entry {
+      width: 48.33333%;
+      float: left;
+      
+      
+      
+       }
+      /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+      .loop--minibanners:not(.owl-carousel) .entry:nth-child(2n+1) {
+        
+        
+        margin-left: 0.83333%;
+        margin-right: -100%;
+        
+        
+        clear: both; }
+      /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+      .loop--minibanners:not(.owl-carousel) .entry:nth-child(2n+2) {
+        
+        
+        margin-left: 50.83333%;
+        margin-right: -100%;
+        
+        
+        clear: none; }
+ }
+  @media (min-width: 64em) {
+    /* line 332, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+    .loop--minibanners:not(.owl-carousel) .entry {
+      width: 31.66667%;
+      float: left;
+      
+      
+      
+       }
+      /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+      .loop--minibanners:not(.owl-carousel) .entry:nth-child(3n+1) {
+        
+        
+        margin-left: 0.83333%;
+        margin-right: -100%;
+        
+        
+        clear: both; }
+      /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+      .loop--minibanners:not(.owl-carousel) .entry:nth-child(3n+2) {
+        
+        
+        margin-left: 34.16667%;
+        margin-right: -100%;
+        
+        
+        clear: none; }
+      /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
+      .loop--minibanners:not(.owl-carousel) .entry:nth-child(3n+3) {
+        
+        
+        margin-left: 67.5%;
+        margin-right: -100%;
+        
+        
+        clear: none; }
+ }
+  /* line 339, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+  .loop--minibanners.loop--categories {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+    /* line 341, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+    .loop--minibanners.loop--categories .item {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 0 100%;
+          -ms-flex: 1 0 100%;
+              flex: 1 0 100%;
+      -webkit-flex-flow: row wrap;
+          -ms-flex-flow: row wrap;
+              flex-flow: row wrap; }
+    @media (min-width: 20em) {
+      /* line 346, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+      .loop--minibanners.loop--categories .item {
+        -webkit-flex-basis: 50%;
+            -ms-flex-preferred-size: 50%;
+                flex-basis: 50%;
+        max-width: 50%; }
+ }
+    @media (min-width: 43.75em) {
+      /* line 352, ../wip-parent-theme/sass/mdf/components/_loops.scss */
+      .loop--minibanners.loop--categories .item {
+        -webkit-flex-basis: 33.333%;
+            -ms-flex-preferred-size: 33.333%;
+                flex-basis: 33.333%;
+        max-width: 33%; }
+ }
+
 /* line 3, ../wip-parent-theme/sass/mdf/components/_forms.scss */
 label, .label {
   font-weight: bold; }
@@ -1349,13 +1766,13 @@ input, textarea {
       bottom: 9vh; }
  }
 
-/**
+/*
  * ----------------------------------------------------------------------------
- * SEARCH RESULTS
+ * LOOP--POSTS
  * ----------------------------------------------------------------------------
  */
 /* line 10, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_loops.scss */
-.search-results .entry {
+[am-loop*="posts"] .Media-figure {
   
   
   
@@ -1366,9 +1783,37 @@ input, textarea {
   
    }
 /* line 13, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_loops.scss */
+[am-loop*="posts"] .Media-details {
+  
+  
+  
+  width: 65%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+   }
+
+/**
+ * ----------------------------------------------------------------------------
+ * SEARCH RESULTS
+ * ----------------------------------------------------------------------------
+ */
+/* line 28, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_loops.scss */
+.search-results .entry {
+  
+  
+  
+  width: 31.66667%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  
+   }
+/* line 31, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_loops.scss */
 .search-results .Media {
   display: block; }
-/* line 16, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_loops.scss */
+/* line 34, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/components/_loops.scss */
 .search-results .Media-figure {
   width: 6em;
   float: right; }
@@ -1805,459 +2250,11 @@ div.create-account {
   text-transform: uppercase;
   font-size: 0.8em; }
 
-/*
- * ----------------------------------------------------------------------------
- * LOOP DEFAULTS
- * ----------------------------------------------------------------------------
- */
-/* line 16, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-.loop {
-  *zoom: 1;
-  clear: both;
-  margin-bottom: 2em; }
-  /* line 45, ../wip-parent-theme/sass/mdf/helpers/_layout.scss */
-  .loop:before, .loop:after {
-    content: " ";
-    display: table; }
-  /* line 50, ../wip-parent-theme/sass/mdf/helpers/_layout.scss */
-  .loop:after {
-    clear: both; }
-  /* line 3, ../wip-parent-theme/sass/mdf/helpers/_thumbnails.scss */
-  .loop .thumb-placeholder {
-    display: block;
-    padding-top: 75%;
-    background: #f2f2f2;
-    position: relative; }
-    /* line 9, ../wip-parent-theme/sass/mdf/helpers/_thumbnails.scss */
-    .loop .thumb-placeholder i {
-      font-size: 2.59786em;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translateX(-50%) translateY(-50%);
-          -ms-transform: translateX(-50%) translateY(-50%);
-              transform: translateX(-50%) translateY(-50%);
-      color: #a6a6a6; }
-  /* line 24, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop .entry-title {
-    font-family: Fira Sans, 'Helvetica Neue', Verdana, Arial, sans-serif;
-    font-size: 1.28145em; }
-  /* line 29, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop .entry {
-    margin-bottom: 0.675em; }
-  /* line 33, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop .entry-meta {
-    font-size: 0.8em; }
-  /* line 38, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop p {
-    margin: 0; }
-
-/*
- * ----------------------------------------------------------------------------
- * LOOPLIST
- * Artigos em modo listagem, com ou sem colunas
- * ----------------------------------------------------------------------------
- */
-/* line 53, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-.loop--list {
-  margin-bottom: 2em; }
-  /* line 57, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--list .entry {
-    
-    
-    
-    width: 98.33333%;
-    float: left;
-    margin-left: 0.83333%;
-    margin-right: 0.83333%;
-    
-     }
-  /* line 61, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--list .Media {
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center; }
-  /* line 64, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--list .Media-figure {
-    -webkit-flex-basis: 31.66667%;
-        -ms-flex-preferred-size: 31.66667%;
-            flex-basis: 31.66667%;
-    margin-right: 0.83333%; }
-  /* line 68, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--list .Media-content {
-    -webkit-flex-basis: 65%;
-        -ms-flex-preferred-size: 65%;
-            flex-basis: 65%;
-    margin-left: 0.83333%; }
-
-/**
- * ----------------------------------------------------------------------------
- * CARDS
- * ----------------------------------------------------------------------------
- */
-/* line 88, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+/* line 11, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
 .loop--cards .entry {
-  position: relative;
-  margin-bottom: 2em;
-  text-align: center; }
-/* line 94, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-.loop--cards img {
-  height: auto;
-  display: block;
-  margin: 0 0 1em; }
-/* line 100, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-.loop--cards .thumb-placeholder {
-  margin: 0 0 1em; }
-/* line 106, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-.loop--cards .Media, .loop--cards .Media-figure, .loop--cards .Media-details {
-  display: block; }
-/* line 110, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-.loop--cards .Media-content {
-  padding: 0 0.83333%; }
-@media (min-width: 20em) {
-  /* line 118, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--cards .entry {
-    width: 48.33333%;
-    float: left;
-    
-    
-    
-     }
-    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-    .loop--cards .entry:nth-child(2n+1) {
-      
-      
-      margin-left: 0.83333%;
-      margin-right: -100%;
-      
-      
-      clear: both; }
-    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-    .loop--cards .entry:nth-child(2n+2) {
-      
-      
-      margin-left: 50.83333%;
-      margin-right: -100%;
-      
-      
-      clear: none; }
- }
-@media (min-width: 43.75em) {
-  /* line 123, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--cards .entry {
-    width: 31.66667%;
-    float: left;
-    
-    
-    
-     }
-    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-    .loop--cards .entry:nth-child(3n+1) {
-      
-      
-      margin-left: 0.83333%;
-      margin-right: -100%;
-      
-      
-      clear: both; }
-    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-    .loop--cards .entry:nth-child(3n+2) {
-      
-      
-      margin-left: 34.16667%;
-      margin-right: -100%;
-      
-      
-      clear: none; }
-    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-    .loop--cards .entry:nth-child(3n+3) {
-      
-      
-      margin-left: 67.5%;
-      margin-right: -100%;
-      
-      
-      clear: none; }
- }
-@media (min-width: 64em) {
-  /* line 129, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--cards .entry {
-    width: 23.33333%;
-    float: left;
-    
-    
-    
-     }
-    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-    .loop--cards .entry:nth-child(4n+1) {
-      
-      
-      margin-left: 0.83333%;
-      margin-right: -100%;
-      
-      
-      clear: both; }
-    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-    .loop--cards .entry:nth-child(4n+2) {
-      
-      
-      margin-left: 25.83333%;
-      margin-right: -100%;
-      
-      
-      clear: none; }
-    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-    .loop--cards .entry:nth-child(4n+3) {
-      
-      
-      margin-left: 50.83333%;
-      margin-right: -100%;
-      
-      
-      clear: none; }
-    /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-    .loop--cards .entry:nth-child(4n+4) {
-      
-      
-      margin-left: 75.83333%;
-      margin-right: -100%;
-      
-      
-      clear: none; }
- }
-/* line 141, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-.sidebar .loop--cards .entry {
-  float: none;
-  width: 100%; }
+  font-size: 0.71111em; }
 
-/*
- * ----------------------------------------------------------------------------
- * MINIBANNERS
- * Lista de artigos apenas com imagem e título por cima da image
- * ----------------------------------------------------------------------------
- */
-/* line 159, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-.loop--minibanners {
-  margin-bottom: 2em;
-  /**
-     * Quando sem slider activo
-     */ }
-  /* line 86, ../wip-parent-theme/sass/mdf/helpers/_media.scss */
-  .loop--minibanners .thumb-placeholder {
-    display: block;
-    background: #f2f2f2;
-    position: relative; }
-    /* line 90, ../wip-parent-theme/sass/mdf/helpers/_media.scss */
-    .loop--minibanners .thumb-placeholder:before {
-      content: "";
-      display: block;
-      padding-top: 75%; }
-    /* line 96, ../wip-parent-theme/sass/mdf/helpers/_media.scss */
-    .loop--minibanners .thumb-placeholder i {
-      font-size: 2.59786em;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translateX(-50%) translateY(-50%);
-          -ms-transform: translateX(-50%) translateY(-50%);
-              transform: translateX(-50%) translateY(-50%);
-      color: #a6a6a6; }
-  /* line 164, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--minibanners .entry {
-    position: relative;
-    overflow: hidden;
-    -webkit-transition: all 0.25s;
-            transition: all 0.25s; }
-    /* line 171, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-    .loop--minibanners .entry:hover .Media-figure {
-      opacity: 0.3; }
-    /* line 174, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-    .loop--minibanners .entry:hover .entry-title {
-      opacity: 0;
-      -webkit-transform: translateY(100%);
-          -ms-transform: translateY(100%);
-              transform: translateY(100%);
-      -webkit-transition-delay: 0s;
-              transition-delay: 0s; }
-    /* line 179, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-    .loop--minibanners .entry:hover .entry-details {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-          -ms-transform: translateY(0%);
-              transform: translateY(0%);
-      -webkit-transition-delay: 0.3s;
-              transition-delay: 0.3s; }
-  /* line 189, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--minibanners .Media, .loop--minibanners .Media-figure, .loop--minibanners .Media-content {
-    display: block; }
-  /* line 194, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--minibanners .Media-figure, .loop--minibanners .entry-title {
-    -webkit-transition: 0.3s all 0.25s ease;
-            transition: 0.3s all 0.25s ease; }
-  /* line 197, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--minibanners .excerpt {
-    -webkit-transition: all 0.35s ease;
-            transition: all 0.35s ease;
-    font-size: 0.8em; }
-    /* line 200, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-    .loop--minibanners .excerpt p {
-      margin: 0; }
-  /* line 205, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--minibanners .Media-content {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%; }
-  /* line 213, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--minibanners .entry-title {
-    margin: 0;
-    font-size: 1.28145em;
-    background: rgba(41, 41, 41, 0.55);
-    padding: 0.75em; }
-  /* line 220, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--minibanners .entry-details {
-    opacity: 0;
-    -webkit-transform: translateY(100%);
-        -ms-transform: translateY(100%);
-            transform: translateY(100%);
-    position: absolute;
-    bottom: 0em;
-    left: 0;
-    padding: 2em; }
-  /* line 229, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--minibanners .thumb-placeholder {
-    padding: 0; }
-  /* line 234, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--minibanners a h4 {
-    color: white; }
-  @media (min-width: 43.75em) {
-    /* line 247, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-    .loop--minibanners:not(.owl-carousel) .entry {
-      width: 48.33333%;
-      float: left;
-      
-      
-      
-       }
-      /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-      .loop--minibanners:not(.owl-carousel) .entry:nth-child(2n+1) {
-        
-        
-        margin-left: 0.83333%;
-        margin-right: -100%;
-        
-        
-        clear: both; }
-      /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-      .loop--minibanners:not(.owl-carousel) .entry:nth-child(2n+2) {
-        
-        
-        margin-left: 50.83333%;
-        margin-right: -100%;
-        
-        
-        clear: none; }
- }
-  @media (min-width: 64em) {
-    /* line 253, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-    .loop--minibanners:not(.owl-carousel) .entry {
-      width: 31.66667%;
-      float: left;
-      
-      
-      
-       }
-      /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-      .loop--minibanners:not(.owl-carousel) .entry:nth-child(3n+1) {
-        
-        
-        margin-left: 0.83333%;
-        margin-right: -100%;
-        
-        
-        clear: both; }
-      /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-      .loop--minibanners:not(.owl-carousel) .entry:nth-child(3n+2) {
-        
-        
-        margin-left: 34.16667%;
-        margin-right: -100%;
-        
-        
-        clear: none; }
-      /* line 66, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/bower_components/susy/sass/susy/language/susy/gallery */
-      .loop--minibanners:not(.owl-carousel) .entry:nth-child(3n+3) {
-        
-        
-        margin-left: 67.5%;
-        margin-right: -100%;
-        
-        
-        clear: none; }
- }
-  /* line 260, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-  .loop--minibanners.loop--categories {
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-            justify-content: flex-start; }
-    /* line 262, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-    .loop--minibanners.loop--categories .item {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 0 100%;
-          -ms-flex: 1 0 100%;
-              flex: 1 0 100%;
-      -webkit-flex-flow: row wrap;
-          -ms-flex-flow: row wrap;
-              flex-flow: row wrap; }
-    @media (min-width: 20em) {
-      /* line 267, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-      .loop--minibanners.loop--categories .item {
-        -webkit-flex-basis: 50%;
-            -ms-flex-preferred-size: 50%;
-                flex-basis: 50%;
-        max-width: 50%; }
- }
-    @media (min-width: 43.75em) {
-      /* line 273, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-      .loop--minibanners.loop--categories .item {
-        -webkit-flex-basis: 33.333%;
-            -ms-flex-preferred-size: 33.333%;
-                flex-basis: 33.333%;
-        max-width: 33%; }
- }
-
-/*
- * ----------------------------------------------------------------------------
- * LOOP--POSTS
- * ----------------------------------------------------------------------------
- */
-/* line 294, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-.loop--posts .Media-figure {
-  
-  
-  
-  width: 31.66667%;
-  float: left;
-  margin-left: 0.83333%;
-  margin-right: 0.83333%;
-  
-   }
-/* line 297, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
-.loop--posts .Media-details {
-  
-  
-  
-  width: 65%;
-  float: left;
-  margin-left: 0.83333%;
-  margin-right: 0.83333%;
-  
-   }
-
-/* line 306, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+/* line 20, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
 .form-row {
   clear: left;
   
@@ -2270,21 +2267,21 @@ div.create-account {
   
   
   margin-bottom: 0.675em; }
-  /* line 312, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 26, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .form-row label {
     display: block; }
-  /* line 316, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 30, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .form-row label.inline {
     display: inline-block;
     width: auto; }
-  /* line 323, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 37, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .form-row input, .form-row textarea, .form-row select {
     width: 100%;
     max-width: 100%; }
-  /* line 330, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 44, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .form-row input[type=checkbox], .form-row input[type=radio], .form-row .button {
     width: auto; }
-  /* line 335, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 49, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .form-row.form-row-first, .form-row.form-row-last {
     
     
@@ -2295,11 +2292,11 @@ div.create-account {
     margin-right: 0.83333%;
     
      }
-  /* line 338, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+  /* line 52, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
   .form-row.form-row-last {
     clear: none; }
 
-/* line 345, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
+/* line 59, /Users/luismartins/Sites/LAB/wpbeta/wp-content/themes/wip-child/src/sass/_shame.scss */
 .relevanssi-query-term {
   background: yellow; }
 

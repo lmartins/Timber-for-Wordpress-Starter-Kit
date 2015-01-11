@@ -3,7 +3,7 @@
         {% do action('tha_entry_top') %}
         {% block content %}
 
-            {% if post.get_thumbnail %}
+            {% if post.get_thumbnail and showthumb %}
                 <div class="Media-figure entry-image">
                     <img src="{{ post.thumbnail.src('thumbnail') }}" />
                 </div>

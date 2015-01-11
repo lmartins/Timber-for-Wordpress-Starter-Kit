@@ -21,23 +21,49 @@ if (!class_exists('Timber')){
 
 require_once( PARENT_DIR . '/lib/tha/tha-theme-hooks.php' );
 
-require_once( PARENT_DIR . '/mdf/admin/branding.php' );
-require_once( PARENT_DIR . '/mdf/admin/editor.php' );
-require_once( PARENT_DIR . '/mdf/admin/lists.php' );
-require_once( PARENT_DIR . '/mdf/admin/metaboxes.php' );
-require_once( PARENT_DIR . '/mdf/admin/taxonomies.php' );
-require_once( PARENT_DIR . '/mdf/admin/users.php' );
-require_once( PARENT_DIR . '/mdf/admin/widgets.php' );
 
-require_once( PARENT_DIR . '/mdf/archives.php' );
-require_once( PARENT_DIR . '/mdf/pages.php' );
-require_once( PARENT_DIR . '/mdf/single.php' );
-require_once( PARENT_DIR . '/mdf/security.php' );
-require_once( PARENT_DIR . '/mdf/woocommerce.php' );
-require_once( PARENT_DIR . '/mdf/woocommerce/template-tags.php' );
+/**
+ * ----------------------------------------------------------------------------
+ * SETUP
+ * ----------------------------------------------------------------------------
+ */
+
+require_once( PARENT_DIR . '/mdf/setup/init.php' );
+require_once( PARENT_DIR . '/mdf/setup/customizer.php' );
+require_once( PARENT_DIR . '/mdf/setup/security.php' );
+require_once( PARENT_DIR . '/mdf/setup/sidebars.php' );
+require_once( PARENT_DIR . '/mdf/setup/taxonomies.php' );
+require_once( PARENT_DIR . '/mdf/setup/users.php' );
 
 
-// require_once( PARENT_DIR . '/mdf/front/head.php' );
+/**
+ * ----------------------------------------------------------------------------
+ * DASH
+ * ----------------------------------------------------------------------------
+ */
+
+require_once( PARENT_DIR . '/mdf/dash/branding.php' );
+require_once( PARENT_DIR . '/mdf/dash/editor.php' );
+require_once( PARENT_DIR . '/mdf/dash/lists.php' );
+require_once( PARENT_DIR . '/mdf/dash/metaboxes.php' );
+if ( is_woocommerce_activated() ) {
+    require_once( PARENT_DIR . '/mdf/dash/woo.php' );
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * RENDER
+ * ----------------------------------------------------------------------------
+ */
+
+require_once( PARENT_DIR . '/mdf/render/archives.php' );
+require_once( PARENT_DIR . '/mdf/render/pages.php' );
+require_once( PARENT_DIR . '/mdf/render/single.php' );
+if ( is_woocommerce_activated() ) {
+    require_once( PARENT_DIR . '/mdf/render/woo.php' );
+}
+
+
 
 
 
